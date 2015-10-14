@@ -149,5 +149,4 @@ describe('The GoogleAuthFactory', () => {
       'scopes': SCOPES,
     }).should.be.fulfilled.then(validate).should.notify(done);
   });
-})
-;
+});

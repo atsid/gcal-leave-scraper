@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/atsid/gcal-leave-scraper"
   },
+  "scripts": {
+    "test": "gulp"
+  },
   "keywords": [],
   "devDependencies": {
     "babel-eslint": "4.0.10",
@@ -22,6 +25,7 @@
     "chai-as-promised": "^5.1.0",
     "codeclimate-test-reporter": "^0.1.0",
     "envify": "^3.4.0",
+    "eslint-config-ats": "0.1.0",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "3.2.3",
     "fs-extra": "^0.24.0",
@@ -44,6 +48,7 @@
     "isparta": "^3.0.3",
     "jsdom": "^6.5.0",
     "livereactload": "^0.7.0",
+    "mocha": "davija/mocha",
     "mkdirp": "^0.5.1",
     "nock": "^2.12.0",
     "passport-github2": "^0.1.9",
@@ -68,6 +73,10 @@
     "marked": "^0.3.5",
     "material-ui": "^0.11.1",
     "mongoose": "^4.0.7",
-    "inquirer-bluebird": "1.0.2"
+    "inquirer-bluebird": "1.0.2",
+    "mongoose": "^4.0.7",
+    "mongoose-organizer": "^0.1.0",
+    "mongoose-q": "0.1.0",
+    "q-bluebird": "0.0.1"
   }
 }
