@@ -79,7 +79,6 @@ function createAuthTokenFile() {
 
 describe('The GoogleAuthFactory', () => {
   const factory = rewire('./GoogleAuthFactory.js');
-  nock.recorder.rec();
   nock.disableNetConnect();
 
   beforeEach(() => {
