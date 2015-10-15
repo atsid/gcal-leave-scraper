@@ -74,7 +74,7 @@ function runTests(sourceGlob, testGlob, reportDir, reporter = DEFAULT_SPEC_REPOR
       .pipe(istanbul.hookRequire())
       .on('error', handleErr(tdd, resolve, reject))
       .on('finish', () => {
-        _runTests(testGlob, reporter, sourceGlob, reportDir, coverageReporters, tdd, resolve)
+        _runTests(testGlob, reporter, sourceGlob, reportDir, coverageReporters, tdd, resolve);
       });
   });
 }
