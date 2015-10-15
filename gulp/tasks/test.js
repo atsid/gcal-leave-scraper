@@ -44,6 +44,26 @@ function writeReports(sourceGlob, outputDir, reporters = DEFAULT_COVERAGE_REPORT
 }
 
 /**
+ * Performs actual test execution
+ * @private
+ */
+function _runTests(testGlob, reporter, sourceGlob, reportDir, coverageReporters, tdd, resolve) {
+  test(testGlob, reporter)
+    .then(() => writeReports(sourceGlob, reportDir, coverageReporters, tdd))
+    .then(resolve)
+    .catch((err) => {
+      gutil.log('Error Testing', err);
+      if (tdd) {
+        resolve();
+      } else {
+        /* eslint-disable */
+        process.exit(1);
+        /* eslint-enable */
+      }
+    });
+}
+
+/**
  * Executes coverage-instrumented tests
  */
 function runTests(sourceGlob, testGlob, reportDir, reporter = DEFAULT_SPEC_REPORTER, coverageReporters = DEFAULT_COVERAGE_REPORTERS, tdd = false) {
@@ -54,19 +74,7 @@ function runTests(sourceGlob, testGlob, reportDir, reporter = DEFAULT_SPEC_REPOR
       .pipe(istanbul.hookRequire())
       .on('error', handleErr(tdd, resolve, reject))
       .on('finish', () => {
-        test(testGlob, reporter)
-          .then(() => writeReports(sourceGlob, reportDir, coverageReporters, tdd))
-          .then(resolve)
-          .catch((err) => {
-            gutil.log('Error Testing', err);
-            if (tdd) {
-              resolve();
-            } else {
-              /* eslint-disable */
-              process.exit(1);
-              /* eslint-enable */
-            }
-          });
+        _runTests(testGlob, reporter, sourceGlob, reportDir, coverageReporters, tdd, resolve)
       });
   });
 }
