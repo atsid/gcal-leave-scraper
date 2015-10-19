@@ -4,10 +4,10 @@ const filters = require('./filters');
 describe('The allDayEventFilter function', () => {
   const filter = filters.allDayEventFilter;
 
-  function createEvent(timestamp) {
+  function createEvent(dateType, dateValue) {
     return {
       'start': {
-        'dateTime': timestamp,
+        [`${dateType}`]: dateValue,
       },
     };
   }
@@ -21,11 +21,11 @@ describe('The allDayEventFilter function', () => {
   });
 
   it('correctly filters non-all day events', () => {
-    expect(filter(createEvent('2015-10-14T09:00:00-07:00'))).to.equal(false);
+    expect(filter(createEvent('dateTime', '2015-10-14T09:00:00-07:00'))).to.equal(false);
   });
 
   it('correctly filters all day event', () => {
-    expect(filter(createEvent('2015-10-14'))).to.equal(true);
+    expect(filter(createEvent('date', '2015-10-14'))).to.equal(true);
   });
 });
 

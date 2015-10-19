@@ -9,7 +9,7 @@ const leaveKeywords = require('../appConfig').leaveKeywords;
 function allDayEventFilter(event) {
   let retVal = false;
 
-  if (event && event.start && event.start.dateTime && event.start.dateTime.match(/^\d\d\d\d-\d\d-\d\d$/g)) {
+  if (event && event.start && event.start.date) {
     retVal = true;
   }
 

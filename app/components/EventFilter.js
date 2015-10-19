@@ -21,7 +21,6 @@ class EventFilter {
     const unfiltered = [];
 
     events.forEach((event) => {
-      console.log(filter.name + ': ' + JSON.stringify(event, null, 4));
       if (filter(event)) {
         unfiltered.push(event);
       }
@@ -50,7 +49,6 @@ class EventFilter {
 
         resolve(postFilter);
       } else {
-        console.log('no filtering: ' + events.length)
         resolve(events);
       }
     });
