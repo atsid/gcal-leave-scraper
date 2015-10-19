@@ -3,6 +3,7 @@ const debug = require('debug')('app:GoogleCalendarShareHelper');
 const Promise = require('bluebird');
 const getCalendarList = Promise.promisify(calendar.calendarList.list);
 const addUserCalendar = Promise.promisify(calendar.calendarList.insert);
+const getEventList = Promise.promisify(calendar.events.list);
 
 function _getAllCalendars(existingUsers, lastResponse, auth) {
   if (!lastResponse || !lastResponse.syncToken) {
@@ -53,4 +54,60 @@ function ensureCalendarsAvailable(gmailUsers, auth) {
   });
 }
 
-module.exports = {ensureCalendarsAvailable};
+/**
+ * Helper method to recurse through all calendar event pages.
+ * @param email
+ * @param startingDate
+ * @param endingDate
+ * @param eventHandler
+ * @param lastResponse
+ * @param auth
+ * @returns {*|Promise.<T>}
+ * @private
+ */
+function _processAllEventsForUser(email, startingDate, endingDate, eventHandler, lastResponse, auth) {
+  if (!lastResponse || !lastResponse.nextSyncToken) {
+    return getEventList({
+      'auth': auth,
+      'timeMin': startingDate,
+      'timeMax': endingDate,
+      'showDeleted': true,
+      'calendarId': email,
+      'pageToken': lastResponse ? lastResponse.nextPageToken : null,
+      'maxResults': 2500,
+      'orderBy': 'updated',
+    }).then((responseList) => {
+      const events = responseList[0].items;
+
+      debug('executing handler on events');
+      events.map(item => {
+        eventHandler(item);
+      });
+
+      return _processAllEventsForUser(email, startingDate, endingDate, eventHandler, responseList[0], auth);
+    });
+  }
+}
+
+/**
+ * Iterate through events for specified calendar with specified constraints and calling the event handler
+ * for each event encountered.
+ *
+ * @param email The email address/calendar to process events for
+ * @param startingDate Starting date to filter events
+ * @param endingDate Ending date to filter events
+ * @param eventHandler Handler to call on each event
+ * @param auth OAuth client
+ * @returns {*|Promise.<T>}
+ */
+function processEventsForUser(email, startingDate, endingDate, eventHandler, auth) {
+  if (email) {
+    return _processAllEventsForUser(email, startingDate, endingDate, eventHandler, null, auth);
+  }
+
+  return new Promise((resolve) => {
+    resolve();
+  });
+}
+
+module.exports = {ensureCalendarsAvailable, processEventsForUser};
