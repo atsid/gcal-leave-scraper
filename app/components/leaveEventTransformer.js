@@ -17,6 +17,10 @@ module.exports = (event) => {
 
   return new Promise((resolve) => {
     GmailUser.find({'email': event.creator.email}, (err, user) => {
+      if (err) {
+        throw err;
+      }
+
       resolve(user[0]);
     });
   }).then(transform);

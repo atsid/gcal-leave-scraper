@@ -6,11 +6,11 @@ const addUserCalendar = Promise.promisify(calendar.calendarList.insert);
 const getEventList = Promise.promisify(calendar.events.list);
 
 function _getAllCalendars(existingUsers, lastResponse, auth) {
-  if (!lastResponse || !lastResponse.syncToken) {
+  if (!lastResponse || !lastResponse.nextSyncToken) {
     return getCalendarList({
       'auth': auth,
       'maxResults': 250,
-      'pageToken': lastResponse ? lastResponse.pageToken : null,
+      'pageToken': lastResponse ? lastResponse.nextPageToken : null,
     }).then((responseList) => {
       const cals = responseList[0].items;
 
@@ -36,7 +36,7 @@ function ensureCalendarsAvailable(gmailUsers, auth) {
   const existingUsers = [];
 
   return _getAllCalendars(existingUsers, null, auth).then(() => {
-    return Promise.map(gmailUsers, gmailUser => {
+    return Promise.map(gmailUsers, (gmailUser) => {
       const email = gmailUser.email;
       const userIndex = existingUsers.indexOf(email);
 

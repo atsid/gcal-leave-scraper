@@ -46,13 +46,13 @@ describe('The GoogleCalendarShareHelper', () => {
 
     function handlePageToken(args, pageCount, resolveArgs) {
       if (isLastPage(pageCount, args)) {
-        resolveArgs.syncToken = 'token';
+        resolveArgs.nextSyncToken = 'token';
       } else if (isFirstPage(args)) {
-        resolveArgs.pageToken = '2';
+        resolveArgs.nextPageToken = '2';
       } else if (args) {
         const pageToken = parseInt(args.pageToken, 10);
 
-        resolveArgs.pageToken = `${pageToken + 1}`;
+        resolveArgs.nextPageToken = `${pageToken + 1}`;
       }
     }
 
