@@ -12,9 +12,9 @@ gulp.task('bundle-client', () => {
   const conf = browserifyConf();
   conf.transform.push([envify({_: 'purge', NODE_ENV: 'production'}), {global: true}]);
   conf.transform.push([uglifyify, {global: true}]);
-  const b = browserify(conf);
-  b.on('log', gutil.log);
-  return b
+  const bundler = browserify(conf);
+  bundler.on('log', gutil.log);
+  return bundler
     .bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(config.client.dist.bundle))

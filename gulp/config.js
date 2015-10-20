@@ -1,7 +1,7 @@
-const _ = require('lodash');
+const _lodash = require('lodash');
 
 function sourceNode(rootName, root, extra = {}) {
-  return _.merge({
+  return _lodash.merge({
     all: [root + '/**/*.js'],
     source: [root + '/**/*.js', '!' + root + '/**/*.spec.js', '!' + root + '/**/*spec*/*'],
     test: [root + '/**/*.spec.js', root + '/**/*spec*/*'],
