@@ -6,5 +6,4 @@ services:
   - mongodb
 before_script: 
   - npm shrinkwrap
-  - sleep 15
 after_script: npm run report-coverage
