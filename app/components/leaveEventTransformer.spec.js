@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const rewire = require('rewire');
+const Promise = require('bluebird');
 let expect;
 
 chai.use(chaiAsPromised);
@@ -12,11 +13,11 @@ describe('The leaveEventTransformer', () => {
 
   function rewireGmailUser() {
     transformer.__set__('GmailUser', {
-      'find': (email, cb) => {
-        cb(null, [{
+      'findAsync': Promise.method(() => {
+        return [{
           '_id': 'id123',
-        }]);
-      },
+        }];
+      }),
     });
   }
 
@@ -48,4 +49,5 @@ describe('The leaveEventTransformer', () => {
 
     transformer(leaveCalendarEvent).should.be.fulfilled.then(validate).should.notify(done);
   });
-});
+})
+;

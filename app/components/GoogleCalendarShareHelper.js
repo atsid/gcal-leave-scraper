@@ -79,14 +79,15 @@ function _processAllEventsForUser(email, startingDate, endingDate, eventHandler,
     }).then((responseList) => {
       const events = responseList[0].items;
 
-      debug('executing handler on events');
-      events.map(item => {
-        eventHandler(item);
+      return Promise.map(events, item => {
+        return eventHandler(item);
+      }).then(() => {
+        return _processAllEventsForUser(email, startingDate, endingDate, eventHandler, responseList[0], auth);
       });
-
-      return _processAllEventsForUser(email, startingDate, endingDate, eventHandler, responseList[0], auth);
     });
   }
+
+  return Promise.resolve();
 }
 
 /**
@@ -105,9 +106,7 @@ function processEventsForUser(email, startingDate, endingDate, eventHandler, aut
     return _processAllEventsForUser(email, startingDate, endingDate, eventHandler, null, auth);
   }
 
-  return new Promise((resolve) => {
-    resolve();
-  });
+  return Promise.resolve();
 }
 
 module.exports = {ensureCalendarsAvailable, processEventsForUser};

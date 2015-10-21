@@ -1,7 +1,7 @@
 const models = require('../persistence/index').models;
-const GmailUser = models.GmailUser;
 const LeaveEvent = models.LeaveEvent;
 const Promise = require('bluebird');
+const GmailUser = Promise.promisifyAll(models.GmailUser);
 
 module.exports = (event) => {
   const transform = (gmailUser) => {
@@ -15,13 +15,7 @@ module.exports = (event) => {
     });
   };
 
-  return new Promise((resolve) => {
-    GmailUser.find({'email': event.creator.email}, (err, user) => {
-      if (err) {
-        throw err;
-      }
-
-      resolve(user[0]);
-    });
-  }).then(transform);
+  return GmailUser.findAsync({'email': event.creator.email}).then((users) => {
+    return transform(users[0]);
+  });
 };

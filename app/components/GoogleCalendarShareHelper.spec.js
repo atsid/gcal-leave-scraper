@@ -8,7 +8,6 @@ chai.use(chaiAsPromised);
 chai.should();
 expect = chai.expect;
 
-
 describe('The GoogleCalendarShareHelper', () => {
   const helper = rewire('./GoogleCalendarShareHelper');
   const auth = {};
