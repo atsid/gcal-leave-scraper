@@ -1,5 +1,5 @@
 const helper = require('./GoogleCalendarShareHelper');
-const leaveEventTransformer = require('./LeaveEventTransformer');
+const leaveEventTransformer = require('./leaveEventTransformer');
 const filters = require('./filters');
 const EventFilter = require('./EventFilter');
 const eventFilter = new EventFilter([filters.allDayEventFilter, filters.leaveEventFilter]);
