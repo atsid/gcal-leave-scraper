@@ -14,6 +14,7 @@ const updateLeaveEvent = Promise.method((leaveEvent, leaveEventObj) => {
   return Promise.method(leaveEventObj.save)();
 });
 const removeLeaveEvent = Promise.method((leaveEventObj) => {
+  // Wrapping in a promise instead of using Promise.method due possible scoping bug in bluebird/mongoose.
   return new Promise((resolve) => {
     leaveEventObj.remove(() => {
       return resolve();
