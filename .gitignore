@@ -2,4 +2,5 @@
 /gcal-leave-scraper.iml
 target
 node_modules
+npm-shrinkwrap.json
 # Created by .ignore support plugin (hsz.mobi)
