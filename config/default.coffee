@@ -2,11 +2,25 @@ module.exports =
   app:
     name: 'gcal-leave-scraper'
 
+  session:
+    name: 'gcal-leave-scraper'
+    secret: 'abc123-random'
+    proxy: true
+
+  clustering:
+    workerLimit: 1
+    entryPoint: __dirname + '/../server/main'
+
+  server:
+    port: 9000
+
   auth:
     google:
-      clientID: 'your_client_id'
-      clientSecret: 'your_client_secret'
+      clientID: 'your-client-id'
+      clientSecret: 'your-client-secret'
+      domain: 'your-domain-or-remove'
       callbackURL: 'http://localhost:9000/api/auth/google/callback'
+      scope: ['profile', 'openid']
 
   container:
     composed: false

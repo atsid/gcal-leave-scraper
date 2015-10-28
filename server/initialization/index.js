@@ -1,17 +1,17 @@
 const debug = require('debug')('app:initialization');
 const INIT_SECTIONS = [
   require('./sections/helmet'),
-  require('./sections/force_ssl'),
+  require('./sections/forceSsl'),
   require('./sections/cacheControl'),
   require('./sections/compression'),
-  require('./sections/body_parsing'),
+  require('./sections/bodyParsing'),
   require('./sections/staticContent'),
   require('./sections/sessions'),
   require('./sections/passport'),
   require('./sections/jade'),
   require('./sections/routing'),
   require('./sections/uiRouting'),
-  require('./sections/error_handling'),
+  require('./sections/errorHandling'),
 ];
 
 function configure(app) {
