@@ -88,4 +88,6 @@ function defineTestingTasks(task, root) {
 }
 
 defineTestingTasks('app', config.app);
-gulp.task('test', ['test-app']);
+defineTestingTasks('server', config.server);
+defineTestingTasks('all', config.all);
+gulp.task('test', ['test-all']);

@@ -13,5 +13,7 @@ function sourceNode(rootName, root, extra = {}) {
 
 module.exports = {
   build: ['gulpfile.js', 'gulp/**/*.js'],
+  server: sourceNode('server', 'server'),
   app: sourceNode('app', 'app'),
+  all: sourceNode('all', '{app,server}'),
 };

@@ -2,7 +2,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const Promise = require('bluebird');
 const rewire = require('rewire');
-const models = require('../persistence').models;
+const models = require('../persistence/index').models;
 const LeaveEvent = Promise.promisifyAll(models.LeaveEvent);
 const GmailUser = models.GmailUser;
 let expect;
@@ -60,6 +60,7 @@ describe('The eventScanner', () => {
           'lastName': 'ln',
           'userId': email,
         }], {}, (err) => {
+          // Ignore already exists error
           if (err && err.code !== 11000) {
             throw err;
           }

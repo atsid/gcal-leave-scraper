@@ -49,5 +49,4 @@ describe('The leaveEventTransformer', () => {
 
     transformer(leaveCalendarEvent).should.be.fulfilled.then(validate).should.notify(done);
   });
-})
-;
+});

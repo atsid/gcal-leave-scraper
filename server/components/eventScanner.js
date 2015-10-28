@@ -4,7 +4,7 @@ const filters = require('./filters');
 const EventFilter = require('./EventFilter');
 const eventFilter = new EventFilter([filters.allDayEventFilter, filters.leaveEventFilter]);
 const Promise = require('bluebird');
-const LeaveEvent = Promise.promisifyAll(require('../persistence').models.LeaveEvent);
+const LeaveEvent = Promise.promisifyAll(require('../persistence/index').models.LeaveEvent);
 const updateLeaveEvent = Promise.method((leaveEvent, leaveEventObj) => {
   // Handles updating of an event that already exists.
   leaveEventObj.status = leaveEvent.status;
