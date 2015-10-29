@@ -87,7 +87,7 @@ function defineTestingTasks(task, root) {
   });
 }
 
-defineTestingTasks('app', config.app);
+defineTestingTasks('client', config.client);
 defineTestingTasks('server', config.server);
 defineTestingTasks('all', config.all);
 gulp.task('test', ['test-all']);

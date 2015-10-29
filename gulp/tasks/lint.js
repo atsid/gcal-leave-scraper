@@ -42,7 +42,7 @@ function defineLintingTasks(taskName, root) {
   ]);
 }
 
-defineLintingTasks('app', config.app);
+defineLintingTasks('client', config.client);
 defineLintingTasks('server', config.server);
 gulp.task('lint-build', lint(config.build));
-gulp.task('lint', ['lint-app', 'lint-server', 'lint-build']);
+gulp.task('lint', ['lint-client', 'lint-server', 'lint-build']);

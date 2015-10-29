@@ -16,7 +16,8 @@ describe('OAuth Callback', () => {
     callback = rewire('./oauthCallback');
     User.createQ({
       'email': 'test@example.com',
-      'name': 'name',
+      'firstName': 'fname',
+      'lastName': 'lname',
       'googleId': '123',
       'googleToken': 'token',
     })
@@ -38,13 +39,24 @@ describe('OAuth Callback', () => {
     });
   });
 
+  function buildUserEntity() {
+    return {
+      id: '234',
+      name: {
+        familyName: 'lname',
+        givenName: 'fname',
+      },
+    };
+  }
+
   it('returns correct user if user already exists', (done) => {
     const doneCb = (err, user) => {
       expect(err).to.be.null;
       expect(user).to.not.be.undefined;
       expect(user).to.not.be.null;
       expect(user.googleId).to.equal('123');
-      expect(user.name).to.equal('name');
+      expect(user.firstName).to.equal('fname');
+      expect(user.lastName).to.equal('lname');
       expect(user.email).to.equal('test@example.com');
       expect(user.googleToken).to.equal('tokenA1');
     };
@@ -58,12 +70,13 @@ describe('OAuth Callback', () => {
       expect(user).to.not.be.undefined;
       expect(user).to.not.be.null;
       expect(user.googleId).to.equal('234');
-      expect(user.name).to.be.undefined;
+      expect(user.firstName).to.equal('fname');
+      expect(user.lastName).to.equal('lname');
       expect(user.email).to.be.undefined;
       expect(user.googleToken).to.equal('tokenA2');
     };
 
-    callback('tokenA2', 'tokenSecret', {id: '234'}, doneCb).should.be.fulfilled.should.notify(done);
+    callback('tokenA2', 'tokenSecret', buildUserEntity(), doneCb).should.be.fulfilled.should.notify(done);
   });
 
   it('calls callback with error', (done) => {
@@ -83,4 +96,5 @@ describe('OAuth Callback', () => {
     callback.__set__('User', myUser);
     callback('tokenA2', 'tokenSecret', {id: '234'}, doneCb).should.be.fulfilled.should.notify(done);
   });
-});
+})
+;

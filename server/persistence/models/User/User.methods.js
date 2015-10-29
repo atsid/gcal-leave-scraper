@@ -15,4 +15,8 @@ function process(req) {
   return result;
 }
 
-module.exports = {process};
+function getDisplayName() {
+  return `${this.firstName} ${this.lastName}`;
+}
+
+module.exports = {process, getDisplayName};

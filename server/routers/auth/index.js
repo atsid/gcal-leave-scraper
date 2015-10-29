@@ -12,6 +12,9 @@ const router = jefferson.router({
       get: [auth.getCurrentUser],
       'delete': [auth.logout],
     },
+    '/logout': {
+      get: [auth.logout],
+    },
   },
 });
 

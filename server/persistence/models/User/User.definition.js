@@ -10,7 +10,11 @@ module.exports = {
   /**
    * A name by which we can address the user
    */
-  name: {
+  firstName: {
+    type: String,
+  },
+
+  lastName: {
     type: String,
   },
 

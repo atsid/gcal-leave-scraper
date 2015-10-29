@@ -12,10 +12,9 @@ function sourceNode(rootName, root, extra = {}) {
 }
 
 module.exports = {
-  build: ['gulpfile.js', 'gulp/**/*.js'],
   server: sourceNode('server', 'server'),
-  app: sourceNode('app', 'app'),
-  all: sourceNode('all', '{app,server}'),
+  all: sourceNode('all', '{client,server}'),
+  build: ['gulpfile.js', 'gulp/**/*.js'],
   client: sourceNode('client', 'client', {
     styles: ['client/styles/**/*.scss'],
     staticJade: ['client/**/*.jade', '!client/**/*.dynamic.jade'],
