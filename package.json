@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "gulp",
-    "report-coverage": "codeclimate-test-reporter < target/test-reports/app/lcov.info"
+    "report-coverage": "codeclimate-test-reporter < target/test-reports/all/lcov.info"
   },
   "keywords": [],
   "devDependencies": {
