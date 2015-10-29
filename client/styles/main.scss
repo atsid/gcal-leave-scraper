@@ -1,0 +1,25 @@
+@import "_variables";
+@import "_reset";
+
+// Insert Sass Styles
+
+.projectBadge {
+  display: inline;
+}
+
+.badgeBlock {
+  display: inline-block;
+}
+
+.projectName {
+  width: 300px;
+  min-width: 300px;
+  margin: 10px;
+}
+
+.projectView {
+}
+
+.content {
+  padding: 5px;
+}
