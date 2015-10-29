@@ -3,4 +3,19 @@
 target
 node_modules
 npm-shrinkwrap.json
+public
+
+# Logs
+logs
+*.log
+*~
+
+# Runtime data
+pids
+*.pid
+dist/
+
+# Directory for instrumented libs
+lib-cov
+
 # Created by .ignore support plugin (hsz.mobi)
