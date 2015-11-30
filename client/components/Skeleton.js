@@ -1,5 +1,6 @@
 const debug = require('debug')('app:components:application');
 const React = require('react/addons');
+const classNames = require('classnames');
 
 // Components
 const mui = require('material-ui');
@@ -58,8 +59,13 @@ const Skeleton = React.createClass({
 
     const user = this.state.user;
     const appBarRightLabel = user ? `${user.firstName} ${user.lastName}` : 'Login';
+    const minimumHeight = {
+      flex: '0.1 99 auto',
+    };
+    const wrapperClass = classNames('content-wrapper');
+
     return (
-      <div>
+      <div className={wrapperClass}>
         <LeftNav
           ref="leftNav"
           menuItems={menuItems}
@@ -70,7 +76,8 @@ const Skeleton = React.createClass({
           <AppBar
             title="testing"
             onLeftIconButtonTouchTap={this.onLeftNavToggle}
-            iconElementRight={<FlatButton label={appBarRightLabel} />}/>
+            iconElementRight={<FlatButton label={appBarRightLabel} />}
+            style={minimumHeight}/>
         </header>
 
         <section className="content">

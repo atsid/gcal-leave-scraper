@@ -3,23 +3,70 @@
 
 // Insert Sass Styles
 
-.projectBadge {
-  display: inline;
-}
-
-.badgeBlock {
-  display: inline-block;
-}
-
-.projectName {
-  width: 300px;
-  min-width: 300px;
-  margin: 10px;
-}
-
-.projectView {
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
+  margin: 0;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
 }
 
 .content {
-  padding: 5px;
+  flex: 20 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-title {
+  font-weight: bold;
+  font-size: 18pt;
+  padding: 10px;
+  text-align: center;
+  flex: 0.1 99 auto;
+}
+
+.calendar-content {
+  flex: 99 0.1 auto;
+  display: block;
+  margin: auto;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-summary-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar-summary-title {
+  font-weight: bold;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.calendar-data {
+  text-align: left;
+}
+
+.fy-calendar-cell {
+  display: flex;
+  flex: 1;
+}
+
+.fy-calendar-cell:hover {
+  border: 3px solid orange;
+  cursor: pointer;
+}
+
+.fy-calendars {
+  display: block;
+  flex: 99 0.1 auto;
+  padding: 10px;
 }
