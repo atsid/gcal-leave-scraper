@@ -16,3 +16,6 @@ Server application that scans google calendars for leave events matching specifi
 * "gulp develop" from the project root
 * Go to localhost:9000 in your web browser
 
+# Quickstarts
+* Use the quickstarts/quickstart-mine.sh script to create a user and put the user in Mongo.
+
