@@ -19,3 +19,11 @@ Server application that scans google calendars for leave events matching specifi
 # Quickstarts
 * Use the quickstarts/quickstart-mine.sh script to create a user and put the user in Mongo.
 
+# To create a service account with Google
+* Go to https://console.developers.google.com and setup a new application
+* From the application "Overview" screen, enable the Google Calendar API
+* From the "Credentials" screen click "Add credential" -> "OAath 2.0"
+* Set the credential application type to "other" -> "installed"
+* Download the credential file and put it in the local project root as "client_secret.json"
+
+
