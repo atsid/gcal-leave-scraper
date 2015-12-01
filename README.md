@@ -17,7 +17,7 @@ Server application that scans google calendars for leave events matching specifi
 * Go to localhost:9000 in your web browser
 
 # Quickstarts
-* Use the quickstarts/quickstart-mine.sh script to create a user and put the user in Mongo.
+* Use the quickstarts/quickstart-mine.sh script to create a user and put the user in Mongo along with any matching events.
 
 # To create a service account with Google
 * Go to https://console.developers.google.com and setup a new application
