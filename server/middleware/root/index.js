@@ -6,6 +6,7 @@ function get(req, res) {
     status: 'ok',
     links: {
       auth: '/auth',
+      events: '/events',
     },
   };
 
