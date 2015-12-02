@@ -29,4 +29,4 @@ Server application that scans google calendars for leave events matching specifi
 # Misc Thoughts
 * Service API is mounted at http://localhost:9000/api
 * Must connect to the standard UI at http://localhost:9000/ before using a web service in order to authenticate
-* List all events: GET http://localhost:9000/api/events/listEvents
+* List all events: GET http://localhost:9000/api/events/listAllEvents

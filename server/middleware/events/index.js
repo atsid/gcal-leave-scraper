@@ -1,3 +1,3 @@
 module.exports = {
-  listEvents: require('./listEvents'),
+  listAllEvents: require('./listAllEvents'),
 };
