@@ -7,10 +7,19 @@ module.exports = (req, res) => {
   if (!req.user) {
     res.status(404).json({message: 'No authenticated user found'});
   } else {
-    debug(sprintf("Searching for events in year %d and month %d", req.params.year, req.params.month));
+    var myStartDate = new Date();
+    myStartDate.setUTCHours(0, 0, 0, 0);
+    myStartDate.setUTCFullYear(req.params.year, req.params.month - 1, 1);
 
-    LeaveEvent.find((err, data) => {
-      if(err) {
+    var myEndDate = new Date();
+    myEndDate.setUTCHours(0, 0, 0, 0);
+    myEndDate.setUTCFullYear(req.params.year, req.params.month, 1);
+
+    debug(sprintf("Searching for events after %s and before %s", myStartDate.toISOString(), myEndDate.toISOString()));
+
+    // Find events with a startDate >= the first day of the month and and endDate < the last day of the month
+    LeaveEvent.find({startDate: {$gte: myStartDate}, endDate: {$lt: myEndDate}}, (err, data) => {
+      if (err) {
         res.json({message: "Error loading leave events", detail: err});
       } else {
         res.json(data);
