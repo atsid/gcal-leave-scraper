@@ -6,6 +6,9 @@ const router = jefferson.router({
     "/listAllEvents": {
       get: [events.listAllEvents],
     },
+    "/listEventsForMonth/:year/:month": {
+      get: [events.listEventsForMonth],
+    },
   },
 });
 
