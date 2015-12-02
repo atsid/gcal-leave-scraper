@@ -11,6 +11,9 @@ const EventFilter = require('./../server/components/EventFilter');
 const filters = require('./../server/components/filters');
 const leaveEventTransformer = require('./../server/components/leaveEventTransformer');
 const eventScanner = require('./../server/components/eventScanner');
+const directory = require('googleapis').admin('directory_v1');
+const Promise = require('bluebird');
+const getUserList = Promise.promisify(directory.users.list);
 
 googleAuthFactory({
   scopes: SCOPES,
@@ -35,6 +38,15 @@ googleAuthFactory({
 
           return;
         }
+
+        getUserList({'auth':auth}, (err, result) => {
+          console.log('Returned from user list');
+          if(err) {
+            console.log('Error: ');
+            console.log(err);
+          }
+          console.log(result);
+        })
 
         console.log('found %d users...', users.length);
         calendarShareHelper.ensureCalendarsAvailable(users, auth).then(() => {
