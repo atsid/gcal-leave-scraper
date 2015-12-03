@@ -16,7 +16,7 @@ function findEventsInMonth(year, month, callback) {
   debug(sprintf('Searching for events after %s and before %s', myStartDate.toISOString(), myEndDate.toISOString()));
 
   // Find events with a startDate >= the first day of the month and and endDate < the last day of the month
-  LeaveEvent.find({startDate: {$gte: myStartDate}, endDate: {$lt: myEndDate}}, callback);
+  LeaveEvent.find({endDate: {$gte: myStartDate}, startDate: {$lte: myEndDate}}, callback);
 }
 
 module.exports = {findEventsInMonth};
