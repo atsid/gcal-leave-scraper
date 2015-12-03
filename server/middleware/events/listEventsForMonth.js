@@ -6,7 +6,7 @@ module.exports = (req, res) => {
   } else {
     searcher.findEventsInMonth(req.params.year, req.params.month, (err, data) => {
       if (err) {
-        res.json({message: "Error loading leave events", detail: err});
+        res.json({message: 'Error loading leave events', detail: err});
       } else {
         res.json(data);
       }

@@ -3,10 +3,10 @@ const events = require('../../middleware/events');
 
 const router = jefferson.router({
   routes: {
-    "/listAllEvents": {
+    '/listAllEvents': {
       get: [events.listAllEvents],
     },
-    "/listEventsForMonth/:year/:month": {
+    '/listEventsForMonth/:year/:month': {
       get: [events.listEventsForMonth],
     },
   },
