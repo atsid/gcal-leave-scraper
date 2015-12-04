@@ -3,12 +3,12 @@ const debug = require('debug')('app:server:components:CalendarUtils');
 require('moment-range');
 
 function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
+  // Find the start and end of the target month.  Use UTC.
   const targetMonthStartDate = moment().utc().year(targetYear).month(targetMonth).startOf('month');
   const targetMonthEndDate = moment().utc().year(targetYear).month(targetMonth).endOf('month');
-
   const wholeMonthRange = moment.range(targetMonthStartDate, targetMonthEndDate);
 
-  // Set the start and end times
+  // Set the start and end times.  Use UTC to keep in sync with the target month.
   const startMoment = moment(startDate).utc().startOf('day');
   const endMoment = moment(endDate).utc().endOf('day');
 
@@ -29,18 +29,13 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
   debug('Intersected date range "%s"', range.toString());
 
   let workdays = 0;
-  console.log('Starting count');
   range.by('days', (currentMoment) => {
     const currentDay = currentMoment.day();
     if (currentDay !== 0 && currentDay !== 6) {
-      console.log('Found workday: ' + currentDay + currentMoment.toString());
       // Increment all days that are not Saturday or Sunday
       workdays++;
-    } else {
-      console.log('Found non-workday: ' + currentDay);
     }
   });
-  console.log('Total workdays: ' + workdays);
 
   return workdays;
 }
