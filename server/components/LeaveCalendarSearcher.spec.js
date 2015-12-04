@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const models = require('../persistence/index').models;
 const Event = models.LeaveEvent;
-const debug = require('debug')('app:middleware:events:listEventsForMonth');
+const debug = require('debug')('app:server:components:leaveSearcher_tests');
 const searcher = require('./LeaveCalendarSearcher');
 
 const chai = require('chai');
