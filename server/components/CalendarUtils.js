@@ -3,20 +3,20 @@ const debug = require('debug')('app:server:components:CalendarUtils');
 require('moment-range');
 
 function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
-  const targetMonthStartDate = new Date(targetYear, targetMonth, 1);
-  const targetMonthEndDate = new Date(targetYear, targetMonth + 1, 0, 23, 59, 59);
+  const targetMonthStartDate = moment().utc().year(targetYear).month(targetMonth).startOf('month');
+  const targetMonthEndDate = moment().utc().year(targetYear).month(targetMonth).endOf('month');
 
   const wholeMonthRange = moment.range(targetMonthStartDate, targetMonthEndDate);
 
   // Set the start and end times
-  startDate.setUTCHours(0, 0, 0, 0);
-  endDate.setUTCHours(23, 59, 59, 999);
+  const startMoment = moment(startDate).utc().startOf('day');
+  const endMoment = moment(endDate).utc().endOf('day');
 
-  debug('Start Date %s End Date %s', startDate, endDate);
+  debug('Start Date %s End Date %s', startMoment, endMoment);
   debug('Whole month range "%s"', wholeMonthRange.toString());
 
   // Find the part of the date range that is completely within the month.
-  let range = moment.range(startDate, endDate);
+  let range = moment.range(startMoment, endMoment);
   debug('Date range "%s"', range.toString());
 
   range = range.intersect(wholeMonthRange);
@@ -28,9 +28,21 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
 
   debug('Intersected date range "%s"', range.toString());
 
-  const totalDays = range.diff('d') + 1;
+  let workdays = 0;
+  console.log('Starting count');
+  range.by('days', (currentMoment) => {
+    const currentDay = currentMoment.day();
+    if (currentDay !== 0 && currentDay !== 6) {
+      console.log('Found workday: ' + currentDay + currentMoment.toString());
+      // Increment all days that are not Saturday or Sunday
+      workdays++;
+    } else {
+      console.log('Found non-workday: ' + currentDay);
+    }
+  });
+  console.log('Total workdays: ' + workdays);
 
-  return totalDays;
+  return workdays;
 }
 
 module.exports = {findWorkdaysInRange};
