@@ -63,7 +63,7 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
 function uniqueUsersInLeaveEventSet(leaveEvents) {
   const users = new Set();
 
-  leaveEvents.map(event => {
+  leaveEvents.map(() => {
 
   });
 
