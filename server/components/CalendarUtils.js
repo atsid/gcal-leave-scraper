@@ -63,5 +63,20 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
   return workdays;
 }
 
-module.exports = {findWorkdaysInRange};
+/**
+ * Returns the unique set of users in a set of leave events.
+ * @param leaveEvents Set of leave events.
+ * @returns {Set} Set of GMailUsers that are used by these leave events
+ */
+function uniqueUsersInLeaveEventSet(leaveEvents) {
+  const users = new Set();
+
+  leaveEvents.map(event => {
+
+  });
+
+  return users;
+}
+
+module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet};
 
