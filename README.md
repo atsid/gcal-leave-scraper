@@ -26,4 +26,7 @@ Server application that scans google calendars for leave events matching specifi
 * Set the credential application type to "other" -> "installed"
 * Download the credential file and put it in the local project root as "client_secret.json"
 
-
+# Misc Thoughts
+* Service API is mounted at http://localhost:9000/api
+* Must connect to the standard UI at http://localhost:9000/ before using a web service in order to authenticate
+* List all events: GET http://localhost:9000/api/events/listAllEvents
