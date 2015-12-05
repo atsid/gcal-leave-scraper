@@ -1,5 +1,7 @@
 const moment = require('moment');
 const debug = require('debug')('app:server:components:CalendarUtils');
+const models = require('../persistence/index').models;
+const User = models.GmailUser;
 require('moment-range');
 
 /**
@@ -58,16 +60,22 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
 /**
  * Returns the unique set of users in a set of leave events.
  * @param leaveEvents Set of leave events.
- * @returns {Set} Set of GMailUsers that are used by these leave events
+ * @returns {Array} Set of GMailUsers that are used by these leave events
  */
 function uniqueUsersInLeaveEventSet(leaveEvents) {
-  const users = new Set();
+  const userIds = new Set();
 
-  leaveEvents.map(() => {
-
+  leaveEvents.map((leaveEvent) => {
+    const gmailUserId = leaveEvent.gmailUser;
+    userIds.add(gmailUserId);
   });
 
-  return users;
+  User.find({userId: {$in: userIds}}, (err, results) => {
+    if (err) {
+      console.log('Error running query %s', err);
+    }
+    return results;
+  });
 }
 
 module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet};

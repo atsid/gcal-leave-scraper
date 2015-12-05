@@ -69,7 +69,7 @@ describe('The CalendarUtils', () => {
     it('single event returns a single valid GmailUser', (done) => {
       const result = utils.uniqueUsersInLeaveEventSet([createEvent('dummy1user1')]);
 
-      expect(result.size).to.equal(1);
+      expect(result.length).to.equal(1);
       expect(result[0].userId).to.equal('dummy1user1');
       expect(result[0].email).to.equal('dummy1.user1@example.com');
 
@@ -79,7 +79,7 @@ describe('The CalendarUtils', () => {
     it('two events returns a single valid GmailUser', (done) => {
       const result = utils.uniqueUsersInLeaveEventSet([createEvent('dummy1user1'), createEvent('dummy1user1')]);
 
-      expect(result.size).to.equal(1);
+      expect(result.length).to.equal(1);
       expect(result[0].userId).to.equal('dummy1user1');
       expect(result[0].email).to.equal('dummy1.user1@example.com');
 
@@ -89,7 +89,7 @@ describe('The CalendarUtils', () => {
     it('two events return different valid GmailUsers', (done) => {
       const result = utils.uniqueUsersInLeaveEventSet([createEvent('dummy1user1'), createEvent('dummy2user2')]);
 
-      expect(result.size).to.equal(1);
+      expect(result.length).to.equal(2);
 
       // User 1
       expect(result[0].userId).to.equal('dummy1user1');
@@ -108,7 +108,7 @@ describe('The CalendarUtils', () => {
           createEvent('dummy2user2'),
           createEvent('dummy1user1')]);
 
-      expect(result.size).to.equal(2);
+      expect(result.length).to.equal(2);
 
       // User 1
       expect(result[0].userId).to.equal('dummy1user1');
@@ -124,7 +124,7 @@ describe('The CalendarUtils', () => {
     it('no events return empty set', (done) => {
       const result = utils.uniqueUsersInLeaveEventSet([]);
 
-      expect(result.size).to.equal(0);
+      expect(result.length).to.equal(0);
 
       done();
     });
@@ -137,7 +137,7 @@ describe('The CalendarUtils', () => {
       }
       const result = utils.uniqueUsersInLeaveEventSet(events);
 
-      expect(result.size).to.equal(2);
+      expect(result.length).to.equal(2);
 
       // User 1
       expect(result[0].userId).to.equal('dummy1user1');
@@ -153,7 +153,7 @@ describe('The CalendarUtils', () => {
     it('user not found', (done) => {
       const result = utils.uniqueUsersInLeaveEventSet([createEvent('thisUserDoesNotExist')]);
 
-      expect(result.size).to.equal(1);
+      expect(result.length).to.equal(1);
 
       // User 1
       expect(result[0].userId).to.equal('dummy1user1');
