@@ -27,17 +27,12 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
   const targetMonthEndDate = moment().utc().year(targetYear).month(targetMonth).endOf('month');
   const wholeMonthRange = moment.range(targetMonthStartDate, targetMonthEndDate);
 
-  console.log('start date: ' + startDate.toISOString());
-  console.log('end date: ' + endDate.toISOString());
-  console.log('Month Range: ' + wholeMonthRange.toString());
-
   debug('Start Date %s End Date %s', startDate, endDate);
   debug('Whole month range "%s"', wholeMonthRange.toString());
 
   // Find the part of the date range that is completely within the month.
   let range = moment.range(moment(startDate).utc(), moment(endDate).utc().subtract(1, 'ms'));
   debug('Date range "%s"', range.toString());
-  console.log('Date range: ', range.toString());
 
   range = range.intersect(wholeMonthRange);
 
@@ -51,14 +46,11 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
   let workdays = 0;
   range.by('days', (currentMoment) => {
     const currentDay = currentMoment.day();
-    console.log('Day: ' + currentDay);
     if (currentDay !== 0 && currentDay !== 6) {
       // Increment all days that are not Saturday or Sunday
       workdays++;
     }
   });
-
-  console.log('workdays: ' + workdays);
 
   return workdays;
 }
