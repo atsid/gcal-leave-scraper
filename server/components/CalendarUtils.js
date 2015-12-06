@@ -60,7 +60,7 @@ function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
 /**
  * Returns the unique set of users in a set of leave events.
  * @param leaveEvents Set of leave events.
- * @returns {Array} Set of GMailUsers that are used by these leave events
+ * @returns {Promise} Set of GMailUsers that are used by these leave events
  */
 function uniqueUsersInLeaveEventSet(leaveEvents) {
   const userIds = new Set();
@@ -70,12 +70,7 @@ function uniqueUsersInLeaveEventSet(leaveEvents) {
     userIds.add(gmailUserId);
   });
 
-  User.find({userId: {$in: userIds}}, (err, results) => {
-    if (err) {
-      console.log('Error running query %s', err);
-    }
-    return results;
-  });
+  return User.find().where('userId').in(Array.from(userIds)).exec();
 }
 
 module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet};
