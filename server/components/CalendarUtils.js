@@ -11,9 +11,13 @@ require('moment-range');
  * @returns {!DateRange} moment-range thet covers the entire month
  */
 function createMonthRange(targetMonth, targetYear) {
+  debug('targetMonth: %s targetYear: %s', targetMonth, targetYear);
+
   // Find the start and end of the target month.  Use UTC.
-  const targetMonthStartDate = moment().utc().year(targetYear).month(targetMonth).startOf('month');
-  const targetMonthEndDate = moment().utc().year(targetYear).month(targetMonth).endOf('month');
+  const targetMonthStartDate = moment([targetYear, targetMonth]).utc().startOf('month');
+  const targetMonthEndDate = moment([targetYear, targetMonth]).utc().endOf('month');
+
+  debug('Creating range that starts "%s" and ends "%s"', targetMonthStartDate, targetMonthEndDate);
 
   return moment.range(targetMonthStartDate, targetMonthEndDate);
 }
