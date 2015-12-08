@@ -9,6 +9,9 @@ const router = jefferson.router({
     '/listEventsForMonth/:year/:month': {
       get: [events.listEventsForMonth],
     },
+    '/summary': {
+      post: [events.summary],
+    },
   },
 });
 
