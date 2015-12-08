@@ -8,7 +8,9 @@ function findEventsInRange(eventDateRange, callback) {
 
   debug(sprintf('Searching for events after %s and before %s', myStartDate.toISOString(), myEndDate.toISOString()));
 
-  // Find events with a startDate >= the first day of the month and and endDate < the last day of the month
+  // Find events that start before the specified range end date and end after the specified range start date.
+  // This will account for events that start and end outside the requested range.
+  // Example: event: {start: 10-25-2015, end 12-5-2015} range: {start: 11-1-2015, 11-30-2015} should be returned
   LeaveEvent.find({endDate: {$gte: myStartDate}, startDate: {$lte: myEndDate}}, callback);
 }
 
