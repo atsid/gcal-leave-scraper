@@ -83,7 +83,7 @@ function uniqueUsersInLeaveEventSet(leaveEvents) {
     userIds.add(gmailUserId);
   });
 
-  return User.find().where('userId').in(Array.from(userIds)).exec();
+  return User.find().where('_id').in(Array.from(userIds)).exec();
 }
 
 module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet, createMonthRange};
