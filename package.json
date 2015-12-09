@@ -81,7 +81,7 @@
     "googleapis": "2.1.5",
     "google-auth-library": "0.9.6",
     "helmet": "^0.10.0",
-    "history": "^1.11.0",
+    "history": "1.13.1",
     "inquirer-bluebird": "1.0.2",
     "jade": "^1.11.0",
     "lodash": "^3.10.0",

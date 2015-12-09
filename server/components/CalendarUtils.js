@@ -5,6 +5,24 @@ const User = models.GmailUser;
 require('moment-range');
 
 /**
+ * Converts a month / year to a moment-range object.
+ * @param targetMonth Zero-based month
+ * @param targetYear Year
+ * @returns {!DateRange} moment-range thet covers the entire month
+ */
+function createMonthRange(targetMonth, targetYear) {
+  debug('targetMonth: %s targetYear: %s', targetMonth, targetYear);
+
+  // Find the start and end of the target month.  Use UTC.
+  const targetMonthStartDate = moment([targetYear, targetMonth]).utc().startOf('month');
+  const targetMonthEndDate = moment([targetYear, targetMonth]).utc().endOf('month');
+
+  debug('Creating range that starts "%s" and ends "%s"', targetMonthStartDate, targetMonthEndDate);
+
+  return moment.range(targetMonthStartDate, targetMonthEndDate);
+}
+
+/**
  * Finds the number of working days in a given date range that also fall within the target month.
  * Holidays are not taken into account.
  *
@@ -23,20 +41,15 @@ require('moment-range');
  * @param targetYear Year of the month to search.
  * @returns {number} Number of working days in the month.
  */
-function findWorkdaysInRange(startDate, endDate, targetMonth, targetYear) {
-  // Find the start and end of the target month.  Use UTC.
-  const targetMonthStartDate = moment().utc().year(targetYear).month(targetMonth).startOf('month');
-  const targetMonthEndDate = moment().utc().year(targetYear).month(targetMonth).endOf('month');
-  const wholeMonthRange = moment.range(targetMonthStartDate, targetMonthEndDate);
-
+function findWorkdaysInRange(startDate, endDate, targetDateRange) {
   debug('Start Date %s End Date %s', startDate, endDate);
-  debug('Whole month range "%s"', wholeMonthRange.toString());
+  debug('Target date range "%s"', targetDateRange.toString());
 
   // Find the part of the date range that is completely within the month.
   let range = moment.range(moment(startDate).utc(), moment(endDate).utc().subtract(1, 'ms'));
   debug('Date range "%s"', range.toString());
 
-  range = range.intersect(wholeMonthRange);
+  range = range.intersect(targetDateRange);
 
   if (range === null) {
     debug('Dates are not within the specified month');
@@ -70,8 +83,8 @@ function uniqueUsersInLeaveEventSet(leaveEvents) {
     userIds.add(gmailUserId);
   });
 
-  return User.find().where('userId').in(Array.from(userIds)).exec();
+  return User.find().where('_id').in(Array.from(userIds)).exec();
 }
 
-module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet};
+module.exports = {findWorkdaysInRange, uniqueUsersInLeaveEventSet, createMonthRange};
 

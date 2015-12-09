@@ -3,6 +3,7 @@ const models = require('../persistence/index').models;
 const Event = models.LeaveEvent;
 const debug = require('debug')('app:server:components:leaveSearcher_tests');
 const searcher = require('./LeaveCalendarSearcher');
+const utils = require('./CalendarUtils');
 
 const chai = require('chai');
 chai.use(require('chai-string'));
@@ -40,7 +41,7 @@ describe('The LeaveCalendarSearcher', () => {
       const startDate = new Date('10/15/2015');
       const endDate = new Date('10/20/2015');
       saveEvent(startDate, endDate, 'My Title');
-      searcher.findEventsInMonth(2015, 10, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(9, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -64,7 +65,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('11/1/2015'), new Date('11/13/2015'), 'November Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 10, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(9, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -88,7 +89,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -112,7 +113,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -136,7 +137,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -162,7 +163,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -188,7 +189,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('11/5/2016'), new Date('11/12/2016'), 'Next Year Event', 3);
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1);
@@ -226,7 +227,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(1000);
@@ -248,7 +249,7 @@ describe('The LeaveCalendarSearcher', () => {
       saveEvent(new Date('12/1/2015'), new Date('12/13/2015'), 'December Event');
 
       // Do the search
-      searcher.findEventsInMonth(2015, 11, (error, result) => {
+      searcher.findEventsInRange(utils.createMonthRange(10, 2015), (error, result) => {
         expect(error).to.be.null;
         expect(result).not.to.be.null;
         expect(result.length).to.equal(0);

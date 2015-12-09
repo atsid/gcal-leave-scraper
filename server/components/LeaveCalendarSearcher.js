@@ -3,20 +3,15 @@ const debug = require('debug')('app:middleware:events:listEventsForMonth');
 const sprintf = require('sprintf-js').sprintf;
 const LeaveEvent = models.LeaveEvent;
 
-function findEventsInMonth(year, month, callback) {
-  const myStartDate = new Date();
-  const myEndDate = new Date();
-
-  myStartDate.setUTCHours(0, 0, 0, 0);
-  myStartDate.setUTCFullYear(year, month - 1, 1);
-
-  myEndDate.setUTCHours(0, 0, 0, 0);
-  myEndDate.setUTCFullYear(year, month, 1);
+function findEventsInRange(eventDateRange, callback) {
+  const [myStartDate, myEndDate] = eventDateRange.toDate();
 
   debug(sprintf('Searching for events after %s and before %s', myStartDate.toISOString(), myEndDate.toISOString()));
 
-  // Find events with a startDate >= the first day of the month and and endDate < the last day of the month
+  // Find events that start before the specified range end date and end after the specified range start date.
+  // This will account for events that start and end outside the requested range.
+  // Example: event: {start: 10-25-2015, end 12-5-2015} range: {start: 11-1-2015, 11-30-2015} should be returned
   LeaveEvent.find({endDate: {$gte: myStartDate}, startDate: {$lte: myEndDate}}, callback);
 }
 
-module.exports = {findEventsInMonth};
+module.exports = {findEventsInRange};
