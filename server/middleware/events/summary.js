@@ -20,8 +20,14 @@ module.exports = (req, res) => {
         res.status(400).json({message: 'Error loading leave events', detail: error});
       } else {
         utils.uniqueUsersInLeaveEventSet(results).then((uniqueUsers) => {
+          let workingDays = 0;
+          results.forEach((event) => {
+            workingDays += utils.findWorkdaysInRange(event.startDate, event.endDate, range);
+          });
+
           res.json({
             uniqueUsers: uniqueUsers,
+            workingDays: workingDays,
             dateRange: range,
           });
 
