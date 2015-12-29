@@ -1,12 +1,11 @@
 const models = require('../persistence/index').models;
 const debug = require('debug')('app:middleware:events:listEventsForMonth');
-const sprintf = require('sprintf-js').sprintf;
 const LeaveEvent = models.LeaveEvent;
 
 function findEventsInRange(eventDateRange, callback) {
   const [myStartDate, myEndDate] = eventDateRange.toDate();
 
-  debug(sprintf('Searching for events after %s and before %s', myStartDate.toISOString(), myEndDate.toISOString()));
+  debug(`Searching for events after ${myStartDate.toISOString()} and before ${myEndDate.toISOString()}`);
 
   // Find events that start before the specified range end date and end after the specified range start date.
   // This will account for events that start and end outside the requested range.

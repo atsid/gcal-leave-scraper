@@ -64,7 +64,6 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
-    "sprintf-js": "^1.0.3",
     "babel": "^5.8.3",
     "body-parser": "^1.13.2",
     "classnames": "^2.2.0",
@@ -103,6 +102,7 @@
     "react-resizable": "^0.4.2",
     "react-router": "^1.0.0-rc1",
     "react-tap-event-plugin": "0.1.6",
+    "react-calendar-render": "git://github.com/atsid/react-calendar-render.git#master",
     "request": "^2.60.0",
     "superagent": "^1.4.0",
     "superagent-bluebird-promise": "^2.1.0"
