@@ -8,6 +8,7 @@
 Server application that scans google calendars for leave events matching specific criteria and logs details on them.
 
 # Requirements
+* Node version 0.12.9
 * Local MongoDB
 * Gulp
 
