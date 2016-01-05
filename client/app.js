@@ -1,4 +1,4 @@
-const React = require('react/addons');
+const React = require('react');
 const Application = require('./components/Application');
 
 window.onload = function onload() {
