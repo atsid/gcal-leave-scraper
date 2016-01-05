@@ -5,6 +5,7 @@ const ReactGridLayout = require('react-grid-layout');
 const moment = require('moment');
 const bFalse = false;
 const bTrue = true;
+const HeatMap = require('./HeatMapDayRenderer');
 const paperStyleOverride = {
   flex: '1 1 auto',
   display: 'flex',
@@ -16,7 +17,7 @@ class SummaryCalendar extends React.Component {
 
   renderMonth(month) {
     return (<Paper zDepth={5} rounded={bTrue} style={paperStyleOverride}>
-      <Calendar month={month.clone()} showHeaderNav={bFalse} showWeekHeader={bFalse}/>
+      <Calendar month={month.clone()} showHeaderNav={bFalse} showWeekHeader={bFalse} dayRenderer={HeatMap}/>
     </Paper>);
   }
 
