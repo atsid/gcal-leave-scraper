@@ -16,7 +16,7 @@ const Logout = require('./Logout');
 
 // MUI
 const mui = require('material-ui');
-const ThemeManager = new mui.Styles.ThemeManager();
+const ThemeManager = mui.Styles.ThemeManager;
 // Needed for onTouchTap
 // Can go away when react 1.0 release
 // Check this repo:
@@ -33,7 +33,7 @@ const Application = React.createClass({
 
   getChildContext() {
     return {
-      muiTheme: ThemeManager.getCurrentTheme(),
+      muiTheme: ThemeManager.getMuiTheme(),
       stores: require('./../stores'),
     };
   },
