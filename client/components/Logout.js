@@ -1,4 +1,4 @@
-const React = require('react/addons');
+const React = require('react');
 const request = require('superagent-bluebird-promise');
 const ReactRedirect = require('react-redirect');
 const Logout = React.createClass({

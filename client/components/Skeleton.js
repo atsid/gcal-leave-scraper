@@ -1,5 +1,5 @@
 const debug = require('debug')('app:components:application');
-const React = require('react/addons');
+const React = require('react');
 const classNames = require('classnames');
 
 // Components

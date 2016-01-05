@@ -1,4 +1,4 @@
-const React = require('react/addons');
+const React = require('react');
 
 // Router Components
 const ReactRouter = require('react-router');
@@ -24,7 +24,7 @@ const ThemeManager = mui.Styles.ThemeManager;
 const injectTapEventPlugin = require('react-tap-event-plugin');
 injectTapEventPlugin();
 
-const createBrowserHistory = require('history/lib/createBrowserHistory');
+const browserHistory = ReactRouter.browserHistory;
 const Application = React.createClass({
   childContextTypes: {
     muiTheme: React.PropTypes.object,
@@ -40,7 +40,7 @@ const Application = React.createClass({
 
   render() {
     return (
-      <Router history={createBrowserHistory()}>
+      <Router history={browserHistory}>
         <Route path="/" component={Skeleton}>
           <IndexRoute component={Dashboard}/>
           <Route path="login" component={Login}/>
