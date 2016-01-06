@@ -6,6 +6,8 @@ const classNames = require('classnames');
 const mui = require('material-ui');
 const AppBar = mui.AppBar;
 const LeftNav = mui.LeftNav;
+const Menu = mui.Menu;
+const MenuItem = mui.MenuItem;
 const FlatButton = mui.FlatButton;
 const Router = require('react-router');
 
@@ -20,15 +22,11 @@ const Skeleton = React.createClass({
   },
 
   getInitialState() {
-    return {loading: true, user: null};
+    return {loading: true, open: false, user: null};
   },
 
   componentDidMount() {
     this.getStateFromStore();
-  },
-
-  onLeftNavToggle() {
-    return this.refs.leftNav.toggle();
   },
 
   onLeftNavChange(event, key, payload) {
@@ -37,52 +35,80 @@ const Skeleton = React.createClass({
   },
 
   getStateFromStore() {
-    this.state = {projects: [], loading: true};
+    this.state = {projects: [], open: this.state.open, loading: true};
     return this.context.stores.users.getCurrentUser()
-      .then((user) => this.setState({user, loading: false}))
+      .then((user) => this.setState({user, open: this.state.open, loading: false}))
       .catch((err) => {
         debug('error loading store data', err);
-        this.setState({loading: false});
+        this.setState({open: this.state.open, loading: false});
       });
   },
 
-  render() {
-    const menuItems = [
-      {route: '/', text: 'Home'},
-    ];
+  handleToggle() {
+    this.setState({loading: this.state.loading, open: !this.state.open, user: this.state.user});
+  },
 
-    if (this.state.user) {
-      menuItems.push({route: '/logout', text: 'Logout'});
-    } else {
-      menuItems.push({route: '/login', text: 'Login'});
-    }
+  handleNavClick(url) {
+    window.location = url;
+  },
 
+  // Render menu items displayed in the left navigation pane
+  renderLeftNavBarMenuItems() {
+    return (
+      <Menu>
+        <MenuItem
+          primaryText="Home"
+          onTouchTap={this.handleNavClick.bind(this, '/')}/>
+        <MenuItem
+          primaryText={this.state.user ? 'Logout' : 'Login'}
+          onTouchTap={this.handleNavClick.bind(this, this.state.user ? '/logout' : '/login')}/>
+      </Menu>
+    );
+  },
+
+  renderLeftNav() {
+    return (
+      <LeftNav
+        ref="leftNav"
+        docked={false}
+        open={this.state.open}>
+        {this.renderLeftNavBarMenuItems()}
+      </LeftNav>
+    );
+  },
+
+  renderHeader() {
     const user = this.state.user;
     const appBarRightLabel = user ? `${user.firstName} ${user.lastName}` : 'Login';
     const minimumHeight = {
       flex: '0.1 99 auto',
     };
-    const wrapperClass = classNames('content-wrapper');
+    return (
+      <header>
+        <AppBar
+          title="testing"
+          onLeftIconButtonTouchTap={this.handleToggle}
+          iconElementRight={<FlatButton label={appBarRightLabel} />}
+          style={minimumHeight}/>
+      </header>
+    );
+  },
 
+  renderContent() {
+    return (
+      <section className="content">
+        {this.props.children}
+      </section>
+    );
+  },
+
+  render() {
+    const wrapperClass = classNames('content-wrapper');
     return (
       <div className={wrapperClass}>
-        <LeftNav
-          ref="leftNav"
-          menuItems={menuItems}
-          docked={false}
-          onChange={this.onLeftNavChange}/>
-
-        <header>
-          <AppBar
-            title="testing"
-            onLeftIconButtonTouchTap={this.onLeftNavToggle}
-            iconElementRight={<FlatButton label={appBarRightLabel} />}
-            style={minimumHeight}/>
-        </header>
-
-        <section className="content">
-          {this.props.children}
-        </section>
+        {this.renderLeftNav()}
+        {this.renderHeader()}
+        {this.renderContent()}
       </div>
     );
   },

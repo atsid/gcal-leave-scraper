@@ -11,7 +11,7 @@ const NoMatch = require('./NoMatch');
 const Login = require('./Login');
 const Skeleton = require('./Skeleton');
 const Dashboard = require('./Dashboard');
-const TestPage = require('./TestPage');
+const TimelineView = require('./timeline/TimelineView');
 const Logout = require('./Logout');
 
 // MUI
@@ -44,7 +44,7 @@ const Application = React.createClass({
         <Route path="/" component={Skeleton}>
           <IndexRoute component={Dashboard}/>
           <Route path="login" component={Login}/>
-          <Route path="test" component={TestPage}/>
+          <Route path="test" component={TimelineView}/>
           <Route path="logout" component={Logout}/>
           <Route path="*" component={NoMatch}/>
         </Route>

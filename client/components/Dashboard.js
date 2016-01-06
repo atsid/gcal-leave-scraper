@@ -1,6 +1,6 @@
 const React = require('react');
 const Login = require('./Login');
-const TestPage = require('./TestPage');
+const TimelineView = require('./timeline/TimelineView');
 
 const Dashboard = React.createClass({
   contextTypes: {
@@ -25,7 +25,7 @@ const Dashboard = React.createClass({
   render() {
     let result = null;
     if (this.state.user) {
-      result = (<TestPage />);
+      result = (<TimelineView />);
     } else {
       result = (<Login />);
     }
