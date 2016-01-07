@@ -4,16 +4,17 @@ const classNames = require('classnames');
 
 // Components
 const mui = require('material-ui');
-const AppBar = mui.AppBar;
+const HeaderBar = require('./HeaderBar');
 const LeftNav = mui.LeftNav;
 const Menu = mui.Menu;
 const MenuItem = mui.MenuItem;
-const FlatButton = mui.FlatButton;
 const Router = require('react-router');
 
 const Skeleton = React.createClass({
   propTypes: {
     children: React.PropTypes.node,
+    appBarTitle: React.PropTypes.string,
+    route: React.PropTypes.object,
   },
 
   contextTypes: {
@@ -48,6 +49,11 @@ const Skeleton = React.createClass({
     this.setState({loading: this.state.loading, open: !this.state.open, user: this.state.user});
   },
 
+  // TODO: Placeholder
+  handleLogin() {
+    console.warn("Not yet implemented");
+  },
+
   handleNavClick(url) {
     window.location = url;
   },
@@ -77,28 +83,21 @@ const Skeleton = React.createClass({
     );
   },
 
-  renderHeader() {
-    const user = this.state.user;
-    const appBarRightLabel = user ? `${user.firstName} ${user.lastName}` : 'Login';
-    const minimumHeight = {
-      flex: '0.1 99 auto',
-    };
-    return (
-      <header>
-        <AppBar
-          title="testing"
-          onLeftIconButtonTouchTap={this.handleToggle}
-          iconElementRight={<FlatButton label={appBarRightLabel} />}
-          style={minimumHeight}/>
-      </header>
-    );
-  },
-
   renderContent() {
     return (
       <section className="content">
         {this.props.children}
       </section>
+    );
+  },
+
+  renderHeader() {
+    return (
+      <HeaderBar
+        user={this.state.user}
+        appBarTitle={this.props.route.appBarTitle}
+        onLeftTouchTap={this.handleToggle}
+        onRightTouchTap={this.handleLogin} />
     );
   },
 

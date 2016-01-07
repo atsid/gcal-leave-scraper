@@ -9,7 +9,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 // Application Components
 const NoMatch = require('./NoMatch');
 const Login = require('./Login');
-const Skeleton = require('./Skeleton');
+const Skeleton = require('./skeleton/Skeleton');
 const Dashboard = require('./Dashboard');
 const TimelineView = require('./timeline/TimelineView');
 const Logout = require('./Logout');
@@ -38,10 +38,12 @@ const Application = React.createClass({
     };
   },
 
+  appBarTitle: document.title,
+
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Skeleton}>
+        <Route path="/" component={Skeleton} appBarTitle={this.appBarTitle}>
           <IndexRoute component={Dashboard}/>
           <Route path="login" component={Login}/>
           <Route path="test" component={TimelineView}/>
