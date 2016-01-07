@@ -28,17 +28,18 @@ function createCredentials() {
   fs.writeFileSync(SECRET_FILE, JSON.stringify(secrets));
 }
 
-function rewirePromptAsync(factory, flags) {
-  const promptAsync = (questions) => {
-    return new Promise((resolve) => {
-      expect(questions[0]).to.not.be.undefined;
-      expect(questions[0].name).to.equal('code');
-      flags.promptAsyncCalled = true;
-      resolve({'code': 'code12345'});
-    });
-  };
-  factory.__set__('promptAsync', promptAsync);
-}
+// TODO: Removed to lint since the test that uses it is removed tell it can be rewriten
+// function rewirePromptAsync(factory, flags) {
+//   const promptAsync = (questions) => {
+//     return new Promise((resolve) => {
+//       expect(questions[0]).to.not.be.undefined;
+//       expect(questions[0].name).to.equal('code');
+//       flags.promptAsyncCalled = true;
+//       resolve({'code': 'code12345'});
+//     });
+//   };
+//   factory.__set__('promptAsync', promptAsync);
+// }
 
 function createOathClient() {
   return {
