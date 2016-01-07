@@ -45,7 +45,7 @@ const LeftNavPane = React.createClass({
       <MenuItem
         key="1"
         primaryText={this.props.user ? 'Logout' : 'Login'}
-        onTouchTap={this.handleNavClick.bind(this, this.props.user ? '/logout' : '/login')} />,
+        onTouchTap={this.handleNavClick.bind(this, this.props.user ? '/logout' : '/api/auth/google')} />,
     ];
   },
 

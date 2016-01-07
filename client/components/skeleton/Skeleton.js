@@ -5,9 +5,11 @@ const classNames = require('classnames');
 // Components
 const HeaderBar = require('./HeaderBar');
 const LeftNavPane = require('./LeftNavPane');
-const Router = require('react-router');
 
 const Skeleton = React.createClass({
+
+  // Properties
+
   propTypes: {
     children: React.PropTypes.node,
     appBarTitle: React.PropTypes.string,
@@ -15,9 +17,11 @@ const Skeleton = React.createClass({
   },
 
   contextTypes: {
-    history: Router.PropTypes.history.isRequired,
+    router: React.PropTypes.object.isRequired,
     stores: React.PropTypes.object.isRequired,
   },
+
+  // Getters
 
   getInitialState() {
     return {loading: true, user: null};
@@ -25,11 +29,6 @@ const Skeleton = React.createClass({
 
   componentDidMount() {
     this.getStateFromStore();
-  },
-
-  onLeftNavChange(event, key, payload) {
-    // Do DOM Diff refresh
-    this.context.history.pushState(null, payload.route);
   },
 
   getStateFromStore() {
@@ -42,24 +41,41 @@ const Skeleton = React.createClass({
       });
   },
 
-  // TODO: Placeholder
+  // Handlers
+
   handleLogin() {
-    console.warn('Not yet implemented');
+    this.pageNavigation(this.loginPath);
   },
 
-  // TODO: Placeholder
   handleNavChange(url) {
-    console.warn('Not yet implemented', url);
+    this.pageNavigation(url);
+    this.toggleLeftNav();
   },
 
   handleLeftNavToggle() {
+    this.toggleLeftNav();
+  },
+
+  // Functions
+
+  pageNavigation(url) {
+    // TODO: Find out reason behind push not working with the login path
+    if (url === this.loginPath) {
+      window.location = url;
+    } else {
+      this.context.router.push({pathname: url});
+    }
+  },
+
+  toggleLeftNav() {
     this.refs.leftNav.toggle();
   },
 
-  // TODO: Placeholder
-  handleContentChange() {
-    console.warn('Not yet implemented');
-  },
+  // Class Properties
+
+  loginPath: '/api/auth/google',
+
+  // Renderers
 
   renderLeftNav() {
     return (
@@ -89,9 +105,8 @@ const Skeleton = React.createClass({
   },
 
   render() {
-    const wrapperClass = classNames('content-wrapper');
     return (
-      <div className={wrapperClass}>
+      <div className={classNames('content-wrapper')}>
         {this.renderLeftNav()}
         {this.renderHeader()}
         {this.renderContent()}
