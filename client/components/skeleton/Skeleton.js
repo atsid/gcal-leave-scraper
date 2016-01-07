@@ -3,11 +3,8 @@ const React = require('react');
 const classNames = require('classnames');
 
 // Components
-const mui = require('material-ui');
 const HeaderBar = require('./HeaderBar');
-const LeftNav = mui.LeftNav;
-const Menu = mui.Menu;
-const MenuItem = mui.MenuItem;
+const LeftNavPane = require('./LeftNavPane');
 const Router = require('react-router');
 
 const Skeleton = React.createClass({
@@ -23,7 +20,7 @@ const Skeleton = React.createClass({
   },
 
   getInitialState() {
-    return {loading: true, open: false, user: null};
+    return {loading: true, user: null};
   },
 
   componentDidMount() {
@@ -36,50 +33,40 @@ const Skeleton = React.createClass({
   },
 
   getStateFromStore() {
-    this.state = {projects: [], open: this.state.open, loading: true};
+    this.state = {projects: [], loading: true};
     return this.context.stores.users.getCurrentUser()
-      .then((user) => this.setState({user, open: this.state.open, loading: false}))
+      .then((user) => this.setState({user, loading: false}))
       .catch((err) => {
         debug('error loading store data', err);
-        this.setState({open: this.state.open, loading: false});
+        this.setState({loading: false});
       });
-  },
-
-  handleToggle() {
-    this.setState({loading: this.state.loading, open: !this.state.open, user: this.state.user});
   },
 
   // TODO: Placeholder
   handleLogin() {
-    console.warn("Not yet implemented");
+    console.warn('Not yet implemented');
   },
 
-  handleNavClick(url) {
-    window.location = url;
+  // TODO: Placeholder
+  handleNavChange(url) {
+    console.warn('Not yet implemented', url);
   },
 
-  // Render menu items displayed in the left navigation pane
-  renderLeftNavBarMenuItems() {
-    return (
-      <Menu>
-        <MenuItem
-          primaryText="Home"
-          onTouchTap={this.handleNavClick.bind(this, '/')}/>
-        <MenuItem
-          primaryText={this.state.user ? 'Logout' : 'Login'}
-          onTouchTap={this.handleNavClick.bind(this, this.state.user ? '/logout' : '/login')}/>
-      </Menu>
-    );
+  handleLeftNavToggle() {
+    this.refs.leftNav.toggle();
+  },
+
+  // TODO: Placeholder
+  handleContentChange() {
+    console.warn('Not yet implemented');
   },
 
   renderLeftNav() {
     return (
-      <LeftNav
+      <LeftNavPane
         ref="leftNav"
-        docked={false}
-        open={this.state.open}>
-        {this.renderLeftNavBarMenuItems()}
-      </LeftNav>
+        user={this.state.user}
+        onNavChange={this.handleNavChange} />
     );
   },
 
@@ -96,7 +83,7 @@ const Skeleton = React.createClass({
       <HeaderBar
         user={this.state.user}
         appBarTitle={this.props.route.appBarTitle}
-        onLeftTouchTap={this.handleToggle}
+        onLeftTouchTap={this.handleLeftNavToggle}
         onRightTouchTap={this.handleLogin} />
     );
   },
