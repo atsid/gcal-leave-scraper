@@ -3,7 +3,7 @@ const React = require('react');
 const mui = require('material-ui');
 const Paper = mui.Paper;
 
-const Login = React.createClass({
+const TimelineView = React.createClass({
   getInitialState() {
     return {};
   },
@@ -23,10 +23,10 @@ const Login = React.createClass({
         zDepth={1}
         rounded={false}
         style={this.getStyles()}>
-        <p>You must first <a href="/api/auth/google">Login</a>.</p>
+        <h1>Hello World</h1>
       </Paper>
     );
   },
 });
 
-module.exports = Login;
+module.exports = TimelineView;

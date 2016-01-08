@@ -8,7 +8,7 @@
 Server application that scans google calendars for leave events matching specific criteria and logs details on them.
 
 # Requirements
-* Node version 0.12.9
+* Node version 4.*
 * Local MongoDB
 * Gulp
 
@@ -23,9 +23,13 @@ Server application that scans google calendars for leave events matching specifi
 # To create a service account with Google
 * Go to https://console.developers.google.com and setup a new application
 * From the application "Overview" screen, enable the Google Calendar API
-* From the "Credentials" screen click "Add credential" -> "OAath 2.0"
+* From the "Credentials" screen click "Add credential" -> "OAuth 2.0"
 * Set the credential application type to "other" -> "installed"
 * Download the credential file and put it in the local project root as "client_secret.json"
+
+# Configuration
+* Copy ./config/local.coffee.template to ./config/local.coffee
+* Replace clientID, clientSecret, and domain from the google credentials section above
 
 # Misc Thoughts
 * Service API is mounted at http://localhost:9000/api

@@ -1,4 +1,4 @@
-const React = require('react/addons');
+const React = require('react');
 
 // Router Components
 const ReactRouter = require('react-router');
@@ -9,9 +9,9 @@ const IndexRoute = ReactRouter.IndexRoute;
 // Application Components
 const NoMatch = require('./NoMatch');
 const Login = require('./Login');
-const Skeleton = require('./Skeleton');
+const Skeleton = require('./skeleton/Skeleton');
 const Dashboard = require('./Dashboard');
-const TestPage = require('./TestPage');
+const TimelineView = require('./timeline/TimelineView');
 const Logout = require('./Logout');
 
 // MUI
@@ -24,7 +24,7 @@ const ThemeManager = mui.Styles.ThemeManager;
 const injectTapEventPlugin = require('react-tap-event-plugin');
 injectTapEventPlugin();
 
-const createBrowserHistory = require('history/lib/createBrowserHistory');
+const browserHistory = ReactRouter.browserHistory;
 const Application = React.createClass({
   childContextTypes: {
     muiTheme: React.PropTypes.object,
@@ -38,13 +38,15 @@ const Application = React.createClass({
     };
   },
 
+  appBarTitle: document.title,
+
   render() {
     return (
-      <Router history={createBrowserHistory()}>
-        <Route path="/" component={Skeleton}>
+      <Router history={browserHistory}>
+        <Route path="/" component={Skeleton} appBarTitle={this.appBarTitle}>
           <IndexRoute component={Dashboard}/>
           <Route path="login" component={Login}/>
-          <Route path="test" component={TestPage}/>
+          <Route path="test" component={TimelineView}/>
           <Route path="logout" component={Logout}/>
           <Route path="*" component={NoMatch}/>
         </Route>

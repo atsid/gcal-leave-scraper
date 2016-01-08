@@ -1,0 +1,8 @@
+module.exports =
+  auth:
+    google:
+      clientID: '<Place client ID>'
+      clientSecret: '<Place secret key>'
+      domain: '<Place domain>'
+      callbackURL: 'http://localhost:9000/api/auth/google/callback'
+      scope: ['profile', 'openid']
