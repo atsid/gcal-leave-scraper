@@ -28,7 +28,6 @@ function createCredentials() {
   fs.writeFileSync(SECRET_FILE, JSON.stringify(secrets));
 }
 
-// TODO: Removed to lint since the test that uses it is removed tell it can be rewriten
 // function rewirePromptAsync(factory, flags) {
 //   const promptAsync = (questions) => {
 //     return new Promise((resolve) => {
@@ -105,7 +104,7 @@ describe('The GoogleAuthFactory', () => {
     }).to.throw(Error, 'Could not find secrets file located in: ' + SECRET_FILE);
   });
 
-  // TODO: Removed this due to expectation for google auth config has changed, now found in config/local.coffee
+  // TODO: Ignore test expects google keys to run, need to mock
   // it('prompts for code when token does not exist', (done) => {
   //   const flags = {};
   //   let execute;
