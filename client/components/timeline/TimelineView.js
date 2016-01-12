@@ -49,19 +49,19 @@ const TimelineView = React.createClass({
           key={index}>
           <div
             key={index + 'id'}
-            style={{width: '100px', display: 'inline-block;'}}
+            style={{width: '100px', display: 'inline-block'}}
             className="id">
             {contacts[index].id}
           </div>
           <div
             key={index + 'first'}
-            style={{width: '100px', display: 'inline-block;'}}
+            style={{width: '100px', display: 'inline-block'}}
             className="first">
             {contacts[index].first}
           </div>
           <div
             key={index + 'last'}
-            style={{width: '100px', display: 'inline-block;'}}
+            style={{width: '100px', display: 'inline-block'}}
             className="last">
             {contacts[index].last}
           </div>
