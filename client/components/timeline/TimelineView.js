@@ -34,36 +34,28 @@ const TimelineView = React.createClass({
   getStyles() {
     return {
       width: '500px',
-      height: '150px',
       padding: '20px',
       margin: 'auto',
     };
   },
 
   renderContacts() {
-    const contacts = this.state.contacts && this.state.contacts.contacts;
+    const contacts = this.state.contacts && this.state.contacts.users;
     const contactsView = [];
     if (contacts) {
       for (let index = 0; index < contacts.length; index++) {
         contactsView.push(<div
-          key={index}>
+          key={index}
+          style={{position: 'relative', padding: '2px'}}>
+          <img
+            key={index + 'thumbnail'}
+            src={contacts[index].thumbnailPhotoUrl}
+            style={{width: '28px', height: '28px', borderRadius: '50%'}} />
           <div
-            key={index + 'id'}
-            style={{width: '100px', display: 'inline-block'}}
+            key={index + 'fullname'}
+            style={{width: '250px', display: 'inline-block', padding: '3px', paddingTop: '6px', position: 'absolute'}}
             className="id">
-            {contacts[index].id}
-          </div>
-          <div
-            key={index + 'first'}
-            style={{width: '100px', display: 'inline-block'}}
-            className="first">
-            {contacts[index].first}
-          </div>
-          <div
-            key={index + 'last'}
-            style={{width: '100px', display: 'inline-block'}}
-            className="last">
-            {contacts[index].last}
+            {contacts[index].name.fullName}
           </div>
         </div>);
       }
