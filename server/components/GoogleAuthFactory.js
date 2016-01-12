@@ -114,11 +114,22 @@ function authorize(config) {
   const oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
   let ret;
 
+  const getCredentials = function() {
+    let ret;
+    if (fs.existsSync(TOKEN_PATH)) {
+      ret = fs.readFileAsync(TOKEN_PATH).then((token) => {
+        return JSON.parse(token);
+      });
+    }
+    return ret;
+  };
+
   if (fs.existsSync(TOKEN_PATH)) {
-    ret = fs.readFileAsync(TOKEN_PATH).then((token) => {
-      oauth2Client.credentials = JSON.parse(token);
+    ret = getCredentials().then((token) => {
+      oauth2Client.credentials = token;
       return oauth2Client;
     });
+    console.log('================================================= END', ret);
   } else {
     ret = getNewToken(oauth2Client, scopes).then(() => {
       return oauth2Client;
