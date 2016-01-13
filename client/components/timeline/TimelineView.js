@@ -1,6 +1,7 @@
 const debug = require('debug')('app:components:application');
 const React = require('react');
 
+const Timeline = require('./Timeline');
 const mui = require('material-ui');
 const Paper = mui.Paper;
 
@@ -22,7 +23,6 @@ const TimelineView = React.createClass({
 
   getStateFromStore() {
     this.state = {projects: [], loading: true};
-    // TODO: Pass user
     return this.context.stores.contacts.getContacts({})
       .then((contacts) => this.setState({contacts, loading: false}))
       .catch((err) => {
@@ -57,6 +57,7 @@ const TimelineView = React.createClass({
             className="id">
             {contacts[index].name.fullName}
           </div>
+          <Timeline />
         </div>);
       }
     }
