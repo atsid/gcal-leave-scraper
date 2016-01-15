@@ -33,7 +33,6 @@ const TimelineView = React.createClass({
 
   getStyles() {
     return {
-      width: '500px',
       padding: '20px',
       margin: 'auto',
     };
@@ -57,7 +56,8 @@ const TimelineView = React.createClass({
             className="id">
             {contacts[index].name.fullName}
           </div>
-          <Timeline />
+          <Timeline
+            calendarId={contacts[index].primaryEmail}/>
         </div>);
       }
     }

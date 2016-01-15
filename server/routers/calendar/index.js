@@ -6,6 +6,9 @@ const router = jefferson.router({
     '/all': {
       get: [calendar.listAllCalendars],
     },
+    '/events/all': {
+      get: [calendar.listAllCalendarEvents],
+    },
   },
 });
 

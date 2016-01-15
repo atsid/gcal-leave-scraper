@@ -1,3 +1,4 @@
+// TODO: Change fetch to use blue bird to match client
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 
@@ -8,7 +9,7 @@ function errorNoUserFound(res) {
 function errorGeneric(res) {
   // (res, err) {
   // TODO: Add debug logging for the err message
-  res.status(500).send({ error: 'Unable to fetch all users' });
+  res.status(500).send({ error: 'Unable to fetch all calendars' });
 }
 
 function getQueryParams(req) {
@@ -21,7 +22,8 @@ function getQueryParams(req) {
 
 function fetchAllCalendars(req, res) {
   const queryParams = getQueryParams(req);
-  // TODO: Change 'me' to user
+  // NOTE: This only returns calendars for the loged in user, would require admin to get others
+  // this could be fine if we change how we share calendars out on the domain
   return fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList?' + queryParams)
   .then((response) => {
     return response.json();

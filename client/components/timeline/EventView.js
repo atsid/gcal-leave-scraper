@@ -1,8 +1,7 @@
 const debug = require('debug')('app:components:application');
 const React = require('react');
-const EventView = require('./EventView');
 
-const Timeline = React.createClass({
+const EventView = React.createClass({
   propTypes: {
     calendarId: React.PropTypes.string,
   },
@@ -13,7 +12,7 @@ const Timeline = React.createClass({
 
   getInitialState() {
     return {
-      calendars: null,
+      events: null,
     };
   },
 
@@ -23,8 +22,8 @@ const Timeline = React.createClass({
 
   getStateFromStore() {
     this.state = {projects: [], loading: true};
-    return this.context.stores.calendars.getCalendars({})
-      .then((calendars) => this.setState({calendars, loading: false}))
+    return this.context.stores.calendars.getCalendarEvents(this.props.calendarId)
+      .then((events) => this.setState({events, loading: false}))
       .catch((err) => {
         debug('error loading store data', err);
         this.setState({loading: false});
@@ -39,28 +38,22 @@ const Timeline = React.createClass({
   },
 
   renderTimeline() {
-    const calendars = this.state.calendars && this.state.calendars.items;
-    const calendarsView = [];
-    if (calendars) {
-      calendarsView.push(<EventView
-        key={this.props.calendarId}
-        calendarId={this.props.calendarId} />);
-      for (let index = 0; index < calendars.length; index++) {
-        calendarsView.push(<div
+    const events = this.state.events && this.state.events.items;
+    const eventsView = [];
+    if (events) {
+      for (let index = 0; index < events.length; index++) {
+        eventsView.push(<div
           key={index}
           style={{position: 'relative', padding: '2px'}}>
-          {calendars[index].summary}
+          {events[index].summary}
           <span
            style={{paddingLeft: '25px'}}>
-            {calendars[index].id}
+            {(events[index].start && events[index].start.date) || ''} : {(events[index].end && events[index].end.date) || ''}
           </span>
         </div>);
-        calendarsView.push(<EventView
-          key={index + 'events'}
-          calendarId={calendars[index].id} />);
       }
     }
-    return calendarsView;
+    return eventsView;
   },
 
   render() {
@@ -73,4 +66,4 @@ const Timeline = React.createClass({
   },
 });
 
-module.exports = Timeline;
+module.exports = EventView;

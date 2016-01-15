@@ -8,11 +8,12 @@ class CalendarsStore {
   constructor() {
     this.state = {
       calendars: null,
+      events: {},
       calendarsPromise: null,
+      calendarEventsPromise: {},
     };
   }
 
-  // TODO: Add user as argument
   getCalendars() {
     let promise;
     if (this.state.calendars) {
@@ -29,6 +30,29 @@ class CalendarsStore {
         .catch((err) => {
           debug('error getting calendars', err);
           this.state.calendars = {result: null};
+          return null;
+        });
+    }
+    return promise;
+  }
+
+  getCalendarEvents(calendarId) {
+    let promise;
+    if (this.state.events && this.state.events[calendarId]) {
+      promise = Promise.resolve(this.state.events[calendarId].result);
+    } else if (this.state.calendarEventsPromise && this.state.calendarEventsPromise[calendarId]) {
+      promise = this.state.calendarEventsPromise[calendarId];
+    } else {
+      promise = this.state.calendarEventsPromise[calendarId] = request.get('/api/calendar/events/all')
+        .query({ calendarId: calendarId })
+        .then((res) => {
+          debug('calendar events: ', res.body);
+          this.state.events[calendarId] = {result: res.body};
+          return res.body;
+        })
+        .catch((err) => {
+          debug('error getting calendar events', err);
+          this.state.events[calendarId] = {result: null};
           return null;
         });
     }

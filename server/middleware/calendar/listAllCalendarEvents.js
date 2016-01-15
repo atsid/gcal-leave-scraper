@@ -9,21 +9,31 @@ function errorNoUserFound(res) {
 function errorGeneric(res) {
   // (res, err) {
   // TODO: Add debug logging for the err message
-  res.status(500).send({ error: 'Unable to fetch all users' });
+  res.status(500).send({ error: 'Unable to fetch all events' });
 }
 
 function getQueryParams(req) {
+  const timeMin = new Date();
+  timeMin.setMilliseconds(0);
+  timeMin.setSeconds(0);
+  timeMin.setMinutes(0);
+  timeMin.setHours(0);
+  const timeMax = new Date(timeMin.getTime());
+  timeMax.setFullYear(timeMax.getFullYear() + 1);
   return stringify({
     access_token: req.user.googleToken,
     domain: 'atsid.com',
     viewType: 'domain_public',
-    maxResults: '500',
+    maxResults: '2500',
+    timeMax: timeMax.toISOString(),
+    timeMin: timeMin.toISOString(),
   });
 }
 
-function fetchAllUsers(req, res) {
+function fetchAllCalendarEvents(req, res) {
   const queryParams = getQueryParams(req);
-  return fetch('https://www.googleapis.com/admin/directory/v1/users?' + queryParams)
+  console.log('Fetching events from calendar: ', req.query.calendarId);
+  return fetch('https://www.googleapis.com/calendar/v3/calendars/' + req.query.calendarId + '/events?' + queryParams)
   .then((response) => {
     return response.json();
   })
@@ -39,6 +49,6 @@ module.exports = (req, res) => {
   if (!req.user) {
     errorNoUserFound(res);
   } else {
-    fetchAllUsers(req, res);
+    fetchAllCalendarEvents(req, res);
   }
 };
