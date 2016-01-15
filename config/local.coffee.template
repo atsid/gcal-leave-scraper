@@ -5,4 +5,10 @@ module.exports =
       clientSecret: '<Place secret key>'
       domain: '<Place domain>'
       callbackURL: 'http://localhost:9000/api/auth/google/callback'
-      scope: ['profile', 'openid']
+      scope: [
+        'profile',
+        'openid',
+        'https://www.googleapis.com/auth/admin.directory.user.readonly',
+        'https://www.googleapis.com/auth/calendar',
+        'https://www.googleapis.com/auth/calendar.readonly',
+      ]
