@@ -36,6 +36,20 @@ class CalendarsStore {
     return promise;
   }
 
+  getBulkCalendarEvents(userId, calendars, filter) {
+    const promises = [];
+    console.log('> Filter: ', filter);
+    console.log('> Calendars: ', calendars);
+    promises.push(this.getCalendarEvents(userId));
+    for (let index = 0; index < calendars.length; index++) {
+      const calendar = calendars[index];
+      if (calendar.id !== userId) {
+        promises.push(this.getCalendarEvents(calendar.id));
+      }
+    }
+    return Promise.all(promises);
+  }
+
   getCalendarEvents(calendarId) {
     let promise;
     if (this.state.events && this.state.events[calendarId]) {

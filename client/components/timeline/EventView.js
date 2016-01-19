@@ -2,8 +2,13 @@ const debug = require('debug')('app:components:application');
 const React = require('react');
 
 const EventView = React.createClass({
+  // propTypes: {
+  //   calendarId: React.PropTypes.string,
+  // },
   propTypes: {
-    calendarId: React.PropTypes.string,
+    calendars: React.PropTypes.array,
+    userId: React.PropTypes.string,
+    filter: React.PropTypes.string,
   },
 
   contextTypes: {
@@ -22,7 +27,7 @@ const EventView = React.createClass({
 
   getStateFromStore() {
     this.state = {projects: [], loading: true};
-    return this.context.stores.calendars.getCalendarEvents(this.props.calendarId)
+    return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter)
       .then((events) => this.setState({events, loading: false}))
       .catch((err) => {
         debug('error loading store data', err);
@@ -32,6 +37,7 @@ const EventView = React.createClass({
 
   getStyles() {
     return {
+      backgroundColor: 'yellow',
       padding: '20px',
       margin: 'auto',
     };
