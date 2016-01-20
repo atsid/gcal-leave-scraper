@@ -18,15 +18,11 @@ const Timeline = React.createClass({
 
   // TODO: Make filter config not static
   renderTimeline() {
-    console.log('> Timeline : ', this.props.calendars);
-    if (!this.props.calendars) {
-      return (<div/>);
-    }
     return (
       <EventView
-        calendars={this.props.calendars.items}
+        calendars={this.props.calendars}
         userId={this.props.userId}
-        filter="ooo,out of office,vacation,sick" />
+        filter="ooo,leave,off,vacation,holiday" />
     );
   },
 

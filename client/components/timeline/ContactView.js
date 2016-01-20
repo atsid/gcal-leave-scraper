@@ -41,14 +41,14 @@ const ContactView = React.createClass({
   },
 
   renderTimeline() {
-    console.log('> Contactview :', this.state.calendars);
-    if (!this.props.calendars) {
-      return (<div/>);
-    }
-    return (
+    return this.state.calendars ? (
       <Timeline
         calendars={this.state.calendars.items}
         userId={this.props.contact.primaryEmail} />
+    )
+    :
+    (
+      <div/>
     );
   },
 

@@ -28,7 +28,15 @@ const EventView = React.createClass({
   getStateFromStore() {
     this.state = {projects: [], loading: true};
     return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter)
-      .then((events) => this.setState({events, loading: false}))
+      .then((events) => {
+        let resultEvents = [];
+        for (let index = 0; index < events.length; index++) {
+          if (events[index].items) {
+            resultEvents = resultEvents.concat(events[index].items);
+          }
+        }
+        this.setState({events: resultEvents, loading: false});
+      })
       .catch((err) => {
         debug('error loading store data', err);
         this.setState({loading: false});
@@ -44,7 +52,7 @@ const EventView = React.createClass({
   },
 
   renderTimeline() {
-    const events = this.state.events && this.state.events.items;
+    const events = this.state.events;
     const eventsView = [];
     if (events) {
       for (let index = 0; index < events.length; index++) {

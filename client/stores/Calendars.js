@@ -38,12 +38,11 @@ class CalendarsStore {
 
   getBulkCalendarEvents(userId, calendars, filter) {
     const promises = [];
-    console.log('> Filter: ', filter);
-    console.log('> Calendars: ', calendars);
+    console.log('Filter is set but not yet implemented: ', filter);
     promises.push(this.getCalendarEvents(userId));
     for (let index = 0; index < calendars.length; index++) {
       const calendar = calendars[index];
-      if (calendar.id !== userId) {
+      if (calendar.id !== userId && !calendar.id.startsWith('#')) {
         promises.push(this.getCalendarEvents(calendar.id));
       }
     }
@@ -66,7 +65,7 @@ class CalendarsStore {
         })
         .catch((err) => {
           debug('error getting calendar events', err);
-          this.state.events[calendarId] = {result: null};
+          this.state.events[calendarId] = null;
           return null;
         });
     }
