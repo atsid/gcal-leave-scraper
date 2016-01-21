@@ -12,7 +12,6 @@ class ContactsStore {
     };
   }
 
-  // TODO: Add user as argument
   getContacts() {
     let promise;
     if (this.state.contacts) {
