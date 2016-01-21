@@ -10,9 +10,9 @@ const Timeline = React.createClass({
 
   getStyles() {
     return {
-      padding: '20px',
       margin: 'auto',
       backgroundColor: 'blue',
+      display: 'inline-block',
     };
   },
 
@@ -22,7 +22,7 @@ const Timeline = React.createClass({
       <EventView
         calendars={this.props.calendars}
         userId={this.props.userId}
-        filter="ooo,leave,off,vacation,holiday" />
+        filter="ooo,leave,vacation,holiday" />
     );
   },
 

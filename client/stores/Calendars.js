@@ -36,17 +36,68 @@ class CalendarsStore {
     return promise;
   }
 
-  getBulkCalendarEvents(userId, calendars, filter) {
+  _getBuildCalenarEvents(userId, calendars) {
     const promises = [];
-    console.log('Filter is set but not yet implemented: ', filter);
+    // Get users calendar along with all calendars of the logged in user
     promises.push(this.getCalendarEvents(userId));
     for (let index = 0; index < calendars.length; index++) {
       const calendar = calendars[index];
+      // Exclude shared calendar of the logged in user, did prior
+      // Exclude any id that starts with #, was causing issues
       if (calendar.id !== userId && !calendar.id.startsWith('#')) {
         promises.push(this.getCalendarEvents(calendar.id));
       }
     }
-    return Promise.all(promises);
+    return promises;
+  }
+
+  _stringContainsFromList(string, filterString) {
+    const filters = filterString.split(',');
+    let match = false;
+    if (string) {
+      for (let index = 0; index < filters.length; index++) {
+        if (string.toLowerCase().indexOf(filters[index].toLowerCase()) >= 0) {
+          match = true;
+        }
+      }
+    }
+    return match;
+  }
+
+  _filterBuildCalenarEvents(userId, events, filter) {
+    const results = [];
+    for (let index = 0; index < events.length; index++) {
+      if (events[index].creator && events[index].creator.email === userId) {
+        if (this._stringContainsFromList(events[index].summary, filter) || this._stringContainsFromList(events[index].title, filter)) {
+          results.push(events[index]);
+        }
+      }
+    }
+    return results;
+  }
+
+  _extractEvents(events) {
+    let resultEvents = [];
+    for (let index = 0; index < events.length; index++) {
+      if (events[index].items) {
+        resultEvents = resultEvents.concat(events[index].items);
+      }
+    }
+    return resultEvents;
+  }
+
+  getBulkCalendarEvents(userId, calendars, filter) {
+    const returnPromise = new Promise((resolve, reject) => {
+      const promises = this._getBuildCalenarEvents(userId, calendars);
+      // When change of service calls all resolved then filter results and resolve returned promise
+      Promise.all(promises).then((events) => {
+        resolve(this._filterBuildCalenarEvents(userId, this._extractEvents(events), filter));
+      })
+      .then(err => {
+        reject(err);
+      });
+    });
+    return returnPromise;
   }
 
   getCalendarEvents(calendarId) {

@@ -27,6 +27,8 @@ const Contact = React.createClass({
   getContactStyle() {
     return {
       backgroundColor: 'red',
+      width: '200px',
+      display: 'inline-block',
     };
   },
 

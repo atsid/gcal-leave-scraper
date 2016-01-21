@@ -29,13 +29,7 @@ const EventView = React.createClass({
     this.state = {projects: [], loading: true};
     return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter)
       .then((events) => {
-        let resultEvents = [];
-        for (let index = 0; index < events.length; index++) {
-          if (events[index].items) {
-            resultEvents = resultEvents.concat(events[index].items);
-          }
-        }
-        this.setState({events: resultEvents, loading: false});
+        this.setState({events: events, loading: false});
       })
       .catch((err) => {
         debug('error loading store data', err);
@@ -46,7 +40,6 @@ const EventView = React.createClass({
   getStyles() {
     return {
       backgroundColor: 'yellow',
-      padding: '20px',
       margin: 'auto',
     };
   },
