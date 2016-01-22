@@ -42,9 +42,9 @@ const EventView = React.createClass({
     return this.getDayDiff(now, yearDate);
   },
 
-  getEventStyles(days, daysFromToday) {
+  getEventStyles(days, daysFromToday, color) {
     return {
-      backgroundColor: '#27C2FD',
+      backgroundColor: color,
       height: '100%',
       width: (days / this.getNumberOfDays() * 100) + '%',
       display: 'inline-block',
@@ -79,7 +79,7 @@ const EventView = React.createClass({
   },
 
   getDayDiff(start, end) {
-    return Math.round((end - start) / (1000 * 60 * 60 * 24));
+    return Math.ceil((end - start) / (1000 * 60 * 60 * 24));
   },
 
   getEventDays(evt) {
@@ -93,6 +93,22 @@ const EventView = React.createClass({
     return date ? this.getDayDiff(new Date(), date) : 0;
   },
 
+  getMonthBeginningFromToday() {
+    const daysToMonth = [];
+    const numberOfDays = this.getNumberOfDays();
+    const now = new Date();
+    const nextMonth = new Date(now);
+    nextMonth.setDate(1);
+    for (let index = 0; index < 12; index++) {
+      nextMonth.setMonth(nextMonth.getMonth() + 1);
+      const daysFromToday = this.getDayDiff(now, nextMonth);
+      if (daysFromToday <= numberOfDays) {
+        daysToMonth.push(daysFromToday);
+      }
+    }
+    return daysToMonth;
+  },
+
   renderTimeline() {
     const events = this.state.events;
     const eventsView = [];
@@ -100,17 +116,32 @@ const EventView = React.createClass({
       for (let index = 0; index < events.length; index++) {
         eventsView.push(<div
           key={index}
-          style={this.getEventStyles(this.getEventDays(events[index]), this.getDaysFromToday(events[index]))}
+          style={this.getEventStyles(this.getEventDays(events[index]), this.getDaysFromToday(events[index]), '#27C2FD')}
           title={this.getEventTitle(events[index])} />);
       }
     }
     return eventsView;
   },
 
+  renderTimelineMonths() {
+    const months = [];
+    const daysToMonth = this.getMonthBeginningFromToday();
+    let styles;
+    for (let index = 0; index < daysToMonth.length; index++) {
+      styles = this.getEventStyles(0, daysToMonth[index], 'rgb(218, 222, 232)');
+      styles.zIndex = '10';
+      months.push(<div
+        key={index}
+        style={styles} />);
+    }
+    return months;
+  },
+
   render() {
     return (
       <div
         style={this.getStyles()}>
+        {this.renderTimelineMonths()}
         {this.renderTimeline()}
       </div>
     );

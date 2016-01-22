@@ -31,7 +31,7 @@ const Contact = React.createClass({
       height: '100%',
       padding: '2px',
       boxSizing: 'border-box',
-      border: 'none',
+      borderRight: '1px solid rgb(218, 222, 232)',
     };
   },
 
