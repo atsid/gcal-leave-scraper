@@ -8,15 +8,15 @@ const Contact = React.createClass({
 
   getThumbnailStyle() {
     return {
-      width: '28px',
-      height: '28px',
+      width: '26px',
+      height: '26px',
       borderRadius: '50%',
     };
   },
 
   getLabelStyle() {
     return {
-      width: '250px',
+      width: '170px',
       display: 'inline-block',
       padding: '3px',
       paddingTop: '6px',
@@ -26,9 +26,12 @@ const Contact = React.createClass({
 
   getContactStyle() {
     return {
-      backgroundColor: 'red',
       width: '200px',
       display: 'inline-block',
+      height: '100%',
+      padding: '2px',
+      boxSizing: 'border-box',
+      border: 'none',
     };
   },
 
