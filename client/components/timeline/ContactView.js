@@ -65,7 +65,7 @@ const ContactView = React.createClass({
   render() {
     return (
       <div
-        className='row'
+        className="row"
         style={this.getStyle()}>
         {this.renderContact()}
         {this.renderTimeline()}
