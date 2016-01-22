@@ -99,11 +99,18 @@ const EventView = React.createClass({
     const now = new Date();
     const nextMonth = new Date(now);
     nextMonth.setDate(1);
+    daysToMonth.push({
+      days: 0,
+      label: nextMonth.toLocaleString('en-us', {month: 'long'}),
+    });
     for (let index = 0; index < 12; index++) {
       nextMonth.setMonth(nextMonth.getMonth() + 1);
       const daysFromToday = this.getDayDiff(now, nextMonth);
       if (daysFromToday <= numberOfDays) {
-        daysToMonth.push(daysFromToday);
+        daysToMonth.push({
+          days: daysFromToday,
+          label: nextMonth.toLocaleString('en-us', {month: 'long'}),
+        });
       }
     }
     return daysToMonth;
@@ -128,10 +135,11 @@ const EventView = React.createClass({
     const daysToMonth = this.getMonthBeginningFromToday();
     let styles;
     for (let index = 0; index < daysToMonth.length; index++) {
-      styles = this.getEventStyles(0, daysToMonth[index], 'rgb(218, 222, 232)');
+      styles = this.getEventStyles(0, daysToMonth[index].days, 'rgb(218, 222, 232)');
       styles.zIndex = '10';
       months.push(<div
         key={index}
+        title={daysToMonth[index].label}
         style={styles} />);
     }
     return months;
