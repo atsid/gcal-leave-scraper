@@ -52,6 +52,7 @@ const EventView = React.createClass({
       top: '0px',
       bottom: '0px',
       left: (daysFromToday / this.getNumberOfDays() * 100) + '%',
+      minWidth: '1px',
     };
   },
 
