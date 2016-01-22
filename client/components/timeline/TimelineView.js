@@ -34,6 +34,9 @@ const TimelineView = React.createClass({
     return {
       padding: '20px',
       margin: 'auto',
+      width: '100%',
+      boxSizing: 'border-box',
+      border: 'none',
     };
   },
 

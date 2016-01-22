@@ -35,8 +35,10 @@ const ContactView = React.createClass({
   getStyle() {
     return {
       position: 'relative',
-      padding: '2px',
-      backgroundColor: 'green',
+      height: '30px',
+      width: '100%',
+      boxSizing: 'border-box',
+      border: 'none',
     };
   },
 
@@ -63,6 +65,7 @@ const ContactView = React.createClass({
   render() {
     return (
       <div
+        className='row'
         style={this.getStyle()}>
         {this.renderContact()}
         {this.renderTimeline()}

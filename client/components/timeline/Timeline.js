@@ -10,9 +10,13 @@ const Timeline = React.createClass({
 
   getStyles() {
     return {
-      margin: 'auto',
-      backgroundColor: 'blue',
       display: 'inline-block',
+      position: 'absolute',
+      right: '0px',
+      left: '200px',
+      top: '0px',
+      bottom: '0px',
+      padding: '1px',
     };
   },
 

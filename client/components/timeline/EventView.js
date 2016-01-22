@@ -37,26 +37,33 @@ const EventView = React.createClass({
       });
   },
 
+  getEventStyles() {
+    return {
+      backgroundColor: '#bbbbee',
+      height: '100%',
+      width: '25px',
+      display: 'inline-block',
+    };
+  },
+
   getStyles() {
     return {
-      backgroundColor: 'yellow',
-      margin: 'auto',
+      height: '100%',
+      width: '100%',
     };
   },
 
   renderTimeline() {
     const events = this.state.events;
     const eventsView = [];
+    // TODO: For tooltip make sure to write function to return string
     if (events) {
       for (let index = 0; index < events.length; index++) {
         eventsView.push(<div
           key={index}
-          style={{position: 'relative', padding: '2px'}}>
-          {events[index].summary}
-          <span
-           style={{paddingLeft: '25px'}}>
-            {(events[index].start && events[index].start.date) || ''} : {(events[index].end && events[index].end.date) || ''}
-          </span>
+          style={this.getEventStyles()}          
+          title={events[index].summary + ' ' + (events[index].start && events[index].start.date) + ' - ' + (events[index].end && events[index].end.date)}>
+          X
         </div>);
       }
     }
