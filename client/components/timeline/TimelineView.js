@@ -1,6 +1,7 @@
 const debug = require('debug')('app:components:application');
 const React = require('react');
 
+const TimelineHeader = require('./TimelineHeader');
 const ContactView = require('./ContactView');
 const mui = require('material-ui');
 const Paper = mui.Paper;
@@ -40,6 +41,12 @@ const TimelineView = React.createClass({
     };
   },
 
+  renderHeader() {
+    return (
+        <TimelineHeader />
+    );
+  },
+
   renderContacts() {
     const contacts = this.state.contacts && this.state.contacts.users;
     const contactsView = [];
@@ -61,6 +68,7 @@ const TimelineView = React.createClass({
         zDepth={1}
         rounded={false}
         style={this.getStyles()}>
+        {this.renderHeader()}
         {this.renderContacts()}
       </Paper>
     );

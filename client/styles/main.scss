@@ -11,6 +11,7 @@ html, body {
   display: flex;
   position: absolute;
   flex-direction: column;
+  color: #555;
 }
 
 .content {
@@ -26,7 +27,7 @@ html, body {
   flex-direction: column;
 }
 
-.row:nth-child(odd) {
+.row:nth-child(even) {
   background-color: #eee;
 }
 
