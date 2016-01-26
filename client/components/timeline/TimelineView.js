@@ -14,6 +14,7 @@ const TimelineView = React.createClass({
   getInitialState() {
     return {
       contacts: null,
+      spinner: true,
     };
   },
 
@@ -22,12 +23,12 @@ const TimelineView = React.createClass({
   },
 
   getStateFromStore() {
-    this.state = {projects: [], loading: true};
+    this.state = {projects: [], loading: true, spinner: this.state.spinner};
     return this.context.stores.contacts.getContacts({})
-      .then((contacts) => this.setState({contacts, loading: false}))
+      .then((contacts) => this.setState({contacts, loading: false, spinner: this.state.spinner}))
       .catch((err) => {
         debug('error loading store data', err);
-        this.setState({loading: false});
+        this.setState({loading: false, spinner: this.state.spinner});
       });
   },
 
@@ -41,9 +42,27 @@ const TimelineView = React.createClass({
     };
   },
 
+  events: [],
+  contactsLoaded: 0,
+
+  handleLoaded(events) {
+    this.contactsLoaded++;
+    this.events = this.events.concat(events);
+    if (this.contactsLoaded >= this.state.contacts.users.length) {
+      this.timelineHeaderSpinner(false);
+    }
+  },
+
+  timelineHeaderSpinner(isSpinner) {
+    if (this.state.spinner !== isSpinner) {
+      this.setState({contacts: this.state.contacts, spinner: isSpinner});
+    }
+  },
+
   renderHeader() {
     return (
-        <TimelineHeader />
+        <TimelineHeader
+          spinner={this.state.spinner} />
     );
   },
 
@@ -55,6 +74,7 @@ const TimelineView = React.createClass({
         contactsView.push(
           <ContactView
             key={index}
+            onLoaded={this.handleLoaded}
             contact={contacts[index]} />
         );
       }

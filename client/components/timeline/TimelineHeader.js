@@ -1,6 +1,12 @@
 const React = require('react');
+const mui = require('material-ui');
+const CircularProgress = mui.CircularProgress;
 
 const TimelineHeader = React.createClass({
+  propTypes: {
+    spinner: React.PropTypes.bool,
+  },
+
   // TODO: Should be based on date filter, so it doesn't have to be just one year
   getNumberOfDays() {
     const now = new Date();
@@ -28,6 +34,7 @@ const TimelineHeader = React.createClass({
       height: '100%',
       position: 'absolute',
       right: '0px',
+      display: 'inline-block',
     };
   },
 
@@ -85,10 +92,20 @@ const TimelineHeader = React.createClass({
     return months;
   },
 
+  renderLoader() {
+    return this.props.spinner ? (
+      <CircularProgress
+        className="headerSpinner"
+        mode="indeterminate"
+        size={0.2} />
+    ) : (<span/>);
+  },
+
   render() {
     return (
       <div
         style={{height: '16px', width: '100%', position: 'relative', color: '#999'}}>
+        {this.renderLoader()}
         <div
           style={this.getStyles()}>
           {this.renderTimelineMonths()}
