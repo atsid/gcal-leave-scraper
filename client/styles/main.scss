@@ -14,6 +14,18 @@ html, body {
   color: #555;
 }
 
+.headerSpinner {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  display: inline-block;
+}
+
+.loading {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
 .content {
   flex: 20 0 auto;
   padding: 10px;

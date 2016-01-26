@@ -1,4 +1,3 @@
-// const debug = require('debug')('app:components:application');
 const React = require('react');
 const EventView = require('./EventView');
 
@@ -6,6 +5,7 @@ const Timeline = React.createClass({
   propTypes: {
     calendars: React.PropTypes.array,
     userId: React.PropTypes.string,
+    onLoaded: React.PropTypes.func,
   },
 
   getStyles() {
@@ -24,6 +24,7 @@ const Timeline = React.createClass({
   renderTimeline() {
     return (
       <EventView
+        onLoaded={this.props.onLoaded}
         calendars={this.props.calendars}
         userId={this.props.userId}
         filter="ooo,leave,vacation,holiday" />

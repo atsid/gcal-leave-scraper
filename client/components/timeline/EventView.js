@@ -6,6 +6,7 @@ const EventView = React.createClass({
     calendars: React.PropTypes.array,
     userId: React.PropTypes.string,
     filter: React.PropTypes.string,
+    onLoaded: React.PropTypes.func,
   },
 
   contextTypes: {
@@ -146,8 +147,12 @@ const EventView = React.createClass({
   },
 
   render() {
+    if (this.state.events) {
+      this.props.onLoaded(this.state.events);
+    }
     return (
       <div
+        className={this.state.events ? '' : 'loading'}
         style={this.getStyles()}>
         {this.renderTimelineMonths()}
         {this.renderTimeline()}

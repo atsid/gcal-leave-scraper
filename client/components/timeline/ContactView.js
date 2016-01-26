@@ -6,6 +6,7 @@ const Contact = require('./Contact');
 const ContactView = React.createClass({
   propTypes: {
     contact: React.PropTypes.object,
+    onLoaded: React.PropTypes.func,
   },
 
   contextTypes: {
@@ -45,6 +46,7 @@ const ContactView = React.createClass({
   renderTimeline() {
     return this.state.calendars ? (
       <Timeline
+        onLoaded={this.props.onLoaded}
         calendars={this.state.calendars.items}
         userId={this.props.contact.primaryEmail} />
     )
