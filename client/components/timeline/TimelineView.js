@@ -2,6 +2,7 @@ const debug = require('debug')('app:components:application');
 const React = require('react');
 
 const TimelineHeader = require('./TimelineHeader');
+const Heatmap = require('./Heatmap');
 const ContactView = require('./ContactView');
 const mui = require('material-ui');
 const Paper = mui.Paper;
@@ -82,6 +83,10 @@ const TimelineView = React.createClass({
     return contactsView;
   },
 
+  renderHeatMap() {
+    return this.events.length > 0 ? (<Heatmap events={this.events} />) : (<span/>);
+  },
+
   render() {
     return (
       <Paper
@@ -89,6 +94,7 @@ const TimelineView = React.createClass({
         rounded={false}
         style={this.getStyles()}>
         {this.renderHeader()}
+        {this.renderHeatMap()}
         {this.renderContacts()}
       </Paper>
     );
