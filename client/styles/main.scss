@@ -39,7 +39,7 @@ html, body {
   flex-direction: column;
 }
 
-.row:nth-child(even) {
+.row:nth-child(odd) {
   background-color: #eee;
 }
 
