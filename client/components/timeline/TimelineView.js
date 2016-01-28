@@ -4,6 +4,7 @@ const React = require('react');
 const TimelineHeader = require('./TimelineHeader');
 const Heatmap = require('./Heatmap');
 const ContactView = require('./ContactView');
+const TimelineToolbar = require('./TimelineToolbar');
 const mui = require('material-ui');
 const Paper = mui.Paper;
 
@@ -36,8 +37,7 @@ const TimelineView = React.createClass({
   getStyles() {
     return {
       padding: '20px',
-      margin: 'auto',
-      width: '100%',
+      margin: '10px',
       boxSizing: 'border-box',
       border: 'none',
     };
@@ -87,7 +87,11 @@ const TimelineView = React.createClass({
     return this.events.length > 0 ? (<Heatmap events={this.events} />) : (<span/>);
   },
 
-  render() {
+  renderToolbar() {
+    return (<TimelineToolbar />);
+  },
+
+  renderBody() {
     return (
       <Paper
         zDepth={1}
@@ -97,6 +101,15 @@ const TimelineView = React.createClass({
         {this.renderHeatMap()}
         {this.renderContacts()}
       </Paper>
+    );
+  },
+
+  render() {
+    return (
+      <div>
+        {this.renderToolbar()}
+        {this.renderBody()}
+      </div>
     );
   },
 });

@@ -88,7 +88,7 @@ const Skeleton = React.createClass({
 
   renderContent() {
     return (
-      <section className="content">
+      <section>
         {this.props.children}
       </section>
     );
