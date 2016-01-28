@@ -9,48 +9,120 @@ const ToolbarGroup = mui.ToolbarGroup;
 const Divider = mui.Divider;
 
 const TimelineToolbar = React.createClass({
-  // contextTypes: {
-  //   stores: React.PropTypes.object.isRequired,
-  // },
+  contextTypes: {
+    stores: React.PropTypes.object.isRequired,
+  },
 
   getInitialState() {
     return {
-      groups: null,
-      filters: null,
-      range: null,
+      selectedGroup: null,
+      selectedFilter: null,
+      selectedRange: null,
+      groups: [],
+      filters: [],
+      range: [],
     };
   },
 
-  // componentDidMount() {
-  //   this.getStateFromStore();
-  // },
+  componentDidMount() {
+    this.getStateFromStore();
+  },
 
-  // getStateFromStore() {
-  //   this.state = {projects: [], loading: true, spinner: this.state.spinner};
-  //   return this.context.stores.contacts.getContacts({})
-  //     .then((contacts) => this.setState({contacts, loading: false, spinner: this.state.spinner}))
-  //     .catch((err) => {
-  //       debug('error loading store data', err);
-  //       this.setState({loading: false, spinner: this.state.spinner});
-  //     });
-  // },
+  getStateFromStore() {
+    // this.state = {projects: [], loading: true, spinner: this.state.spinner};
+    // return this.context.stores.contacts.getContacts({})
+    //   .then((contacts) => this.setState({contacts, loading: false, spinner: this.state.spinner}))
+    //   .catch((err) => {
+    //     debug('error loading store data', err);
+    //     this.setState({loading: false, spinner: this.state.spinner});
+    //   });
+    setTimeout(() => {
+      this.setState({
+        selectedGroup: 3,
+        selectedFilter: 1,
+        selectedRange: 1,
+        groups: [
+          {
+            id: 1,
+            label: 'Developers',
+          },
+          {
+            id: 2,
+            label: 'Management',
+          },
+          {
+            id: 3,
+            label: 'Front End Devs',
+          },
+          {
+            id: 4,
+            label: 'Back End Devs',
+          },
+        ],
+        filters: [
+          {
+            id: 1,
+            label: 'Out Of Office',
+          },
+          {
+            id: 2,
+            label: 'Vacation',
+          },
+          {
+            id: 3,
+            label: 'Projects',
+          },
+        ],
+        range: [
+          {
+            id: 1,
+            label: 'Year',
+          },
+          {
+            id: 2,
+            label: 'Quarter',
+          },
+          {
+            id: 3,
+            label: 'Month',
+          },
+        ],
+      });
+    }, 500);
+  },
+
+  // TODO: Remove after everything is implemented
   mocked: true,
 
+  // TODO: Implement handler to allow for seting state on timelineView
   handleChange() {},
+
+  renderMenu(items, hasAdd, hasCustom) {
+    const menu = [];
+    if (items) {
+      items.map((item) => {
+        menu.push(<MenuItem value={item.id} primaryText={item.label} />);
+      });
+    }
+    if (hasAdd || hasCustom) {
+      menu.push(<Divider />);
+      if (hasAdd) {
+        menu.push(<MenuItem value="add" primaryText="Add"/>);
+      }
+      if (hasCustom) {
+        menu.push(<MenuItem value="custom" primaryText="Custom"/>);
+      }
+    }
+    return menu;
+  },
 
   renderGroup() {
     return (
         <DropDownMenu
-          value="3"
+          value={this.state.selectedGroup}
           style={{margin: '5px'}}
           onChange={this.handleChange}>
-          <MenuItem value="1" primaryText="Developers"/>
-          <MenuItem value="2" primaryText="Management"/>
-          <MenuItem value="3" primaryText="Front End Devs"/>
-          <MenuItem value="4" primaryText="Back End Devs"/>
-          <Divider />
-          <MenuItem value="5" primaryText="Add"/>
-          <MenuItem value="6" primaryText="Custom"/>
+          {this.renderMenu(this.state.groups, true, true)}
         </DropDownMenu>
     );
   },
@@ -59,15 +131,10 @@ const TimelineToolbar = React.createClass({
     return (
         <DropDownMenu
           disabled={this.mocked}
-          value="1"
+          value={this.state.selectedFilter}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleChange}>
-          <MenuItem value="1" primaryText="Out Of Office"/>
-          <MenuItem value="2" primaryText="Vacation"/>
-          <MenuItem value="3" primaryText="Projects"/>
-          <Divider />
-          <MenuItem value="4" primaryText="Add"/>
-          <MenuItem value="5" primaryText="Custom"/>
+          {this.renderMenu(this.state.filters, true, true)}
         </DropDownMenu>
     );
   },
@@ -76,14 +143,10 @@ const TimelineToolbar = React.createClass({
     return (
         <DropDownMenu
           disabled={this.mocked}
-          value="1"
+          value={this.state.selectedRange}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleChange}>
-          <MenuItem value="1" primaryText="Year"/>
-          <MenuItem value="2" primaryText="Quarter"/>
-          <MenuItem value="3" primaryText="Month"/>
-          <Divider />
-          <MenuItem value="4" primaryText="Custom"/>
+          {this.renderMenu(this.state.range, false, true)}
         </DropDownMenu>
     );
   },

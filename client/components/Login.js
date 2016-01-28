@@ -13,7 +13,9 @@ const Login = React.createClass({
       width: '300px',
       height: '150px',
       padding: '20px',
-      margin: 'auto',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '10px',
     };
   },
 
