@@ -7,6 +7,7 @@ const MenuItem = mui.MenuItem;
 const Toolbar = mui.Toolbar;
 const ToolbarGroup = mui.ToolbarGroup;
 const Divider = mui.Divider;
+const FontIcon = mui.FontIcon;
 
 const TimelineToolbar = React.createClass({
   contextTypes: {
@@ -43,48 +44,63 @@ const TimelineToolbar = React.createClass({
         selectedRange: 1,
         groups: [
           {
+            id: 0,
+            label: 'All',
+            edit: false,
+          },
+          {
             id: 1,
             label: 'Developers',
+            edit: true,
           },
           {
             id: 2,
             label: 'Management',
+            edit: true,
           },
           {
             id: 3,
             label: 'Front End Devs',
+            edit: true,
           },
           {
             id: 4,
             label: 'Back End Devs',
+            edit: true,
           },
         ],
         filters: [
           {
             id: 1,
             label: 'Out Of Office',
+            edit: true,
           },
           {
             id: 2,
             label: 'Vacation',
+            edit: true,
           },
           {
             id: 3,
             label: 'Projects',
+            edit: true,
           },
         ],
         range: [
           {
             id: 1,
             label: 'Year',
+            edit: false,
           },
           {
             id: 2,
             label: 'Quarter',
+            edit: false,
           },
           {
             id: 3,
             label: 'Month',
+            edit: false,
           },
         ],
       });
@@ -101,7 +117,11 @@ const TimelineToolbar = React.createClass({
     const menu = [];
     if (items) {
       items.map((item) => {
-        menu.push(<MenuItem value={item.id} primaryText={item.label} />);
+        // TODO: Add edits, which allows for delete
+        menu.push(<MenuItem
+          value={item.id}
+          rightIcon={item.edit ? <FontIcon className="material-icons">mode_edit</FontIcon> : <span />}
+          primaryText={item.label} />);
       });
     }
     if (hasAdd || hasCustom) {
