@@ -39,9 +39,9 @@ const TimelineToolbar = React.createClass({
     //   });
     setTimeout(() => {
       this.setState({
-        selectedGroup: 3,
-        selectedFilter: 1,
-        selectedRange: 1,
+        selectedGroup: 30,
+        selectedFilter: 10,
+        selectedRange: 10,
         groups: [
           {
             id: 0,
@@ -49,56 +49,56 @@ const TimelineToolbar = React.createClass({
             edit: false,
           },
           {
-            id: 1,
+            id: 10,
             label: 'Developers',
             edit: true,
           },
           {
-            id: 2,
+            id: 20,
             label: 'Management',
             edit: true,
           },
           {
-            id: 3,
+            id: 30,
             label: 'Front End Devs',
             edit: true,
           },
           {
-            id: 4,
+            id: 40,
             label: 'Back End Devs',
             edit: true,
           },
         ],
         filters: [
           {
-            id: 1,
+            id: 10,
             label: 'Out Of Office',
             edit: true,
           },
           {
-            id: 2,
+            id: 20,
             label: 'Vacation',
             edit: true,
           },
           {
-            id: 3,
+            id: 30,
             label: 'Projects',
             edit: true,
           },
         ],
         range: [
           {
-            id: 1,
+            id: 10,
             label: 'Year',
             edit: false,
           },
           {
-            id: 2,
+            id: 20,
             label: 'Quarter',
             edit: false,
           },
           {
-            id: 3,
+            id: 30,
             label: 'Month',
             edit: false,
           },
@@ -110,17 +110,52 @@ const TimelineToolbar = React.createClass({
   // TODO: Remove after everything is implemented
   mocked: true,
 
-  // TODO: Implement handler to allow for seting state on timelineView
-  handleChange() {},
+  isMenuIcon(evt) {
+    return evt.target.className.indexOf('material-icons') > -1;
+  },
+
+  routePage(value, category) {
+    // TODO: Route to new page to allow for user to make a new group
+    console.log('Rout to group page to: ' + value + ' - ' + category);
+  },
+
+  stateChange(evt, value, category, newState) {
+    const isEdit = this.isMenuIcon(evt);
+    console.log('menu changed ', value);
+    if (isEdit || value === 'add' || value === 'custom') {
+      this.routePage(value, category);
+    } else {
+      this.setState(newState);
+    }
+    // TODO: Event back to TimelineViewer to load contacts from group
+  },
+
+  handleGroupChange(evt, index, value) {
+    this.stateChange(evt, value, 'group', {selectedGroup: value});
+  },
+
+  handleFilterChange(evt, index, value) {
+    this.stateChange(evt, value, 'filter', {selectedFilter: value});
+  },
+
+  handleRangeChange(evt, index, value) {
+    this.stateChange(evt, value, 'range', {selectedRange: value});
+  },
+
+  renderEditIcon() {
+    return (<FontIcon
+      className="material-icons menuIcon">
+      mode_edit
+    </FontIcon>);
+  },
 
   renderMenu(items, hasAdd, hasCustom) {
     const menu = [];
     if (items) {
       items.map((item) => {
-        // TODO: Add edits, which allows for delete
         menu.push(<MenuItem
           value={item.id}
-          rightIcon={item.edit ? <FontIcon className="material-icons">mode_edit</FontIcon> : <span />}
+          rightIcon={item.edit ? this.renderEditIcon() : <span />}
           primaryText={item.label} />);
       });
     }
@@ -141,7 +176,7 @@ const TimelineToolbar = React.createClass({
         <DropDownMenu
           value={this.state.selectedGroup}
           style={{margin: '5px'}}
-          onChange={this.handleChange}>
+          onChange={this.handleGroupChange}>
           {this.renderMenu(this.state.groups, true, true)}
         </DropDownMenu>
     );
@@ -153,7 +188,7 @@ const TimelineToolbar = React.createClass({
           disabled={this.mocked}
           value={this.state.selectedFilter}
           style={{margin: '5px', left: '25px'}}
-          onChange={this.handleChange}>
+          onChange={this.handleFilterChange}>
           {this.renderMenu(this.state.filters, true, true)}
         </DropDownMenu>
     );
@@ -165,7 +200,7 @@ const TimelineToolbar = React.createClass({
           disabled={this.mocked}
           value={this.state.selectedRange}
           style={{margin: '5px', left: '25px'}}
-          onChange={this.handleChange}>
+          onChange={this.handleRangeChange}>
           {this.renderMenu(this.state.range, false, true)}
         </DropDownMenu>
     );
