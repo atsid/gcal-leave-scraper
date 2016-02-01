@@ -10,6 +10,10 @@ const Divider = mui.Divider;
 const FontIcon = mui.FontIcon;
 
 const TimelineToolbar = React.createClass({
+  propTypes: {
+    onToolbarChange: React.PropTypes.func,
+  },
+
   contextTypes: {
     stores: React.PropTypes.object.isRequired,
   },
@@ -104,6 +108,7 @@ const TimelineToolbar = React.createClass({
           },
         ],
       });
+      this.props.onToolbarChange(this.selectedGroup, 'groups');
     }, 500);
   },
 
@@ -121,25 +126,31 @@ const TimelineToolbar = React.createClass({
 
   stateChange(evt, value, category, newState) {
     const isEdit = this.isMenuIcon(evt);
-    console.log('menu changed ', value);
     if (isEdit || value === 'add' || value === 'custom') {
       this.routePage(value, category);
     } else {
       this.setState(newState);
+      this.props.onToolbarChange(value, category);
     }
     // TODO: Event back to TimelineViewer to load contacts from group
   },
 
   handleGroupChange(evt, index, value) {
-    this.stateChange(evt, value, 'group', {selectedGroup: value});
+    if (value !== this.state.selectedGroup) {
+      this.stateChange(evt, value, 'group', {selectedGroup: value});
+    }
   },
 
   handleFilterChange(evt, index, value) {
-    this.stateChange(evt, value, 'filter', {selectedFilter: value});
+    if (value !== this.state.selectedFilter) {
+      this.stateChange(evt, value, 'filter', {selectedFilter: value});
+    }
   },
 
   handleRangeChange(evt, index, value) {
-    this.stateChange(evt, value, 'range', {selectedRange: value});
+    if (value !== this.state.selectedRange) {
+      this.stateChange(evt, value, 'range', {selectedRange: value});
+    }
   },
 
   renderEditIcon() {
@@ -149,13 +160,14 @@ const TimelineToolbar = React.createClass({
     </FontIcon>);
   },
 
-  renderMenu(items, hasAdd, hasCustom) {
+  renderMenu(key, items, hasAdd, hasCustom) {
     const menu = [];
     if (items) {
       items.map((item) => {
         menu.push(<MenuItem
+          key={'menu' + key + item.id}
           value={item.id}
-          rightIcon={item.edit ? this.renderEditIcon() : <span />}
+          rightIcon={item.edit ? this.renderEditIcon() : <span key={'menuIcon' + key + item.id} />}
           primaryText={item.label} />);
       });
     }
@@ -177,7 +189,7 @@ const TimelineToolbar = React.createClass({
           value={this.state.selectedGroup}
           style={{margin: '5px'}}
           onChange={this.handleGroupChange}>
-          {this.renderMenu(this.state.groups, true, true)}
+          {this.renderMenu('group', this.state.groups, true, true)}
         </DropDownMenu>
     );
   },
@@ -189,7 +201,7 @@ const TimelineToolbar = React.createClass({
           value={this.state.selectedFilter}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleFilterChange}>
-          {this.renderMenu(this.state.filters, true, true)}
+          {this.renderMenu('filter', this.state.filters, true, true)}
         </DropDownMenu>
     );
   },
@@ -201,7 +213,7 @@ const TimelineToolbar = React.createClass({
           value={this.state.selectedRange}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleRangeChange}>
-          {this.renderMenu(this.state.range, false, true)}
+          {this.renderMenu('range', this.state.range, false, true)}
         </DropDownMenu>
     );
   },
