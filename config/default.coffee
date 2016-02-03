@@ -21,7 +21,6 @@ module.exports =
     connectionString: 'mongodb://localhost:27017/gcal-leave-scraper'
 
   leaveKeywords: ['ooo', 'leave', 'off', 'vacation', 'holiday']
-
   auth:
     google:
       clientID: 'GOOGLE_CLIENT_ID'
