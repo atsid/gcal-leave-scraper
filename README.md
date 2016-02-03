@@ -28,8 +28,7 @@ Server application that scans google calendars for leave events matching specifi
 * Download the credential file and put it in the local project root as "client_secret.json"
 
 # Configuration
-* Copy ./config/local.coffee.template to ./config/local.coffee
-* Replace clientID, clientSecret, and domain from the google credentials section above
+* Set environment variables for GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_CLIENT_DOMAIN from the google credentials section above
 
 # Misc Thoughts
 * Service API is mounted at http://localhost:9000/api

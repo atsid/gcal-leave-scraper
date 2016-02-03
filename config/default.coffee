@@ -21,3 +21,17 @@ module.exports =
     connectionString: 'mongodb://localhost:27017/gcal-leave-scraper'
 
   leaveKeywords: ['ooo', 'leave', 'off', 'vacation', 'holiday']
+
+  auth:
+    google:
+      clientID: 'GOOGLE_CLIENT_ID'
+      clientSecret: 'GOOGLE_CLIENT_SECRET'
+      domain: 'GOOGLE_CLIENT_DOMAIN'
+      callbackURL: 'http://localhost:9000/api/auth/google/callback'
+      scope: [
+        'profile',
+        'openid',
+        'https://www.googleapis.com/auth/admin.directory.user.readonly',
+        'https://www.googleapis.com/auth/calendar',
+        'https://www.googleapis.com/auth/calendar.readonly',
+      ]

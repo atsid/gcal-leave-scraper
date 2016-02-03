@@ -20,6 +20,5 @@ lib-cov
 
 # Google Client Certificate
 client_secret.json
-config/local.coffee
 
 # Created by .ignore support plugin (hsz.mobi)
