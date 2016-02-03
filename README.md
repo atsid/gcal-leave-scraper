@@ -22,7 +22,7 @@ Server application that scans google calendars for leave events matching specifi
 
 # To create a service account with Google
 * Go to https://console.developers.google.com and setup a new application
-* From the application "Overview" screen, enable the Google Calendar API, and admin SDK
+* From the application "Overview" screen, enable the Google Calendar API, Google+ API, and admin SDK
 * From the "Credentials" screen click "Add credential" -> "OAuth 2.0"
 * Set the credential application type to "other" -> "installed"
 * Download the credential file and put it in the local project root as "client_secret.json"
