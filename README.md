@@ -13,7 +13,7 @@ Server application that scans google calendars for leave events matching specifi
 * Gulp
 
 # How to launch
-* Start your MongoDB instance. "docker run --name gcal-leave-scraper -p 27017:27017 mongo --smallfiles"  <br /><b>or</b><br />mongod --port 27017 --dbpath &gt;mongoHome&gt;\data\db
+* Start your MongoDB instance. "docker run --name gcal-leave-scraper -p 27017:27017 mongo --smallfiles"  <br /><b>or</b><br />mongod --port 27017 --dbpath &lt;mongoHome&gt;\data\db
 * "gulp develop" from the project root
 * Go to localhost:9000 in your web browser
 
