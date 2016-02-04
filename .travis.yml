@@ -9,7 +9,7 @@ before_script:
 after_script: npm run report-coverage
 deploy:
   provider: elasticbeanstalk
-  region: us-west-1
+  region: us-west-2
   app: leave_calendar
   env: leaveCalendar-env
   bucket_name: leave-calendar
