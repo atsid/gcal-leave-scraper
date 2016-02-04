@@ -14,6 +14,15 @@ html, body {
   color: #555;
 }
 
+.menuIcon {
+  opacity: .25;
+  transition: opacity .25s ease-in-out;
+}
+
+.menuIcon:hover {
+  opacity: 1;
+}
+
 .headerSpinner {
   position: absolute;
   top: -20px;

@@ -23,6 +23,11 @@ const ContactView = React.createClass({
     this.getStateFromStore();
   },
 
+  componentWillReceiveProps() {
+    this.setState({calendars: null});
+    this.getStateFromStore();
+  },
+
   getStateFromStore() {
     this.state = {projects: [], loading: true};
     return this.context.stores.calendars.getCalendars({})
