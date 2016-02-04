@@ -10,10 +10,10 @@ after_script: npm run report-coverage
 deploy:
   provider: elasticbeanstalk
   region: us-west-1
-  app: leave_calendar
-  env: leaveCalendar-env
-  bucket_name: leave-calendar
-  access_key_id: AKIAJ6LKDXRWXBMCFCKA
+  app: "leave_calendar"
+  env: "leaveCalendar-env"
+  bucket_name: "leave-calendar"
+  access_key_id: "AKIAJ6LKDXRWXBMCFCKA"
   secret_access_key:
     secure: "iscvAvbUfSWIwgJQvmlPq6b25oGtB9uxJ2vCXHGlaqpK4BMViK7zu3zHd0/+bVzn0OeXKaxhR09SoUZYvD1//oF4uj9mZBl0p/FTlgMX9LoH4JGww3sX28I1phzrUA/TJ5vtrSIRXjLU4DePQgJILPKI0NFDJb+Qpx5BKm99kWxQh8hujyMri4aRD2cSGNJ4sZXB3i4VlraOM5Jm8VKrOr38vnYN399qvhgXCud+xT3Un1HUrsfgfJvSWpFOk/0+cRGCokCCkrmXF6XmitcOH+bfZjugtz3som5NhiLlp/dob1iTWXwdFkb7P7mpEEi9nKlQ+iSQVi0RfUrk2mQXPup+2YS7LvBO7C0cMLfwRbl2gzzr1vdlYl3As4gdoA894ga8Fyb08UR+xXLKohYT90uTgHQI8clk3wc/VLIPAeRqZBCj4L+vMwbgjISkxig67LDzM6mty9EANiL8JNsJ+3W6BFeb8PcbqePqfttH+TufGCsBNj8Cp/NwQVnwOJMUR5X+XBPqQ6j9A4IMbe0yw745iVhYXcJxR7EXcUu7fWN3rwc8qghdPu7qtjhUewfYcTd/pzprtPaoMl9WEEJgxU/8pz/scPYtWIr2FUk9b7RcdoIDjjo68jBfXNYn7SupPpj4/JKzA4jaPRrD/SdBGZJuKUN46lo6aEhgWRZtsNg="
   on:
