@@ -1,4 +1,4 @@
-// const debug = require('debug')('app:components:application');
+const debug = require('debug')('app:components:application');
 const React = require('react');
 
 const TimelineHeader = require('./TimelineHeader');
@@ -110,12 +110,8 @@ const TimelineView = React.createClass({
   //   ];
   // },
 
-  clearData() {
-    this.events = [];
-    this.contactsLoaded = 0;
-  },
-
   getStateFromStore(groupId, category) {
+    console.log('Update contacts ' + category + ': ', groupId);
     this.state = {projects: [], loading: true, spinner: true};
     return this.context.stores.contacts.getContacts({})
       .then((contacts) => {
@@ -149,6 +145,11 @@ const TimelineView = React.createClass({
 
   events: [],
   contactsLoaded: 0,
+
+  clearData() {
+    this.events = [];
+    this.contactsLoaded = 0;
+  },
 
   isHeatMapLoaded() {
     return this.contactsLoaded >= this.state.contacts.length;
