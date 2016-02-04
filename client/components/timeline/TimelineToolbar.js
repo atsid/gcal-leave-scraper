@@ -41,75 +41,74 @@ const TimelineToolbar = React.createClass({
     //     debug('error loading store data', err);
     //     this.setState({loading: false, spinner: this.state.spinner});
     //   });
-    setTimeout(() => {
-      this.setState({
-        selectedGroup: 30,
-        selectedFilter: 10,
-        selectedRange: 10,
-        groups: [
-          {
-            id: 0,
-            label: 'All',
-            edit: false,
-          },
-          {
-            id: 10,
-            label: 'Developers',
-            edit: true,
-          },
-          {
-            id: 20,
-            label: 'Management',
-            edit: true,
-          },
-          {
-            id: 30,
-            label: 'Front End Devs',
-            edit: true,
-          },
-          {
-            id: 40,
-            label: 'Back End Devs',
-            edit: true,
-          },
-        ],
-        filters: [
-          {
-            id: 10,
-            label: 'Out Of Office',
-            edit: true,
-          },
-          {
-            id: 20,
-            label: 'Vacation',
-            edit: true,
-          },
-          {
-            id: 30,
-            label: 'Projects',
-            edit: true,
-          },
-        ],
-        range: [
-          {
-            id: 10,
-            label: 'Year',
-            edit: false,
-          },
-          {
-            id: 20,
-            label: 'Quarter',
-            edit: false,
-          },
-          {
-            id: 30,
-            label: 'Month',
-            edit: false,
-          },
-        ],
-      });
-      this.props.onToolbarChange(this.selectedGroup, 'groups');
-    }, 500);
+    // TODO: THIS IS MOCKS FOR WHAT WILL BE FROM A STORE CALL
+    this.setState({
+      selectedGroup: 0,
+      selectedFilter: 10,
+      selectedRange: 10,
+      groups: [
+        {
+          id: 0,
+          label: 'All',
+          edit: false,
+        },
+        {
+          id: 10,
+          label: 'Developers',
+          edit: true,
+        },
+        {
+          id: 20,
+          label: 'Management',
+          edit: true,
+        },
+        {
+          id: 30,
+          label: 'Front End Devs',
+          edit: true,
+        },
+        {
+          id: 40,
+          label: 'Back End Devs',
+          edit: true,
+        },
+      ],
+      filters: [
+        {
+          id: 10,
+          label: 'Leave',
+          edit: true,
+        },
+        {
+          id: 20,
+          label: 'Vacation',
+          edit: true,
+        },
+        {
+          id: 30,
+          label: 'Projects',
+          edit: true,
+        },
+      ],
+      range: [
+        {
+          id: 10,
+          label: 'Year',
+          edit: false,
+        },
+        {
+          id: 20,
+          label: 'Quarter',
+          edit: false,
+        },
+        {
+          id: 30,
+          label: 'Month',
+          edit: false,
+        },
+      ],
+    });
+    this.props.onToolbarChange(this.selectedGroup, 'groups');
   },
 
   // TODO: Remove after everything is implemented
@@ -186,6 +185,7 @@ const TimelineToolbar = React.createClass({
   renderGroup() {
     return (
         <DropDownMenu
+          disabled={this.mocked}
           value={this.state.selectedGroup}
           style={{margin: '5px'}}
           onChange={this.handleGroupChange}>

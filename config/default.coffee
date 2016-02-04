@@ -18,9 +18,10 @@ module.exports =
     composed: false
 
   database:
-    connectionString: 'mongodb://localhost:27017/gcal-leave-scraper'
+    connectionString: 'LEAVE_TIMELINE_DB'
 
   leaveKeywords: ['ooo', 'leave', 'off', 'vacation', 'holiday']
+
   auth:
     google:
       clientID: 'GOOGLE_CLIENT_ID'

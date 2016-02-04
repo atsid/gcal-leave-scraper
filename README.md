@@ -29,6 +29,7 @@ Server application that scans google calendars for leave events matching specifi
 
 # Configuration
 * Set environment variables for GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_CLIENT_DOMAIN from the google credentials section above
+* Set environment variable for db LEAVE_TIMELINE_DB > mongodb://localhost:27017/gcal-leave-scraper
 
 # Misc Thoughts
 * Service API is mounted at http://localhost:9000/api
