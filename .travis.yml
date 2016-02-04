@@ -1,20 +1,20 @@
 language: node_js
 node_js:
-  - "4.2"
+- '4.2'
 sudo: false
 services:
-  - mongodb
-before_script: 
-  - npm shrinkwrap
+- mongodb
+before_script:
+- npm shrinkwrap
 after_script: npm run report-coverage
 deploy:
   provider: elasticbeanstalk
   region: us-west-1
-  app: "leave_calendar"
-  env: "leaveCalendar-env"
-  bucket_name: "leave-calendar"
-  access_key_id: "AKIAJ6LKDXRWXBMCFCKA"
+  app: leave_calendar
+  env: leaveCalendar-env
+  bucket_name: leave-calendar
+  access_key_id: AKIAJ6LKDXRWXBMCFCKA
   secret_access_key:
-    secure: "iscvAvbUfSWIwgJQvmlPq6b25oGtB9uxJ2vCXHGlaqpK4BMViK7zu3zHd0/+bVzn0OeXKaxhR09SoUZYvD1//oF4uj9mZBl0p/FTlgMX9LoH4JGww3sX28I1phzrUA/TJ5vtrSIRXjLU4DePQgJILPKI0NFDJb+Qpx5BKm99kWxQh8hujyMri4aRD2cSGNJ4sZXB3i4VlraOM5Jm8VKrOr38vnYN399qvhgXCud+xT3Un1HUrsfgfJvSWpFOk/0+cRGCokCCkrmXF6XmitcOH+bfZjugtz3som5NhiLlp/dob1iTWXwdFkb7P7mpEEi9nKlQ+iSQVi0RfUrk2mQXPup+2YS7LvBO7C0cMLfwRbl2gzzr1vdlYl3As4gdoA894ga8Fyb08UR+xXLKohYT90uTgHQI8clk3wc/VLIPAeRqZBCj4L+vMwbgjISkxig67LDzM6mty9EANiL8JNsJ+3W6BFeb8PcbqePqfttH+TufGCsBNj8Cp/NwQVnwOJMUR5X+XBPqQ6j9A4IMbe0yw745iVhYXcJxR7EXcUu7fWN3rwc8qghdPu7qtjhUewfYcTd/pzprtPaoMl9WEEJgxU/8pz/scPYtWIr2FUk9b7RcdoIDjjo68jBfXNYn7SupPpj4/JKzA4jaPRrD/SdBGZJuKUN46lo6aEhgWRZtsNg="
+    secure: hLxstAvensWf63T/FlIh1Xxx+Riv5d/ldsimezmTps+cfycj5ATg7fgK6+hDLz/urKF2i3dmtvqcu3dj+RwpgYJX1P1Ma9gQxpTaWPL9J7yIUdHmlWpZdWXuYzOp4m7hrvb/6RQFkVQB+CeUXQuovnh8sset1JV877H3ZdK6NWPLjFOo20l4WY0HiqykUZYCWbzEen2ETp64uhR8pvpbalHPnVLjtblAU0U6biTDXZd8j+/7IOI0lAHGKd26Hq++QQcVPm7UA9ND0GJMd2dHW435MVuTnogSY0ht7F5862fG/VR3Xo4j4VyCl6SGV4cGJicEtoiR3V+9qiXXpBJMARaXJbRWnn4FN2n/1BcP+QdzORds1lqFLCLRykat5TVTMeM005f1LoWjXYTz/vgqdW8j9xxSqwkxSdzNRn0YGDNjLXiL5dmzUPMUk/0ntov1+96XLh+FRDcAJAztCqjwSn01mWQKMnWk72+nuolVh87d8WW1f7pGagPO9G4HhLj5P2W1Lvzy7PcoVrQnDHfTv4Saoun6FFSbSsA0DxjtSu9TybCXzZijlfQGYFdqw2aaDj4DSEPNcaZxAiEnnvOBp5VNBcpuBiiEr3mX7vZvZAY3pFjLFAu3vUQTbgryDAK4/fi4bUxwG/DUIN1mxJhtvhhUS1mOolGeuz7k2MRculo=
   on:
     tags: true
