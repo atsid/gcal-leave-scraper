@@ -1,4 +1,4 @@
-// const debug = require('debug')('app:components:application');
+const debug = require('debug')('app:components:application');
 const React = require('react');
 
 const mui = require('material-ui');
@@ -34,81 +34,55 @@ const TimelineToolbar = React.createClass({
   },
 
   getStateFromStore() {
-    // this.state = {projects: [], loading: true, spinner: this.state.spinner};
-    // return this.context.stores.contacts.getContacts({})
-    //   .then((contacts) => this.setState({contacts, loading: false, spinner: this.state.spinner}))
-    //   .catch((err) => {
-    //     debug('error loading store data', err);
-    //     this.setState({loading: false, spinner: this.state.spinner});
-    //   });
-    // TODO: THIS IS MOCKS FOR WHAT WILL BE FROM A STORE CALL
-    this.setState({
-      selectedGroup: 0,
-      selectedFilter: 10,
-      selectedRange: 10,
-      groups: [
-        {
-          id: 0,
-          label: 'All',
-          edit: false,
-        },
-        {
-          id: 10,
-          label: 'Developers',
-          edit: true,
-        },
-        {
-          id: 20,
-          label: 'Management',
-          edit: true,
-        },
-        {
-          id: 30,
-          label: 'Front End Devs',
-          edit: true,
-        },
-        {
-          id: 40,
-          label: 'Back End Devs',
-          edit: true,
-        },
-      ],
-      filters: [
-        {
-          id: 10,
-          label: 'Leave',
-          edit: true,
-        },
-        {
-          id: 20,
-          label: 'Vacation',
-          edit: true,
-        },
-        {
-          id: 30,
-          label: 'Projects',
-          edit: true,
-        },
-      ],
-      range: [
-        {
-          id: 10,
-          label: 'Year',
-          edit: false,
-        },
-        {
-          id: 20,
-          label: 'Quarter',
-          edit: false,
-        },
-        {
-          id: 30,
-          label: 'Month',
-          edit: false,
-        },
-      ],
-    });
-    this.props.onToolbarChange(this.selectedGroup, 'groups');
+    this.state = {projects: [], loading: true, spinner: this.state.spinner};
+    return this.context.stores.groups.getGroups({})
+      .then((groups) => {
+        this.setState({
+          selectedGroup: 0,
+          selectedFilter: 10,
+          selectedRange: 10,
+          groups: groups,
+          filters: [
+            {
+              id: 10,
+              label: 'Leave',
+              edit: true,
+            },
+            {
+              id: 20,
+              label: 'Vacation',
+              edit: true,
+            },
+            {
+              id: 30,
+              label: 'Projects',
+              edit: true,
+            },
+          ],
+          range: [
+            {
+              id: 10,
+              label: 'Year',
+              edit: false,
+            },
+            {
+              id: 20,
+              label: 'Quarter',
+              edit: false,
+            },
+            {
+              id: 30,
+              label: 'Month',
+              edit: false,
+            },
+          ],
+        });
+        this.props.onToolbarChange(0, 'groups');
+      })
+      .catch((err) => {
+        debug('error loading store data', err);
+        this.setState({loading: false, spinner: this.state.spinner});
+      });
   },
 
   // TODO: Remove after everything is implemented
@@ -161,7 +135,7 @@ const TimelineToolbar = React.createClass({
 
   renderMenu(key, items, hasAdd, hasCustom) {
     const menu = [];
-    if (items) {
+    if (items && items.length > 0) {
       items.map((item) => {
         menu.push(<MenuItem
           key={'menu' + key + item.id}
@@ -171,12 +145,12 @@ const TimelineToolbar = React.createClass({
       });
     }
     if (hasAdd || hasCustom) {
-      menu.push(<Divider />);
+      menu.push(<Divider key="devider" />);
       if (hasAdd) {
-        menu.push(<MenuItem value="add" primaryText="Add"/>);
+        menu.push(<MenuItem key="add" value="add" primaryText="Add"/>);
       }
       if (hasCustom) {
-        menu.push(<MenuItem value="custom" primaryText="Custom"/>);
+        menu.push(<MenuItem key="custom" value="custom" primaryText="Custom"/>);
       }
     }
     return menu;
@@ -185,7 +159,6 @@ const TimelineToolbar = React.createClass({
   renderGroup() {
     return (
         <DropDownMenu
-          disabled={this.mocked}
           value={this.state.selectedGroup}
           style={{margin: '5px'}}
           onChange={this.handleGroupChange}>
