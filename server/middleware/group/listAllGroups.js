@@ -7,22 +7,17 @@ const groups = [
   },
   {
     id: 10,
-    label: 'Developers',
+    label: 'Corporate',
     edit: true,
   },
   {
     id: 20,
-    label: 'Management',
+    label: 'Systems',
     edit: true,
   },
   {
     id: 30,
-    label: 'Front End Devs',
-    edit: true,
-  },
-  {
-    id: 40,
-    label: 'Back End Devs',
+    label: 'MSG',
     edit: true,
   },
 ];

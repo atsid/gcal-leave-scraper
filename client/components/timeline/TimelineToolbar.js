@@ -129,7 +129,7 @@ const TimelineToolbar = React.createClass({
   renderEditIcon() {
     return (<FontIcon
       className="material-icons menuIcon"
-      style={this.mocked ? {pointerEvents: 'none', opacity: '0.1'} : {}}>
+      style={this.mocked ? {pointerEvents: 'none', opacity: '0.2'} : {}}>
       mode_edit
     </FontIcon>);
   },

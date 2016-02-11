@@ -21,6 +21,7 @@ const TimelineView = React.createClass({
   },
 
   getStateFromStore(groupId, category) {
+    console.log(category + ' groupId: ', groupId);
     if (!this.state.loading) {
       this.state = {projects: [], loading: true, spinner: true};
       this.clearData();
