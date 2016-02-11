@@ -1,3 +1,4 @@
+const selected = 10;
 const groups = [
   {
     id: 0,
@@ -31,7 +32,7 @@ function errorNoUserFound(res) {
 }
 
 function fetchGroups(req, res) {
-  res.json(groups);
+  res.json({items: groups, selected: selected});
 }
 
 module.exports = (req, res) => {

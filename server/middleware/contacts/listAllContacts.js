@@ -28,7 +28,7 @@ function fetchAllUsers(req, res) {
     return response.json();
   })
   .then((data) => {
-    return res.json(data);
+    return res.json(data.users);
   })
   .catch(err => {
     errorGeneric(err, res);

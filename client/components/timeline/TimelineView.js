@@ -21,7 +21,6 @@ const TimelineView = React.createClass({
   },
 
   getStateFromStore(groupId, category) {
-    console.log('Update contacts ' + category + ': ', groupId);
     if (!this.state.loading) {
       this.state = {projects: [], loading: true, spinner: true};
       this.clearData();
@@ -59,10 +58,8 @@ const TimelineView = React.createClass({
 
   handleLoaded(events) {
     this.contactsLoaded++;
-    console.log(this.contactsLoaded + ' >= ' + this.state.contacts.length);
     this.events = this.events.concat(events);
     if (this.isHeatMapLoaded()) {
-      console.log('FINISHED');
       this.timelineHeaderSpinner(false);
     }
   },

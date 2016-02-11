@@ -27,7 +27,6 @@ const EventView = React.createClass({
     this.state = {projects: [], loading: true};
     return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter)
       .then((events) => {
-        console.log('Event View ' + this.props.userId + ' Events: ', events);
         this.setState({events: events, loading: false});
       })
       .catch((err) => {

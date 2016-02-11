@@ -38,10 +38,10 @@ const TimelineToolbar = React.createClass({
     return this.context.stores.groups.getGroups({})
       .then((groups) => {
         this.setState({
-          selectedGroup: 0,
+          selectedGroup: groups.selected,
           selectedFilter: 10,
           selectedRange: 10,
-          groups: groups,
+          groups: groups.items,
           filters: [
             {
               id: 10,
@@ -77,7 +77,7 @@ const TimelineToolbar = React.createClass({
             },
           ],
         });
-        this.props.onToolbarChange(0, 'groups');
+        this.props.onToolbarChange(groups.selected, 'groups');
       })
       .catch((err) => {
         debug('error loading store data', err);
@@ -128,7 +128,8 @@ const TimelineToolbar = React.createClass({
 
   renderEditIcon() {
     return (<FontIcon
-      className="material-icons menuIcon">
+      className="material-icons menuIcon"
+      style={this.mocked ? {pointerEvents: 'none', opacity: '0.1'} : {}}>
       mode_edit
     </FontIcon>);
   },
@@ -147,10 +148,10 @@ const TimelineToolbar = React.createClass({
     if (hasAdd || hasCustom) {
       menu.push(<Divider key="devider" />);
       if (hasAdd) {
-        menu.push(<MenuItem key="add" value="add" primaryText="Add"/>);
+        menu.push(<MenuItem key="add" disabled={this.mocked} value="add" primaryText="Add"/>);
       }
       if (hasCustom) {
-        menu.push(<MenuItem key="custom" value="custom" primaryText="Custom"/>);
+        menu.push(<MenuItem key="custom" disabled={this.mocked} value="custom" primaryText="Custom"/>);
       }
     }
     return menu;
