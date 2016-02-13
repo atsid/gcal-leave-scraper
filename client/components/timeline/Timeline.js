@@ -4,6 +4,7 @@ const EventView = require('./EventView');
 const Timeline = React.createClass({
   propTypes: {
     calendars: React.PropTypes.array,
+    filter: React.PropTypes.string,
     userId: React.PropTypes.string,
     onLoaded: React.PropTypes.func,
   },
@@ -20,14 +21,13 @@ const Timeline = React.createClass({
     };
   },
 
-  // TODO: Make filter config not static
   renderTimeline() {
     return (
       <EventView
         onLoaded={this.props.onLoaded}
         calendars={this.props.calendars}
         userId={this.props.userId}
-        filter="ooo,leave,vacation,holiday" />
+        filter={this.props.filter} />
     );
   },
 

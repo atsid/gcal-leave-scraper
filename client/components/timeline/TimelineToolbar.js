@@ -33,49 +33,13 @@ const TimelineToolbar = React.createClass({
     this.getStateFromStore();
   },
 
-  getStateFromStore() {
+  getGroupsFromStore() {
     this.state = {projects: [], loading: true, spinner: this.state.spinner};
     return this.context.stores.groups.getGroups({})
       .then((groups) => {
         this.setState({
           selectedGroup: groups.selected,
-          selectedFilter: 10,
-          selectedRange: 10,
           groups: groups.items,
-          filters: [
-            {
-              id: 10,
-              label: 'Leave',
-              edit: true,
-            },
-            {
-              id: 20,
-              label: 'Vacation',
-              edit: true,
-            },
-            {
-              id: 30,
-              label: 'Projects',
-              edit: true,
-            },
-          ],
-          range: [
-            {
-              id: 10,
-              label: 'Year',
-              edit: false,
-            },
-            {
-              id: 20,
-              label: 'Quarter',
-              edit: false,
-            },
-            {
-              id: 30,
-              label: 'Month',
-              edit: false,
-            },
-          ],
         });
         this.props.onToolbarChange(groups.selected, 'groups');
       })
@@ -85,6 +49,54 @@ const TimelineToolbar = React.createClass({
       });
   },
 
+  getFiltersFromStore() {
+    this.state = {projects: [], loading: true, spinner: this.state.spinner};
+    return this.context.stores.filters.getFilters({})
+      .then((filters) => {
+        this.setState({
+          selectedFilter: filters.selected,
+          filters: filters.items,
+        });
+        const filter = this.find('id', filters.selected, filters.items);
+        if (filter) {
+          this.props.onToolbarChange(filters.selected, 'filters', filter);
+        }
+      })
+      .catch((err) => {
+        debug('error loading store data', err);
+        this.setState({loading: false, spinner: this.state.spinner});
+      });
+  },
+
+  getDateFromStore() {
+    this.setState({
+      selectedRange: 10,
+      range: [
+        {
+          id: 10,
+          label: 'Year',
+          edit: false,
+        },
+        {
+          id: 20,
+          label: 'Quarter',
+          edit: false,
+        },
+        {
+          id: 30,
+          label: 'Month',
+          edit: false,
+        },
+      ],
+    });
+  },
+
+  getStateFromStore() {
+    this.getFiltersFromStore();
+    this.getDateFromStore();
+    this.getGroupsFromStore();
+  },
+
   // TODO: Remove after everything is implemented
   mocked: true,
 
@@ -92,9 +104,35 @@ const TimelineToolbar = React.createClass({
     return evt.target.className.indexOf('material-icons') > -1;
   },
 
+  find(prop, value, myArray) {
+    let match;
+    myArray.map((obj) => {
+      if (obj[prop] === value) {
+        match = obj;
+      }
+    });
+    return match;
+  },
+
   routePage(value, category) {
     // TODO: Route to new page to allow for user to make a new group
     console.log('Rout to group page to: ' + value + ' - ' + category);
+  },
+
+  selectedItem(category, selectedState) {
+    let items;
+    let selected;
+    if (category === 'filters') {
+      items = this.state.filters;
+      selected = selectedState.selectedFilter;
+    } else if (category === 'groups') {
+      items = this.state.groups;
+      selected = selectedState.selectedGroup;
+    } else if (category === 'ranges') {
+      items = this.state.ranges;
+      selected = selectedState.selectedRange;
+    }
+    return this.find('id', selected, items);
   },
 
   stateChange(evt, value, category, newState) {
@@ -103,26 +141,26 @@ const TimelineToolbar = React.createClass({
       this.routePage(value, category);
     } else {
       this.setState(newState);
-      this.props.onToolbarChange(value, category);
+      this.props.onToolbarChange(value, category, this.selectedItem(category, newState));
     }
     // TODO: Event back to TimelineViewer to load contacts from group
   },
 
   handleGroupChange(evt, index, value) {
     if (value !== this.state.selectedGroup) {
-      this.stateChange(evt, value, 'group', {selectedGroup: value});
+      this.stateChange(evt, value, 'groups', {selectedGroup: value});
     }
   },
 
   handleFilterChange(evt, index, value) {
     if (value !== this.state.selectedFilter) {
-      this.stateChange(evt, value, 'filter', {selectedFilter: value});
+      this.stateChange(evt, value, 'filters', {selectedFilter: value});
     }
   },
 
   handleRangeChange(evt, index, value) {
     if (value !== this.state.selectedRange) {
-      this.stateChange(evt, value, 'range', {selectedRange: value});
+      this.stateChange(evt, value, 'ranges', {selectedRange: value});
     }
   },
 
@@ -171,7 +209,6 @@ const TimelineToolbar = React.createClass({
   renderFilter() {
     return (
         <DropDownMenu
-          disabled={this.mocked}
           value={this.state.selectedFilter}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleFilterChange}>

@@ -28,7 +28,7 @@ class GroupsStore {
           return res.body;
         })
         .catch((err) => {
-          debug('error getting groupts', err);
+          debug('error getting groups', err);
           this.state.groups = {result: null};
           return null;
         });
