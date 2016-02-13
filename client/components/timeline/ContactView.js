@@ -6,6 +6,7 @@ const Contact = require('./Contact');
 const ContactView = React.createClass({
   propTypes: {
     contact: React.PropTypes.object,
+    filter: React.PropTypes.string,
     onLoaded: React.PropTypes.func,
   },
 
@@ -53,6 +54,7 @@ const ContactView = React.createClass({
       <Timeline
         onLoaded={this.props.onLoaded}
         calendars={this.state.calendars.items}
+        filter={this.props.filter}
         userId={this.props.contact.primaryEmail} />
     )
     :

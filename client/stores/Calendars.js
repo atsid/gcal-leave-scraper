@@ -52,12 +52,14 @@ class CalendarsStore {
   }
 
   _stringContainsFromList(string, filterString) {
-    const filters = filterString.split(',');
     let match = false;
-    if (string) {
-      for (let index = 0; index < filters.length; index++) {
-        if (string.toLowerCase().indexOf(filters[index].toLowerCase()) >= 0) {
-          match = true;
+    if (filterString) {
+      const filters = filterString.split(',');
+      if (string) {
+        for (let index = 0; index < filters.length; index++) {
+          if (string.toLowerCase().indexOf(filters[index].toLowerCase()) >= 0) {
+            match = true;
+          }
         }
       }
     }
