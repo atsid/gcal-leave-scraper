@@ -17,6 +17,7 @@ const TimelineView = React.createClass({
     return {
       contacts: null,
       filter: null,
+      range: null,
       spinner: true,
     };
   },
@@ -26,22 +27,25 @@ const TimelineView = React.createClass({
       this.getContactsFromStore(id);
     } else if (category === 'filters') {
       this.clearData();
-      this.setState({filter: selected.value, contacts: this.state.contacts, spinner: this.isSpinner()});
+      this.setState({filter: selected.value, range: this.state.range, contacts: this.state.contacts, spinner: this.isSpinner()});
+    } else if (category === 'ranges') {
+      console.log(id + ' ' + category + ' ', selected);
+      this.setState({filter: this.state.filter, range: selected, contacts: this.state.contacts, spinner: this.isSpinner()});
     }
   },
 
   getContactsFromStore(groupId) {
     const _this = this;
     if (!this.state.loading) {
-      this.state = {filter: _this.state.filter, projects: [], loading: true, spinner: true};
+      this.state = {filter: _this.state.filter, range: this.state.range, projects: [], loading: true, spinner: true};
       this.clearData();
       return this.context.stores.groups.getGroupContacts(groupId)
         .then((contacts) => {
-          _this.setState({filter: _this.state.filter, contacts: contacts, loading: false, spinner: _this.isSpinner()});
+          _this.setState({filter: _this.state.filter, range: this.state.range, contacts: contacts, loading: false, spinner: _this.isSpinner()});
         })
         .catch((err) => {
           debug('error loading store data', err);
-          _this.setState({filter: _this.state.filter, loading: false, spinner: _this.isSpinner()});
+          _this.setState({filter: _this.state.filter, range: this.state.range, loading: false, spinner: _this.isSpinner()});
         });
     }
   },
@@ -79,7 +83,7 @@ const TimelineView = React.createClass({
 
   timelineHeaderSpinner(isSpinner) {
     if (this.state.spinner !== isSpinner) {
-      this.setState({contacts: this.state.contacts, filter: this.state.filter, spinner: isSpinner});
+      this.setState({contacts: this.state.contacts, range: this.state.range, filter: this.state.filter, spinner: isSpinner});
     }
   },
 
@@ -95,6 +99,7 @@ const TimelineView = React.createClass({
         key={contactIndex}
         onLoaded={this.handleLoaded}
         filter={this.state.filter}
+        range={this.state.range}
         contact={this.state.contacts[contactIndex]} />
     );
   },
@@ -123,7 +128,7 @@ const TimelineView = React.createClass({
 
   // Render contents when contacts and filter have been loaded
   renderBody() {
-    return !!(this.state && this.state.contacts && this.state.filter) ? (
+    return !!(this.state && this.state.contacts && this.state.filter && this.state.range) ? (
       <Paper
         zDepth={1}
         rounded={false}
