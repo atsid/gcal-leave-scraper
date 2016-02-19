@@ -29,7 +29,6 @@ const TimelineView = React.createClass({
       this.clearData();
       this.setState({filter: selected.value, range: this.state.range, contacts: this.state.contacts, spinner: this.isSpinner()});
     } else if (category === 'ranges') {
-      console.log(id + ' ' + category + ' ', selected);
       this.setState({filter: this.state.filter, range: selected, contacts: this.state.contacts, spinner: this.isSpinner()});
     }
   },
@@ -89,7 +88,7 @@ const TimelineView = React.createClass({
 
   // Render header containers wait spinner and time lables
   renderHeader() {
-    return (<TimelineHeader spinner={this.state.spinner} />);
+    return (<TimelineHeader spinner={this.state.spinner} range={this.state.range} />);
   },
 
   // Render a single content along with its timeline
@@ -115,7 +114,7 @@ const TimelineView = React.createClass({
 
   // When all events have came back for all contents, render heatmap
   renderHeatMap() {
-    return this.isHeatMapLoaded() ? (<Heatmap events={this.events} />) : (<span/>);
+    return this.isHeatMapLoaded() ? (<Heatmap events={this.events} range={this.state.range} />) : (<span/>);
   },
 
   // Render toolbar which sets the group and filter for loading content

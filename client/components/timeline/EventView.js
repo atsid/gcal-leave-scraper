@@ -25,10 +25,10 @@ const EventView = React.createClass({
   },
 
   getStateFromStore() {
-    const startDate = this.props.range.getStartDate();
-    const endDate = this.props.range.getEndDate(startDate);
+    this.startDate = this.props.range.getStartDate();
+    this.endDate = this.props.range.getEndDate(this.startDate);
     this.state = {projects: [], loading: true};
-    return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter, startDate, endDate)
+    return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter, this.startDate, this.endDate)
       .then((events) => {
         this.setState({events: events, loading: false});
       })
@@ -38,12 +38,8 @@ const EventView = React.createClass({
       });
   },
 
-  // TODO: Should be based on date filter, so it doesn't have to be just one year
   getNumberOfDays() {
-    const now = new Date();
-    const yearDate = new Date(now.getTime());
-    yearDate.setFullYear(yearDate.getFullYear() + 1);
-    return this.getDayDiff(now, yearDate);
+    return this.getDayDiff(this.startDate, this.endDate);
   },
 
   getEventStyles(days, daysFromToday, color) {
@@ -92,15 +88,15 @@ const EventView = React.createClass({
     return startDate && endDate ? this.getDayDiff(startDate, endDate) : 0;
   },
 
-  getDaysFromToday(evt) {
+  getDaysFromToday(evt, startDate) {
     const date = this.getEventDate(evt.start);
-    return date ? this.getDayDiff(new Date(), date) : 0;
+    return date ? this.getDayDiff(startDate, date) : 0;
   },
 
   getMonthBeginningFromToday() {
     const daysToMonth = [];
     const numberOfDays = this.getNumberOfDays();
-    const now = new Date();
+    const now = this.startDate;
     const nextMonth = new Date(now);
     nextMonth.setDate(1);
     daysToMonth.push({
@@ -120,6 +116,9 @@ const EventView = React.createClass({
     return daysToMonth;
   },
 
+  startDate: null,
+  endDate: null,
+
   renderTimeline() {
     const events = this.state.events;
     const eventsView = [];
@@ -127,7 +126,7 @@ const EventView = React.createClass({
       for (let index = 0; index < events.length; index++) {
         eventsView.push(<div
           key={index}
-          style={this.getEventStyles(this.getEventDays(events[index]), this.getDaysFromToday(events[index]), '#27C2FD')}
+          style={this.getEventStyles(this.getEventDays(events[index]), this.getDaysFromToday(events[index], this.startDate), '#27C2FD')}
           title={this.getEventTitle(events[index])} />);
       }
     }

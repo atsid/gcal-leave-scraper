@@ -108,8 +108,6 @@ class CalendarsStore {
 
   getCalendarEvents(calendarId, startDate, endDate) {
     let promise;
-    console.log('Start Date: ', startDate);
-    console.log('End Date: ', endDate);
     if (this.state.events && this.state.events[this.getEventId(calendarId, endDate)]) {
       promise = Promise.resolve(this.state.events[this.getEventId(calendarId, endDate)].result);
     } else if (this.state.calendarEventsPromise && this.state.calendarEventsPromise[this.getEventId(calendarId, endDate)]) {

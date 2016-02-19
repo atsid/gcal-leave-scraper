@@ -74,8 +74,8 @@ const TimelineToolbar = React.createClass({
       {
         id: 10,
         label: 'Year',
-        getStartDate: function() {return new Date();},
-        getEndDate: function(startDate) {
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
           const date = new Date(startDate.getTime());
           date.setFullYear(date.getFullYear() + 1);
           return date;
@@ -85,8 +85,8 @@ const TimelineToolbar = React.createClass({
       {
         id: 20,
         label: 'Quarter',
-        getStartDate: function() {return new Date();},
-        getEndDate: function(startDate) {
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
           const date = new Date(startDate.getTime());
           date.setMonth(date.getMonth() + 4);
           return date;
@@ -96,8 +96,8 @@ const TimelineToolbar = React.createClass({
       {
         id: 30,
         label: 'Month',
-        getStartDate: function() {return new Date();},
-        getEndDate: function(startDate) {
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
           const date = new Date(startDate.getTime());
           date.setMonth(date.getMonth() + 1);
           return date;
