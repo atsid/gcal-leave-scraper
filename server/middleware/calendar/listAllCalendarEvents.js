@@ -13,13 +13,16 @@ function errorGeneric(res) {
 }
 
 function getQueryParams(req) {
-  const timeMin = new Date();
+  const timeMin = new Date(req.query.startDate);
   timeMin.setMilliseconds(0);
   timeMin.setSeconds(0);
   timeMin.setMinutes(0);
   timeMin.setHours(0);
-  const timeMax = new Date(timeMin.getTime());
-  timeMax.setFullYear(timeMax.getFullYear() + 1);
+  const timeMax = new Date(req.query.endDate);
+  timeMax.setMilliseconds(0);
+  timeMax.setSeconds(0);
+  timeMax.setMinutes(0);
+  timeMax.setHours(0);
   return stringify({
     access_token: req.user.googleToken,
     domain: 'atsid.com',
@@ -33,6 +36,8 @@ function getQueryParams(req) {
 function fetchAllCalendarEvents(req, res) {
   const queryParams = getQueryParams(req);
   console.log('Fetching events from calendar: ', req.query.calendarId);
+  console.log('Request Query: ', req.query);
+  console.log('Query Params: ', queryParams);
   return fetch('https://www.googleapis.com/calendar/v3/calendars/' + req.query.calendarId + '/events?' + queryParams)
   .then((response) => {
     return response.json();

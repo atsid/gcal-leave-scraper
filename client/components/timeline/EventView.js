@@ -6,6 +6,7 @@ const EventView = React.createClass({
     calendars: React.PropTypes.array,
     userId: React.PropTypes.string,
     filter: React.PropTypes.string,
+    range: React.PropTypes.object,
     onLoaded: React.PropTypes.func,
   },
 
@@ -24,8 +25,10 @@ const EventView = React.createClass({
   },
 
   getStateFromStore() {
+    const startDate = this.props.range.getStartDate();
+    const endDate = this.props.range.getEndDate(startDate);
     this.state = {projects: [], loading: true};
-    return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter)
+    return this.context.stores.calendars.getBulkCalendarEvents(this.props.userId, this.props.calendars, this.props.filter, startDate, endDate)
       .then((events) => {
         this.setState({events: events, loading: false});
       })

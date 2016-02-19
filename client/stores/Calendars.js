@@ -36,16 +36,16 @@ class CalendarsStore {
     return promise;
   }
 
-  _getBuildCalenarEvents(userId, calendars) {
+  _getBuildCalenarEvents(userId, calendars, startDate, endDate) {
     const promises = [];
     // Get users calendar along with all calendars of the logged in user
-    promises.push(this.getCalendarEvents(userId));
+    promises.push(this.getCalendarEvents(userId, startDate, endDate));
     for (let index = 0; index < calendars.length; index++) {
       const calendar = calendars[index];
       // Exclude shared calendar of the logged in user, did prior
       // Exclude any id that starts with #, was causing issues
       if (calendar.id !== userId && !calendar.id.startsWith('#')) {
-        promises.push(this.getCalendarEvents(calendar.id));
+        promises.push(this.getCalendarEvents(calendar.id, startDate, endDate));
       }
     }
     return promises;
@@ -88,12 +88,12 @@ class CalendarsStore {
     return resultEvents;
   }
 
-  getBulkCalendarEvents(userId, calendars, filter) {
+  getBulkCalendarEvents(userId, calendars, filter, startDate, endDate) {
     const returnPromise = new Promise((resolve, reject) => {
-      const promises = this._getBuildCalenarEvents(userId, calendars);
+      const promises = this._getBuildCalenarEvents(userId, calendars, startDate, endDate);
       // When change of service calls all resolved then filter results and resolve returned promise
       Promise.all(promises).then((events) => {
-        resolve(this._filterBuildCalenarEvents(userId, this._extractEvents(events), filter));
+        resolve(this._filterBuildCalenarEvents(userId, this._extractEvents(events), filter, startDate, endDate));
       })
       .then(err => {
         reject(err);
@@ -102,23 +102,29 @@ class CalendarsStore {
     return returnPromise;
   }
 
-  getCalendarEvents(calendarId) {
+  getEventId(calendarId, endDate) {
+    return calendarId + endDate.toString();
+  }
+
+  getCalendarEvents(calendarId, startDate, endDate) {
     let promise;
-    if (this.state.events && this.state.events[calendarId]) {
-      promise = Promise.resolve(this.state.events[calendarId].result);
-    } else if (this.state.calendarEventsPromise && this.state.calendarEventsPromise[calendarId]) {
-      promise = this.state.calendarEventsPromise[calendarId];
+    console.log('Start Date: ', startDate);
+    console.log('End Date: ', endDate);
+    if (this.state.events && this.state.events[this.getEventId(calendarId, endDate)]) {
+      promise = Promise.resolve(this.state.events[this.getEventId(calendarId, endDate)].result);
+    } else if (this.state.calendarEventsPromise && this.state.calendarEventsPromise[this.getEventId(calendarId, endDate)]) {
+      promise = this.state.calendarEventsPromise[this.getEventId(calendarId, endDate)];
     } else {
-      promise = this.state.calendarEventsPromise[calendarId] = request.get('/api/calendar/events/all')
-        .query({ calendarId: calendarId })
+      promise = this.state.calendarEventsPromise[this.getEventId(calendarId, endDate)] = request.get('/api/calendar/events/all')
+        .query({ calendarId: calendarId, startDate: startDate, endDate: endDate })
         .then((res) => {
           debug('calendar events: ', res.body);
-          this.state.events[calendarId] = {result: res.body};
+          this.state.events[this.getEventId(calendarId, endDate)] = {result: res.body};
           return res.body;
         })
         .catch((err) => {
           debug('error getting calendar events', err);
-          this.state.events[calendarId] = null;
+          this.state.events[this.getEventId(calendarId, endDate)] = null;
           return null;
         });
     }
