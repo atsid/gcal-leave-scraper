@@ -5,14 +5,11 @@ const CircularProgress = mui.CircularProgress;
 const TimelineHeader = React.createClass({
   propTypes: {
     spinner: React.PropTypes.bool,
+    range: React.PropTypes.object,
   },
 
-  // TODO: Should be based on date filter, so it doesn't have to be just one year
   getNumberOfDays() {
-    const now = new Date();
-    const yearDate = new Date(now.getTime());
-    yearDate.setFullYear(yearDate.getFullYear() + 1);
-    return this.getDayDiff(now, yearDate);
+    return this.getDayDiff(this.startDate, this.endDate);
   },
 
   getEventStyles(days, daysFromToday) {
@@ -54,7 +51,7 @@ const TimelineHeader = React.createClass({
   getMonthBeginningFromToday() {
     const daysToMonth = [];
     const numberOfDays = this.getNumberOfDays();
-    const now = new Date();
+    const now = this.startDate;
     const nextMonth = new Date(now);
     nextMonth.setDate(1);
     daysToMonth.push({
@@ -73,6 +70,9 @@ const TimelineHeader = React.createClass({
     }
     return daysToMonth;
   },
+
+  startDate: null,
+  endDate: null,
 
   renderTimelineMonths() {
     const months = [];
@@ -102,6 +102,8 @@ const TimelineHeader = React.createClass({
   },
 
   render() {
+    this.startDate = this.props.range.getStartDate();
+    this.endDate = this.props.range.getEndDate(this.startDate);
     return (
       <div
         style={{height: '16px', width: '100%', position: 'relative', color: '#999'}}>

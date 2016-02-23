@@ -25,7 +25,7 @@ const TimelineToolbar = React.createClass({
       selectedRange: null,
       groups: [],
       filters: [],
-      range: [],
+      ranges: [],
     };
   },
 
@@ -69,26 +69,50 @@ const TimelineToolbar = React.createClass({
   },
 
   getDateFromStore() {
+    const selected = 10;
+    const ranges = [
+      {
+        id: 10,
+        label: 'Year',
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
+          const date = new Date(startDate.getTime());
+          date.setFullYear(date.getFullYear() + 1);
+          return date;
+        },
+        edit: false,
+      },
+      {
+        id: 20,
+        label: 'Quarter',
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
+          const date = new Date(startDate.getTime());
+          date.setMonth(date.getMonth() + 4);
+          return date;
+        },
+        edit: false,
+      },
+      {
+        id: 30,
+        label: 'Month',
+        getStartDate: () => {return new Date();},
+        getEndDate: (startDate) => {
+          const date = new Date(startDate.getTime());
+          date.setMonth(date.getMonth() + 1);
+          return date;
+        },
+        edit: false,
+      },
+    ];
     this.setState({
-      selectedRange: 10,
-      range: [
-        {
-          id: 10,
-          label: 'Year',
-          edit: false,
-        },
-        {
-          id: 20,
-          label: 'Quarter',
-          edit: false,
-        },
-        {
-          id: 30,
-          label: 'Month',
-          edit: false,
-        },
-      ],
+      selectedRange: selected,
+      ranges: ranges,
     });
+    const range = this.find('id', selected, ranges);
+    if (range) {
+      this.props.onToolbarChange(selected, 'ranges', range);
+    }
   },
 
   getStateFromStore() {
@@ -220,11 +244,10 @@ const TimelineToolbar = React.createClass({
   renderDateSelector() {
     return (
         <DropDownMenu
-          disabled={this.mocked}
           value={this.state.selectedRange}
           style={{margin: '5px', left: '25px'}}
           onChange={this.handleRangeChange}>
-          {this.renderMenu('range', this.state.range, false, true)}
+          {this.renderMenu('range', this.state.ranges, false, true)}
         </DropDownMenu>
     );
   },

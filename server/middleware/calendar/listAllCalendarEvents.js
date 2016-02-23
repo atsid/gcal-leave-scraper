@@ -12,14 +12,17 @@ function errorGeneric(res) {
   res.status(500).send({ error: 'Unable to fetch all events' });
 }
 
+function dateTimeToDate(date) {
+  date.setMilliseconds(0);
+  date.setSeconds(0);
+  date.setMinutes(0);
+  date.setHours(0);
+  return date;
+}
+
 function getQueryParams(req) {
-  const timeMin = new Date();
-  timeMin.setMilliseconds(0);
-  timeMin.setSeconds(0);
-  timeMin.setMinutes(0);
-  timeMin.setHours(0);
-  const timeMax = new Date(timeMin.getTime());
-  timeMax.setFullYear(timeMax.getFullYear() + 1);
+  const timeMin = dateTimeToDate(new Date(req.query.startDate));
+  const timeMax = dateTimeToDate(new Date(req.query.endDate));
   return stringify({
     access_token: req.user.googleToken,
     domain: 'atsid.com',

@@ -3,14 +3,11 @@ const React = require('react');
 const Heatmap = React.createClass({
   propTypes: {
     events: React.PropTypes.array,
+    range: React.PropTypes.object,
   },
 
-  // TODO: Should be based on date filter, so it doesn't have to be just one year
   getNumberOfDays() {
-    const now = new Date();
-    const yearDate = new Date(now.getTime());
-    yearDate.setFullYear(yearDate.getFullYear() + 1);
-    return this.getDayDiff(now, yearDate);
+    return this.getDayDiff(this.startDate, this.endDate);
   },
 
   getEventStyles(days, daysFromToday, color) {
@@ -58,13 +55,13 @@ const Heatmap = React.createClass({
 
   getDaysFromToday(evt) {
     const date = this.getEventDate(evt.start);
-    return date ? this.getDayDiff(new Date(), date) : 0;
+    return date ? this.getDayDiff(this.startDate, date) : 0;
   },
 
   getMonthBeginningFromToday() {
     const daysToMonth = [];
     const numberOfDays = this.getNumberOfDays();
-    const now = new Date();
+    const now = this.startDate;
     const nextMonth = new Date(now);
     nextMonth.setDate(1);
     daysToMonth.push({
@@ -83,6 +80,9 @@ const Heatmap = React.createClass({
     }
     return daysToMonth;
   },
+
+  startDate: null,
+  endDate: null,
 
   renderTimeline() {
     const events = this.props.events;
@@ -113,6 +113,8 @@ const Heatmap = React.createClass({
   },
 
   render() {
+    this.startDate = this.props.range.getStartDate();
+    this.endDate = this.props.range.getEndDate(this.startDate);
     return (
       <div
         style={{height: '5px', width: '100%', position: 'relative', marginTop: '2px', color: '#999'}}>

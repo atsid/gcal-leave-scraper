@@ -7,6 +7,7 @@ const ContactView = React.createClass({
   propTypes: {
     contact: React.PropTypes.object,
     filter: React.PropTypes.string,
+    range: React.PropTypes.object,
     onLoaded: React.PropTypes.func,
   },
 
@@ -55,6 +56,7 @@ const ContactView = React.createClass({
         onLoaded={this.props.onLoaded}
         calendars={this.state.calendars.items}
         filter={this.props.filter}
+        range={this.props.range}
         userId={this.props.contact.primaryEmail} />
     )
     :

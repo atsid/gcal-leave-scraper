@@ -6,6 +6,7 @@ const Timeline = React.createClass({
     calendars: React.PropTypes.array,
     filter: React.PropTypes.string,
     userId: React.PropTypes.string,
+    range: React.PropTypes.object,
     onLoaded: React.PropTypes.func,
   },
 
@@ -27,7 +28,8 @@ const Timeline = React.createClass({
         onLoaded={this.props.onLoaded}
         calendars={this.props.calendars}
         userId={this.props.userId}
-        filter={this.props.filter} />
+        filter={this.props.filter}
+        range={this.props.range} />
     );
   },
 
