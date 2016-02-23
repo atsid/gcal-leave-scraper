@@ -10,7 +10,7 @@ after_script: npm run report-coverage
 deploy:
   provider: elasticbeanstalk
   region: us-west-2
-  app: leaveTimeline
+  app: Leave Timeline
   env: leaveTimeline-env
   bucket_name: elasticbeanstalk-us-west-2-286035534108
   access_key_id: AKIAIRDO7T2RSAUCSFUA
