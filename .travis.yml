@@ -4,10 +4,10 @@ node_js:
 sudo: false
 services:
 - mongodb
-before_script:
-- npm shrinkwrap
 after_script: npm run report-coverage
-before_deploy: 'echo "$(grep -v "public" .gitignore)" > .gitignore'
+before_deploy:
+- 'echo "$(grep -v "public" .gitignore)" > .gitignore'
+- npm shrinkwrap
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
