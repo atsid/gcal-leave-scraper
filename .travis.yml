@@ -6,10 +6,12 @@ services:
 - mongodb
 before_script:
 - npm shrinkwrap
+script: ./build.sh
 after_script: npm run report-coverage
 before_deploy: 'echo "$(grep -v "public" .gitignore)" > .gitignore'
 deploy:
   skip_cleanup: true
+  zip_file: leaveTimeline.zip
   provider: elasticbeanstalk
   region: us-west-2
   app: Leave Timeline
