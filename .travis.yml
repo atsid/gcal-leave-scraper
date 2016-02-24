@@ -7,6 +7,8 @@ services:
 before_script:
 - npm shrinkwrap
 after_script: npm run report-coverage
+before_deploy:
+  'echo "$(grep -v "public" .gitignore)" > .gitignore'
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
