@@ -6,8 +6,10 @@ services:
 - mongodb
 after_script: npm run report-coverage
 before_deploy:
+- ls .
 - 'echo "$(grep -v "public" .gitignore)" > .gitignore'
 - npm shrinkwrap
+- ls .
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
