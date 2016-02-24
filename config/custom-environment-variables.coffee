@@ -6,3 +6,5 @@ module.exports =
       clientID: 'GOOGLE_CLIENT_ID'
       clientSecret: 'GOOGLE_CLIENT_SECRET'
       domain: 'GOOGLE_CLIENT_DOMAIN'
+  server:
+    port: 'PORT'
