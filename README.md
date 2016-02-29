@@ -24,8 +24,7 @@ Server application that scans google calendars for leave events matching specifi
 * Go to https://console.developers.google.com and setup a new application
 * From the application "Overview" screen, enable the Google Calendar API, Google+ API, and admin SDK
 * From the "Credentials" screen click "Add credential" -> "OAuth 2.0"
-* Set the credential application type to "other" -> "installed"
-* Download the credential file and put it in the local project root as "client_secret.json"
+* Set the credential application type to "web", and add oauth domain and callback
 
 # Configuration
 * Set environment variables for GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_CLIENT_DOMAIN from the google credentials section above
