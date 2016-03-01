@@ -68,39 +68,39 @@ const TimelineToolbar = React.createClass({
       });
   },
 
+  getStartOfMonth() {
+    const date = new Date();
+    date.setDate(1);
+    return date;
+  },
+
   getDateFromStore() {
     const selected = 10;
     const ranges = [
       {
         id: 10,
         label: 'Year',
-        getStartDate: () => {return new Date();},
+        getStartDate: () => {return this.getStartOfMonth();},
         getEndDate: (startDate) => {
-          const date = new Date(startDate.getTime());
-          date.setFullYear(date.getFullYear() + 1);
-          return date;
+          return new Date(startDate.getFullYear() + 1, startDate.getMonth(), 0);
         },
         edit: false,
       },
       {
         id: 20,
         label: 'Quarter',
-        getStartDate: () => {return new Date();},
+        getStartDate: () => {return this.getStartOfMonth();},
         getEndDate: (startDate) => {
-          const date = new Date(startDate.getTime());
-          date.setMonth(date.getMonth() + 4);
-          return date;
+          return new Date(startDate.getFullYear(), startDate.getMonth() + 4, 0);
         },
         edit: false,
       },
       {
         id: 30,
         label: 'Month',
-        getStartDate: () => {return new Date();},
+        getStartDate: () => {return this.getStartOfMonth();},
         getEndDate: (startDate) => {
-          const date = new Date(startDate.getTime());
-          date.setMonth(date.getMonth() + 1);
-          return date;
+          return new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0);
         },
         edit: false,
       },
