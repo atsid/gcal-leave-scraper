@@ -55,6 +55,7 @@ const TimelineView = React.createClass({
       margin: '10px',
       boxSizing: 'border-box',
       border: 'none',
+      overflow: 'hidden',
     };
   },
 
@@ -134,7 +135,9 @@ const TimelineView = React.createClass({
         style={this.getStyles()}>
         {this.renderHeader()}
         {this.renderHeatMap()}
-        {this.renderContacts()}
+        <div style={{height: 'calc(100vh - 205px)', overflow: 'hidden', overflowY: 'auto'}}>
+          {this.renderContacts()}
+        </div>
       </Paper>
     ) : (<span/>);
   },
