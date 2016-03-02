@@ -112,6 +112,15 @@ const Heatmap = React.createClass({
     return months;
   },
 
+  renderTimelineToday() {
+    let styles;
+    styles = this.getEventStyles(0, new Date().getDate() - 1, 'rgb(243, 164, 164)');
+    styles.zIndex = '100';
+    return (<div
+      title="Today"
+      style={styles} />);
+  },
+
   render() {
     this.startDate = this.props.range.getStartDate();
     this.endDate = this.props.range.getEndDate(this.startDate);
@@ -122,6 +131,7 @@ const Heatmap = React.createClass({
           className={this.props.events ? '' : 'loading'}
           style={this.getStyles()}>
           {this.renderTimelineMonths()}
+          {this.renderTimelineToday()}
           {this.renderTimeline()}
         </div>
       </div>
