@@ -1,1653 +1,421 @@
 [
   {
-    "kind":"admin#directory#user",
-    "id":"114587913885193838449",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/DXTCmXyvViHSifLo7k2Gc5HyQMA\"",
-    "primaryEmail":"alika.larsen@atsid.com",
-    "name":{
-      "givenName":"Alika",
-      "familyName":"Larsen",
-      "fullName":"Alika Larsen"
+    "name": {
+      "fullName": "Alika Larsen"
     },
-    "emails":[
-      {
-        "address":"alika.larsen@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3340,319",
-        "type":"work"
-      },
-      {
-        "value":"360-689-2619",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPG-3qe3zKu5ygEiC3ZjYXJkX3Bob3RvKig0NjJjYjU1ZTc5MmEzOGNhMjE5MzVjODIyMjFmYjJlZWQ3M2Q5MmU1MAHEBWn52OUutz8CTChI3eBUdwBxmg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/7oy9p4pLw8LIj4LQAu-GOhas4oI\""
+    "primaryEmail": "alika.larsen@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPG-3qe3zKu5ygEiC3ZjYXJkX3Bob3RvKig0NjJjYjU1ZTc5MmEzOGNhMjE5MzVjODIyMjFmYjJlZWQ3M2Q5MmU1MAHEBWn52OUutz8CTChI3eBUdwBxmg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"111528482744556525508",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/eW78sYmT04BFshw8_I4fYJ9kAok\"",
-    "primaryEmail":"amy.martin@atsid.com",
-    "name":{
-      "givenName":"Amy",
-      "familyName":"Martin",
-      "fullName":"Amy Martin"
+    "name": {
+      "fullName": "Amy Martin"
     },
-    "emails":[
-      {
-        "address":"amy.martin@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-697-6952",
-        "type":"home"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMSvjKScv9n-nwEiC3ZjYXJkX3Bob3RvKig2YzcyYjI3MDkyNGI0NTdiYjllYTYzZjI3MDI1MmJhNjdmZTIxYWZkMAGOvrtXosS6VLkI2PVyvB52ddrxxw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PUh2fulRcW6lHvufBpv2J0WThVw\""
+    "primaryEmail": "amy.martin@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMSvjKScv9n-nwEiC3ZjYXJkX3Bob3RvKig2YzcyYjI3MDkyNGI0NTdiYjllYTYzZjI3MDI1MmJhNjdmZTIxYWZkMAGOvrtXosS6VLkI2PVyvB52ddrxxw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"113423644814084832464",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/HVv76Cx5-EwZ87a3FG8fq0DZt4g\"",
-    "primaryEmail":"andrew.reid@atsid.com",
-    "name":{
-      "givenName":"Andrew",
-      "familyName":"Reid",
-      "fullName":"Andrew Reid"
+    "name": {
+      "fullName": "Andrew Reid"
     },
-    "emails":[
-      {
-        "address":"andrew.reid@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-380-3450",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECND5qfTjupelugEiC3ZjYXJkX3Bob3RvKig4YmJmYjA4MWNkZmEwZTBkYzJlMjdiZWNiZmE0NDkyYTZlNzFjMmExMAH8QifEp7QjXW9AywDY3ZJWgBImhA",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/vjD9fEIJa-Wgi-WXp3Ht5BIVH9A\""
+    "primaryEmail": "andrew.reid@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECND5qfTjupelugEiC3ZjYXJkX3Bob3RvKig4YmJmYjA4MWNkZmEwZTBkYzJlMjdiZWNiZmE0NDkyYTZlNzFjMmExMAH8QifEp7QjXW9AywDY3ZJWgBImhA"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"103721020391026006356",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/H4a-fr_E3vxrq2NlyTSKG3H-x7A\"",
-    "primaryEmail":"ben.fenwick@atsid.com",
-    "name":{
-      "givenName":"Ben",
-      "familyName":"Fenwick",
-      "fullName":"Ben Fenwick"
+    "name": {
+      "fullName": "Ben Fenwick"
     },
-    "emails":[
-      {
-        "address":"ben.fenwick@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-665-4350,4350",
-        "type":"work"
-      },
-      {
-        "value":"785-341-1161",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCNSy3IjLiu7RMyILdmNhcmRfcGhvdG8qKGNlNjk3YTQzZmI0ZGVlM2Y1YmMyNjJjYjBjNGE2M2NhODRmODliN2YwASarQJk-GCgapwGLQOucKHRfm3AL",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Q7FtdT547RVx5ZQa446sjZGn-6Y\""
+    "primaryEmail": "ben.fenwick@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCNSy3IjLiu7RMyILdmNhcmRfcGhvdG8qKGNlNjk3YTQzZmI0ZGVlM2Y1YmMyNjJjYjBjNGE2M2NhODRmODliN2YwASarQJk-GCgapwGLQOucKHRfm3AL"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"110450581839951790879",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/ogrzzksdiMtd9OjHUHZXqITN2ZE\"",
-    "primaryEmail":"bill.leegard@atsid.com",
-    "name":{
-      "givenName":"Bill",
-      "familyName":"Leegard",
-      "fullName":"Bill Leegard"
+    "name": {
+      "fullName": "Bill Leegard"
     },
-    "emails":[
-      {
-        "address":"bill.leegard@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3368,307",
-        "type":"work"
-      },
-      {
-        "value":"360-359-0185",
-        "type":"home"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECJ-G5tOFmvuDkQEiC3ZjYXJkX3Bob3RvKigxOGQ1Y2E1MWMwNDgwZjVhNjIxOWM1ZDBkYTNhZDAwMDY2YjBhNjAxMAHwF1o2N0lO5oDiObISwZTs6ITBcg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/5hEXjnjhM0KSgJGiLp2FFwoDC_A\""
+    "primaryEmail": "bill.leegard@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECJ-G5tOFmvuDkQEiC3ZjYXJkX3Bob3RvKigxOGQ1Y2E1MWMwNDgwZjVhNjIxOWM1ZDBkYTNhZDAwMDY2YjBhNjAxMAHwF1o2N0lO5oDiObISwZTs6ITBcg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"104674433516657656003",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/oSgzJM4AmuWW35rPQObW0yeJ2Dw\"",
-    "primaryEmail":"brad.anderson@atsid.com",
-    "name":{
-      "givenName":"Brad",
-      "familyName":"Anderson",
-      "fullName":"Brad Anderson"
+    "name": {
+      "fullName": "Brad Anderson"
     },
-    "emails":[
-      {
-        "address":"brad.anderson@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"202-302-8394",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMOBvbTGkLvvQCILdmNhcmRfcGhvdG8qKDBmOWJkMTFmMjUwMWZkMDZmNzEzZjVjOTQxNDcyMWJlNjU0YzJlODAwAVQTtV4IVB286DDWwd3JbgHMiweC",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/yg5O2830z_dy0deNDlwgNoIffUg\""
+    "primaryEmail": "brad.anderson@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMOBvbTGkLvvQCILdmNhcmRfcGhvdG8qKDBmOWJkMTFmMjUwMWZkMDZmNzEzZjVjOTQxNDcyMWJlNjU0YzJlODAwAVQTtV4IVB286DDWwd3JbgHMiweC"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"112225305622175243715",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/x5YjQTBWc-u2L-8-_yqeKJBxH_Y\"",
-    "primaryEmail":"brad.maupin@atsid.com",
-    "name":{
-      "givenName":"Brad",
-      "familyName":"Maupin",
-      "fullName":"Brad Maupin"
+    "name": {
+      "fullName": "Brad Maupin"
     },
-    "emails":[
-      {
-        "address":"brad.maupin@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3366,310",
-        "type":"work"
-      },
-      {
-        "value":"360-471-1203",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMO73YKO1sDUqQEiC3ZjYXJkX3Bob3RvKihiZTBkOTNiZmU3OTdiMGViNDc5MWRiYmVjYzYwODM0M2Y4NThkZDBhMAHgRHDAb6wtMVHggooXa9zPQ5FSBg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/rxkB6H_7KWvCyet-zylHbE6OsSk\""
+    "primaryEmail": "brad.maupin@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMO73YKO1sDUqQEiC3ZjYXJkX3Bob3RvKihiZTBkOTNiZmU3OTdiMGViNDc5MWRiYmVjYzYwODM0M2Y4NThkZDBhMAHgRHDAb6wtMVHggooXa9zPQ5FSBg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"103901763798582153960",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Hs4HWwFMOxjxqHxUEkTQn54FT6c\"",
-    "primaryEmail":"brian.ingles@atsid.com",
-    "name":{
-      "givenName":"Brian",
-      "familyName":"Ingles",
-      "fullName":"Brian Ingles"
+    "name": {
+      "fullName": "Brian Ingles"
     },
-    "emails":[
-      {
-        "address":"brian.ingles@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-217-9431",
-        "type":"home"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOil39-JsPaSNiILdmNhcmRfcGhvdG8qKGFhMjI0ZWQwYzU5YTMyYzU2YWQyNGRlZjZhZTUxYTJjMmQ2YjY0ZTkwAcLB6DMXZHHaPH3EW4P0vVgFk41N",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/uqVIcp52J_OwovBf8pY5T7lPaPs\""
+    "primaryEmail": "brian.ingles@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOil39-JsPaSNiILdmNhcmRfcGhvdG8qKGFhMjI0ZWQwYzU5YTMyYzU2YWQyNGRlZjZhZTUxYTJjMmQ2YjY0ZTkwAcLB6DMXZHHaPH3EW4P0vVgFk41N"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"104650570302978436765",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/064O1GHwd_ofXNAjoxCyZalTudE\"",
-    "primaryEmail":"bruce.stahl@atsid.com",
-    "name":{
-      "givenName":"Bruce",
-      "familyName":"Stahl",
-      "fullName":"Bruce Stahl"
+    "name": {
+      "fullName": "Bruce Stahl"
     },
-    "emails":[
-      {
-        "address":"bruce.stahl@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"609-790-3216",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCJ3dioDQoYnFQCILdmNhcmRfcGhvdG8qKGM3ZTQzMDdlZGI2NmFkY2FkZjBjY2Q4ZTMyNjlmODc1ZGE3N2ZiZWEwAcSkT8eXk3R-4xlUmgY9e-g_Hbe7",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/B34OEuLj2c00S18sirIBYJDy02g\""
+    "primaryEmail": "bruce.stahl@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCJ3dioDQoYnFQCILdmNhcmRfcGhvdG8qKGM3ZTQzMDdlZGI2NmFkY2FkZjBjY2Q4ZTMyNjlmODc1ZGE3N2ZiZWEwAcSkT8eXk3R-4xlUmgY9e-g_Hbe7"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"112157817354241674860",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/T3rmAP3MXYMqC0yuItI8yPFEIH4\"",
-    "primaryEmail":"bryan.benson@atsid.com",
-    "name":{
-      "givenName":"Bryan",
-      "familyName":"Benson",
-      "fullName":"Bryan Benson"
+    "name": {
+      "fullName": "Bryan Benson"
     },
-    "emails":[
-      {
-        "address":"bryan.benson@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3346,320",
-        "type":"work"
-      },
-      {
-        "value":"425-457-1135",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECOycnp2Az8_cqAEiC3ZjYXJkX3Bob3RvKihhN2M5MjgwMWZkZjEwYjEwMzdmNzRjZWIwOTUxZDhjOWQzMDcwN2UwMAEFx3zUdYk6mJLviugJynoqReiw5w",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/SLypp0S6IO6ISEmKZvmNRDXJ4ag\""
+    "primaryEmail": "bryan.benson@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECOycnp2Az8_cqAEiC3ZjYXJkX3Bob3RvKihhN2M5MjgwMWZkZjEwYjEwMzdmNzRjZWIwOTUxZDhjOWQzMDcwN2UwMAEFx3zUdYk6mJLviugJynoqReiw5w"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"117328111182178717332",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/xNv5APFCbibv2JZ8VdwhJGV4PU4\"",
-    "primaryEmail":"bryan.tower@atsid.com",
-    "name":{
-      "givenName":"Bryan",
-      "familyName":"Tower",
-      "fullName":"Bryan Tower"
+    "name": {
+      "fullName": "Bryan Tower"
     },
-    "emails":[
-      {
-        "address":"bryan.tower@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3340,319",
-        "type":"work"
-      },
-      {
-        "value":"360-697-7402",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJSd8tH9qfS88AEiC3ZjYXJkX3Bob3RvKigzZWQ1ZTJkMDVkOGJmYTg2NjljYjgxMGFjMzBiYWMyZjhhYzZlYWQzMAEw_50NTWjLQkTG4pkJw2utycWGSw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/kF4dX_AqLQ3We94VEbIsvOsIjfE\""
+    "primaryEmail": "bryan.tower@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJSd8tH9qfS88AEiC3ZjYXJkX3Bob3RvKigzZWQ1ZTJkMDVkOGJmYTg2NjljYjgxMGFjMzBiYWMyZjhhYzZlYWQzMAEw_50NTWjLQkTG4pkJw2utycWGSw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107397213014286317113",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/aaDbBmXJjUxtZsd8hFj4ZMu5bVs\"",
-    "primaryEmail":"carey.kolb@atsid.com",
-    "name":{
-      "givenName":"Carey",
-      "familyName":"Kolb",
-      "fullName":"Carey Kolb"
+    "name": {
+      "fullName": "Carey Kolb"
     },
-    "emails":[
-      {
-        "address":"carey.kolb@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-665-4367",
-        "type":"work"
-      },
-      {
-        "value":"360-710-4462",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLnsuuO1wYvUZiILdmNhcmRfcGhvdG8qKGE3MzhmZTc3OWVlNjE0YmQwNWE2NmNiMzViNzlmMjBiOGQxMzBmYzYwAfgG92sKCmAugulHITREL4LVOxd0",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/kSLZsPcEAiPGfX3NwBQC4ITUxCw\""
+    "primaryEmail": "carey.kolb@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLnsuuO1wYvUZiILdmNhcmRfcGhvdG8qKGE3MzhmZTc3OWVlNjE0YmQwNWE2NmNiMzViNzlmMjBiOGQxMzBmYzYwAfgG92sKCmAugulHITREL4LVOxd0"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"114686297659557931866",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/_s66O1db5_1oIbKmYDf9ofxrIE4\"",
-    "primaryEmail":"cesar.hernandez@atsid.com",
-    "name":{
-      "givenName":"Cesar",
-      "familyName":"Hernandez",
-      "fullName":"Cesar Hernandez"
+    "name": {
+      "fullName": "Cesar Hernandez"
     },
-    "emails":[
-      {
-        "address":"cesar.hernandez@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-265-2974",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECNrW57yPvY3oywEiC3ZjYXJkX3Bob3RvKihmNGQ5MTQ3OGE5M2FlOTJiNDc2N2U1M2ZjN2NhYWRkYTBlOTIxYTdiMAFRJOvAgYKWK04XVZ5drUScPWxXGA",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/ByYD5-LRGYpPOHjH3WWylijdR4w\""
+    "primaryEmail": "cesar.hernandez@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECNrW57yPvY3oywEiC3ZjYXJkX3Bob3RvKihmNGQ5MTQ3OGE5M2FlOTJiNDc2N2U1M2ZjN2NhYWRkYTBlOTIxYTdiMAFRJOvAgYKWK04XVZ5drUScPWxXGA"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"112220593883680072080",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/7YQ78r7-JGFWGcAGGCQyUO7pmSI\"",
-    "primaryEmail":"chris.gillis@atsid.com",
-    "name":{
-      "givenName":"Chris",
-      "familyName":"Gillis",
-      "fullName":"Chris Gillis"
+    "name": {
+      "fullName": "Chris Gillis"
     },
-    "emails":[
-      {
-        "address":"chris.gillis@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-943-6296",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJDDv6i8rJHMqQEiC3ZjYXJkX3Bob3RvKig5YzFjNTQyOTFiY2ZlMzNkYTg3OTdiOTc4ODkyOWRlZmE5NmJmN2VjMAEhl10zWTPxuRpnE5Mr2oparO1svg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/nExFCrkP8xB78rM7Qbz31EUjp-g\""
+    "primaryEmail": "chris.gillis@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJDDv6i8rJHMqQEiC3ZjYXJkX3Bob3RvKig5YzFjNTQyOTFiY2ZlMzNkYTg3OTdiOTc4ODkyOWRlZmE5NmJmN2VjMAEhl10zWTPxuRpnE5Mr2oparO1svg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"109387621931889699927",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/jLFpQpjPhzRvQR8LUrYd3dgBBmI\"",
-    "primaryEmail":"chris.leach@atsid.com",
-    "name":{
-      "givenName":"Chris",
-      "familyName":"Leach",
-      "fullName":"Chris Leach"
+    "name": {
+      "fullName": "Chris Leach"
     },
-    "emails":[
-      {
-        "address":"chris.leach@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3346,320",
-        "type":"work"
-      },
-      {
-        "value":"940-923-1391",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECNfYzr-MjeKjggEiC3ZjYXJkX3Bob3RvKig0NjUyYmY0NWQ0NDllNTEwNWNlMjQ0ZTA1YTAwNWNiZDRhN2FlOTY4MAG2bSHN2fmlSJSbC9OPDe_BM9e90w",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/sTHcC6N6elw69cV8NTTWUHlmlfE\""
+    "primaryEmail": "chris.leach@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECNfYzr-MjeKjggEiC3ZjYXJkX3Bob3RvKig0NjUyYmY0NWQ0NDllNTEwNWNlMjQ0ZTA1YTAwNWNiZDRhN2FlOTY4MAG2bSHN2fmlSJSbC9OPDe_BM9e90w"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"111860838035543054871",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/jlcvoQWvmHoXlN4YaBNBaR6v1YQ\"",
-    "primaryEmail":"chris.prince@atsid.com",
-    "name":{
-      "givenName":"Chris",
-      "familyName":"Prince",
-      "fullName":"Chris Prince"
+    "name": {
+      "fullName": "Chris Prince"
     },
-    "emails":[
-      {
-        "address":"chris.prince@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"206-902-6946",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJe08behq4rNpAEiC3ZjYXJkX3Bob3RvKig1MmY3OTM2NzhjZWQ1ODQxZmUyYTkwMWQzOTM1MGQzYzgyZWQwZDI0MAGxiJv0ykInUvEdG0Ssyg7RwvH9OQ",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/XM5OE5MRI8xnPTE0LlQ82oI_ko0\""
+    "primaryEmail": "chris.prince@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECJe08behq4rNpAEiC3ZjYXJkX3Bob3RvKig1MmY3OTM2NzhjZWQ1ODQxZmUyYTkwMWQzOTM1MGQzYzgyZWQwZDI0MAGxiJv0ykInUvEdG0Ssyg7RwvH9OQ"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"101749432988688246787",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/fo4hzBt9O-T9ot-msT5Kgkvwlaw\"",
-    "primaryEmail":"chris.trevino@atsid.com",
-    "name":{
-      "givenName":"Chris",
-      "familyName":"Trevino",
-      "fullName":"Chris Trevino"
+    "name": {
+      "fullName": "Chris Trevino"
     },
-    "emails":[
-      {
-        "address":"chris.trevino@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3366,310",
-        "type":"work"
-      },
-      {
-        "value":"360-480-2443",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCIPQ88iMgc-jGCILdmNhcmRfcGhvdG8qKDVkNWFhZGIxNjk2MTA1OTc4N2Y3Y2ZlZDE4Zjg0NDZjYmMzZDIwNjYwAXiwEQt1GDp2BS2a4CMyvq-F1Obu",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/8NguHrVQdLEbMgmsJKZ7co6vgLQ\""
+    "primaryEmail": "chris.trevino@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCIPQ88iMgc-jGCILdmNhcmRfcGhvdG8qKDVkNWFhZGIxNjk2MTA1OTc4N2Y3Y2ZlZDE4Zjg0NDZjYmMzZDIwNjYwAXiwEQt1GDp2BS2a4CMyvq-F1Obu"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"109052669025492755750",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/r750nMmgh3R1rv5xN4pL7yzD_vk\"",
-    "primaryEmail":"chris.varga@atsid.com",
-    "name":{
-      "givenName":"Chris",
-      "familyName":"Varga",
-      "fullName":"Chris Varga"
+    "name": {
+      "fullName": "Chris Varga"
     },
-    "emails":[
-      {
-        "address":"chris.varga@atsid.com",
-        "primary":true
-      }
-    ],
-    "relations":[
-      {
-        "value":"chris.varga@atsid.com",
-        "type":"manager"
-      }
-    ],
-    "organizations":[
-      {
-        "title":"Software Engineer",
-        "primary":true,
-        "customType":"",
-        "department":"Systems"
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-314-8365",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCKbKte2_0OLQfSILdmNhcmRfcGhvdG8qKGM3MTMwNTA5Zjk1ZjEyMWEzNzg4YThlMWUwYjE1ZmM1YzFiZWVkODgwAVrI9g9tU6hRBUaVJChBGx0sEX_K",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/p2jlMsEUSl3LAQddmMOKd_NeYrg\""
+    "primaryEmail": "chris.varga@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCKbKte2_0OLQfSILdmNhcmRfcGhvdG8qKGM3MTMwNTA5Zjk1ZjEyMWEzNzg4YThlMWUwYjE1ZmM1YzFiZWVkODgwAVrI9g9tU6hRBUaVJChBGx0sEX_K"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"113314126196473312961",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/UJFuxs5k-pTr_xbYh-IiivNNba0\"",
-    "primaryEmail":"craig.mcdonald@atsid.com",
-    "name":{
-      "givenName":"Craig",
-      "familyName":"McDonald",
-      "fullName":"Craig McDonald"
+    "name": {
+      "fullName": "Craig McDonald"
     },
-    "emails":[
-      {
-        "address":"craig.mcdonald@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-546-4933,109",
-        "type":"work"
-      },
-      {
-        "value":"571-336-2544",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECMHtjpzA59HiuAEiC3ZjYXJkX3Bob3RvKig1MzEwNTMxODQ5NmZmNzJmYjc4NmJmM2RhNzc5Y2EzMjA2MWMzODE5MAGdAQMv19K9kQoSFPOaug4ZoYGn4g",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/jzrPBI9dFZlXAGvQbmTLdjA_GHw\""
+    "primaryEmail": "craig.mcdonald@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECMHtjpzA59HiuAEiC3ZjYXJkX3Bob3RvKig1MzEwNTMxODQ5NmZmNzJmYjc4NmJmM2RhNzc5Y2EzMjA2MWMzODE5MAGdAQMv19K9kQoSFPOaug4ZoYGn4g"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107920292086782180110",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/GTA07qaaRvO-Ep4J2Ix0t9n_8Fg\"",
-    "primaryEmail":"dan.xu@atsid.com",
-    "name":{
-      "givenName":"Dan",
-      "familyName":"Xu",
-      "fullName":"Dan Xu"
+    "name": {
+      "fullName": "Dan Xu"
     },
-    "emails":[
-      {
-        "address":"dan.xu@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-546-4925,105",
-        "type":"work"
-      },
-      {
-        "value":"571-253-1609",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCI729O-H9qH1bSILdmNhcmRfcGhvdG8qKGYxNTUyOWRkMjIzOGY1NTFkYTQyNjZkMjk4ZTNhNDQxZDNmMjA5ZWIwAQn3HOV0j_Hd8fPxyCQCrBR-eIPV",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/1TmKaU6TJmcU5V04ShafI0KDKuY\""
+    "primaryEmail": "dan.xu@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCI729O-H9qH1bSILdmNhcmRfcGhvdG8qKGYxNTUyOWRkMjIzOGY1NTFkYTQyNjZkMjk4ZTNhNDQxZDNmMjA5ZWIwAQn3HOV0j_Hd8fPxyCQCrBR-eIPV"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107978850141580302810",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Mp0KETTz3j63ZrVpCPp4y8qw_sM\"",
-    "primaryEmail":"dave.mather@atsid.com",
-    "name":{
-      "givenName":"Dave",
-      "familyName":"Mather",
-      "fullName":"Dave Mather"
+    "name": {
+      "fullName": "Dave Mather"
     },
-    "emails":[
-      {
-        "address":"david.mather@atsid.com"
-      },
-      {
-        "address":"dave.mather@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-546-4923",
-        "type":"work"
-      },
-      {
-        "value":" 571-232-4690",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCNqz4KfhvaTdbiILdmNhcmRfcGhvdG8qKGNjOGFlNWM5MzhlZGEwYzg0OGViYzIxM2Y4Zjc3ZjZjY2FlZTUwZjMwAW_CJeQtSp-A-fC3OiAQUjBwn_31",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Il9bsDSd80eKw1toZ1Eh4byRex0\""
+    "primaryEmail": "dave.mather@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCNqz4KfhvaTdbiILdmNhcmRfcGhvdG8qKGNjOGFlNWM5MzhlZGEwYzg0OGViYzIxM2Y4Zjc3ZjZjY2FlZTUwZjMwAW_CJeQtSp-A-fC3OiAQUjBwn_31"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"117008642451398849188",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/ohNadFmOAIEL0LWdnBjWXjp9VRg\"",
-    "primaryEmail":"david.herring@atsid.com",
-    "name":{
-      "givenName":"David",
-      "familyName":"Herring",
-      "fullName":"David Herring"
+    "name": {
+      "fullName": "David Herring"
     },
-    "emails":[
-      {
-        "address":"david.herring@atsid.com",
-        "primary":true
-      }
-    ],
-    "relations":[
-      {
-        "value":"michele.myers@atsid.com",
-        "type":"manager"
-      }
-    ],
-    "organizations":[
-      {
-        "title":"UI/UX Designer",
-        "primary":true,
-        "customType":"",
-        "department":"Systems"
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-608-1201",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECKTlh5qaxrWF7AEiC3ZjYXJkX3Bob3RvKig4MWJjMDlkN2ZmYTYzYmZhODdjMzIwZjQxYWRlNjJhNWViMWRhZTY0MAEUZeV2QCNTD4SMrQlzs9AfnHojhg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/TnXhBBp2QCDGAS118ZNzSrhviYA\""
+    "primaryEmail": "david.herring@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECKTlh5qaxrWF7AEiC3ZjYXJkX3Bob3RvKig4MWJjMDlkN2ZmYTYzYmZhODdjMzIwZjQxYWRlNjJhNWViMWRhZTY0MAEUZeV2QCNTD4SMrQlzs9AfnHojhg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"105585018955675959814",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/inn-zbMe49WEpSs5cMAMrpJ5TLA\"",
-    "primaryEmail":"david.tittsworth@atsid.com",
-    "name":{
-      "givenName":"David",
-      "familyName":"Tittsworth",
-      "fullName":"David Tittsworth"
+    "name": {
+      "fullName": "David Tittsworth"
     },
-    "emails":[
-      {
-        "address":"david.tittsworth@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"253-359-6636",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCIaEjqfkpP7ATSILdmNhcmRfcGhvdG8qKGE5ZTkxNDk1NDZiMDRiNGEwNWYyYzIxMGI3NDQ2ZjUwNTE4Y2ZiYjcwAY0boQkceJzYhS1s6bc2igU6aQH4",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/hdoNpMGKC0yqQ_wwOlOsocraF04\""
+    "primaryEmail": "david.tittsworth@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCIaEjqfkpP7ATSILdmNhcmRfcGhvdG8qKGE5ZTkxNDk1NDZiMDRiNGEwNWYyYzIxMGI3NDQ2ZjUwNTE4Y2ZiYjcwAY0boQkceJzYhS1s6bc2igU6aQH4"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"116511603273778412191",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/pYOUrLpOvqhKGBQ6Bmsxc4jwQCg\"",
-    "primaryEmail":"dennis.berkley@atsid.com",
-    "name":{
-      "givenName":"Dennis",
-      "familyName":"Berkley",
-      "fullName":"Dennis Berkley"
+    "name": {
+      "fullName": "Dennis Berkley"
     },
-    "emails":[
-      {
-        "address":"dennis.berkley@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-476-3372",
-        "type":"work"
-      },
-      {
-        "value":"360-471-3328",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECJ_19O2f9r-S5QEiC3ZjYXJkX3Bob3RvKig1MGZmNTVkZDcwYWNiYjU0ODM1YzAyMjEwYjI3MjlkMjQ3ZTg2NTY5MAHYWKGu-Tv1BNtuHPucYFQPYkavMw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/xoTodFOGdqLHRl0P8uYVdz4C0i4\""
+    "primaryEmail": "dennis.berkley@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECJ_19O2f9r-S5QEiC3ZjYXJkX3Bob3RvKig1MGZmNTVkZDcwYWNiYjU0ODM1YzAyMjEwYjI3MjlkMjQ3ZTg2NTY5MAHYWKGu-Tv1BNtuHPucYFQPYkavMw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"116988497764427340596",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/MvWoBok54bDZ6koz4w0A3EAYuwc\"",
-    "primaryEmail":"derek.gesin@atsid.com",
-    "name":{
-      "givenName":"Derek",
-      "familyName":"Gesin",
-      "fullName":"Derek Gesin"
+    "name": {
+      "fullName": "Derek Gesin"
     },
-    "emails":[
-      {
-        "address":"derek.gesin@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"720-412-8565",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLS21qHTltHh6wEiC3ZjYXJkX3Bob3RvKihkNjUxYzk2YzM5MGEzMjc3NzNkZGM3YTBjYTFkNTdmMTg2ZjkxMWQ3MAFRBWVS8lJTdHZQV0LE-ftX1OTXLw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/WUf4cv8EmbKX-tBsskXLn6xVEKM\""
+    "primaryEmail": "derek.gesin@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLS21qHTltHh6wEiC3ZjYXJkX3Bob3RvKihkNjUxYzk2YzM5MGEzMjc3NzNkZGM3YTBjYTFkNTdmMTg2ZjkxMWQ3MAFRBWVS8lJTdHZQV0LE-ftX1OTXLw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"116327638870377543566",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PgAIl7NwIhNM08Zsq0OzfJ8oqwo\"",
-    "primaryEmail":"eric.hellewell@atsid.com",
-    "name":{
-      "givenName":"Eric",
-      "familyName":"Hellewell",
-      "fullName":"Eric Hellewell"
+    "name": {
+      "fullName": "Eric Hellewell"
     },
-    "emails":[
-      {
-        "address":"eric.hellewell@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3347,304",
-        "type":"work"
-      },
-      {
-        "value":"360-550-1260",
-        "type":"home"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECI7v2s24odvL4gEiC3ZjYXJkX3Bob3RvKigwNDExNTNhOTZlYWRmYmIwNGFhMjQ0ZmU5YWQ0MWQ3YmFiNDYyZDlkMAF6_FPKexgkxdrR3IPr0ZOPDemTTQ",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PlhjFMY7m1tEBrTjYZG41c2w8gY\""
+    "primaryEmail": "eric.hellewell@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECI7v2s24odvL4gEiC3ZjYXJkX3Bob3RvKigwNDExNTNhOTZlYWRmYmIwNGFhMjQ0ZmU5YWQ0MWQ3YmFiNDYyZDlkMAF6_FPKexgkxdrR3IPr0ZOPDemTTQ"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"102930772564074089027",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Hfqi9wPwocppVk5bXQhO4kdeL2Y\"",
-    "primaryEmail":"eric.portney@atsid.com",
-    "name":{
-      "givenName":"Eric",
-      "familyName":"Portney",
-      "fullName":"Eric Portney"
+    "name": {
+      "fullName": "Eric Portney"
     },
-    "emails":[
-      {
-        "address":"eric.portney@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-698-7100,228",
-        "type":"work"
-      },
-      {
-        "value":"360-621-3179",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMOU4_jnw4zWKCILdmNhcmRfcGhvdG8qKDJhYzA1NTcyNDU0YTMyMDVhYzNhNTVmMzkzZjQyM2Q3ODAzNjkwYWMwAVh8kPU4q-J36-H4YnVk4b4Hwyjc",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/FK2lP7Xpcvs1vqMQpSkEjx2mH4A\""
+    "primaryEmail": "eric.portney@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMOU4_jnw4zWKCILdmNhcmRfcGhvdG8qKDJhYzA1NTcyNDU0YTMyMDVhYzNhNTVmMzkzZjQyM2Q3ODAzNjkwYWMwAVh8kPU4q-J36-H4YnVk4b4Hwyjc"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"105453884517397782633",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/QXkejU76W6XNNi1cm2wsMkAMPhc\"",
-    "primaryEmail":"eric.stanton@atsid.com",
-    "name":{
-      "givenName":"Eric",
-      "familyName":"Stanton",
-      "fullName":"Eric Stanton"
+    "name": {
+      "fullName": "Eric Stanton"
     },
-    "emails":[
-      {
-        "address":"eric.stanton@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"202-344-0507",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOnA_cup4oXYSyILdmNhcmRfcGhvdG8qKDE4YmNkZTU2NWQ3N2M5ZmMzNGZhY2QxYmJkODU2YjllNTIxMDk0NDUwAZ-EfxJmyWKscMdJL0AOjujuSmvk",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/-sGxa66tfKEYqsELekvWxfeu7Yg\""
+    "primaryEmail": "eric.stanton@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOnA_cup4oXYSyILdmNhcmRfcGhvdG8qKDE4YmNkZTU2NWQ3N2M5ZmMzNGZhY2QxYmJkODU2YjllNTIxMDk0NDUwAZ-EfxJmyWKscMdJL0AOjujuSmvk"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"108346986879228398409",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/oGOMqa4psnraSIxNqxdH8_2zog8\"",
-    "primaryEmail":"gang.zi@atsid.com",
-    "name":{
-      "givenName":"Gang",
-      "familyName":"Zi",
-      "fullName":"Gang Zi"
+    "name": {
+      "fullName": "Gang Zi"
     },
-    "emails":[
-      {
-        "address":"gang.zi@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-531-9368",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCMmWhcr6ip3rcyILdmNhcmRfcGhvdG8qKGIzN2QzYTY3ZWIzNTBjZjI1ZTcxZTliZmNiMTBiMTQ1MDE2YjlmYWQwATbEzlbWC4ItjcJ7Vo14XXI_NGB5",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/gH6of5zVQ0E2z-zYCnz1NrOzKQc\""
+    "primaryEmail": "gang.zi@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCMmWhcr6ip3rcyILdmNhcmRfcGhvdG8qKGIzN2QzYTY3ZWIzNTBjZjI1ZTcxZTliZmNiMTBiMTQ1MDE2YjlmYWQwATbEzlbWC4ItjcJ7Vo14XXI_NGB5"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107839237843744196122",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PAq98u5OncDnt4mfLXWMBRhQ0ko\"",
-    "primaryEmail":"greg.grady@atsid.com",
-    "name":{
-      "givenName":"Greg",
-      "familyName":"Grady",
-      "fullName":"Greg Grady"
+    "name": {
+      "fullName": "Greg Grady"
     },
-    "emails":[
-      {
-        "address":"greg.grady@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-932-9365",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCJqMsNGOqaTlbCILdmNhcmRfcGhvdG8qKDMxZDIyZGU1ZDIxYzRlN2I2NGZjNjBjOWMxMjYyYTZhNjFlZGE5ZTkwAZRx5EQ9c8Ik_mylICGZVf2jvDuI",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/8GzuZ6pNlBDIKK3igCPM63CkDfg\""
+    "primaryEmail": "greg.grady@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCJqMsNGOqaTlbCILdmNhcmRfcGhvdG8qKDMxZDIyZGU1ZDIxYzRlN2I2NGZjNjBjOWMxMjYyYTZhNjFlZGE5ZTkwAZRx5EQ9c8Ik_mylICGZVf2jvDuI"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"106541537175975761458",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/4yfeCXWEOyzdRUVH45wXWjHE9Jw\"",
-    "primaryEmail":"greg.kedge@atsid.com",
-    "name":{
-      "givenName":"Greg",
-      "familyName":"Kedge",
-      "fullName":"Greg Kedge"
+    "name": {
+      "fullName": "Greg Kedge"
     },
-    "emails":[
-      {
-        "address":"greg.kedge@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"202-603-0648",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLKssNjyrI3kWiILdmNhcmRfcGhvdG8qKGY0OWEwM2FjN2M3MjQ2YjgwYTA5MmI2N2FmYzU4NjY4MTUwZjY1NjgwAdv_IKaofURC4813ePHRSBhsuaof",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/n_mMLd_T4taydR0NtYksK5QhO7g\""
+    "primaryEmail": "greg.kedge@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLKssNjyrI3kWiILdmNhcmRfcGhvdG8qKGY0OWEwM2FjN2M3MjQ2YjgwYTA5MmI2N2FmYzU4NjY4MTUwZjY1NjgwAdv_IKaofURC4813ePHRSBhsuaof"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"100541615741491538525",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/WiEYFVaQy9GU8yKic8teUQOgGGQ\"",
-    "primaryEmail":"isaac.flemming@atsid.com",
-    "name":{
-      "givenName":"Isaac",
-      "familyName":"Flemming",
-      "fullName":"Isaac Flemming"
+    "name": {
+      "fullName": "Isaac Flemming"
     },
-    "emails":[
-      {
-        "address":"isaac.flemming@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3368,309",
-        "type":"work"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCN3U86LblI3CByILdmNhcmRfcGhvdG8qKDhiYzE2YzZlYmNhNzg1ZDRlMzNhZTJhMTk3OWQ2NTA4Nzk2YjhmZDUwAdv2i0an387nXm44gBqxfw4BgPJV",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/-AeJQT9AHQXgbJLqOkXWveEKGgI\""
+    "primaryEmail": "isaac.flemming@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCN3U86LblI3CByILdmNhcmRfcGhvdG8qKDhiYzE2YzZlYmNhNzg1ZDRlMzNhZTJhMTk3OWQ2NTA4Nzk2YjhmZDUwAdv2i0an387nXm44gBqxfw4BgPJV"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"105270612213283610852",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/P5nmGcMBjUibb3dg9NurmwdAXcU\"",
-    "primaryEmail":"james.davis@atsid.com",
-    "name":{
-      "givenName":"James",
-      "familyName":"Davis",
-      "fullName":"James Davis"
+    "name": {
+      "fullName": "James Davis"
     },
-    "emails":[
-      {
-        "address":"james.davis@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3347,304",
-        "type":"work"
-      },
-      {
-        "value":"360-362-9047",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOTB64yhvL6SSSILdmNhcmRfcGhvdG8qKDIxNTExZTQyYmVhZDhkNTVhNDIzYzJkYTZiM2RjOWYxMTFlNWE2ZWMwARYN2n2Q-kS9kLPECzcFGBSOVGsx",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/CbVZKpxMXrKPuTQkxal6o_lka9E\""
+    "primaryEmail": "james.davis@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOTB64yhvL6SSSILdmNhcmRfcGhvdG8qKDIxNTExZTQyYmVhZDhkNTVhNDIzYzJkYTZiM2RjOWYxMTFlNWE2ZWMwARYN2n2Q-kS9kLPECzcFGBSOVGsx"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"101602809719392118967",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/yEUSQ4FsH09CxJHxgGaG_gGbPVM\"",
-    "primaryEmail":"james.mello@atsid.com",
-    "name":{
-      "givenName":"James",
-      "familyName":"Mello",
-      "fullName":"James Mello"
+    "name": {
+      "fullName": "James Mello"
     },
-    "emails":[
-      {
-        "address":"james.mello@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3342,323",
-        "type":"work"
-      },
-      {
-        "value":"253-222-2342",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLfRpPep3pSfFiILdmNhcmRfcGhvdG8qKDU3ODk0ODkwMmZmY2FmOGYyMzBkODkxNDRjYmZlOWE1NzZhZDY1NWQwAS-n8tjiDnfBAFx5co4eyJrMwLKu",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/naMAkUSgd6-dh8eHdaaCV9sWkfg\""
+    "primaryEmail": "james.mello@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLfRpPep3pSfFiILdmNhcmRfcGhvdG8qKDU3ODk0ODkwMmZmY2FmOGYyMzBkODkxNDRjYmZlOWE1NzZhZDY1NWQwAS-n8tjiDnfBAFx5co4eyJrMwLKu"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"106908611634114594031",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/9Itlzzp1boj7lBORuP3x0XHtr9o\"",
-    "primaryEmail":"james.scharett@atsid.com",
-    "name":{
-      "givenName":"James",
-      "familyName":"Scharett",
-      "fullName":"James Scharett"
+    "name": {
+      "fullName": "James Scharett"
     },
-    "emails":[
-      {
-        "address":"james.scharett@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"585-750-1579",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCO-JoLTYtZTwXyILdmNhcmRfcGhvdG8qKGJkOWYyYTVhOGM5NDU5MDA3ZjFhNmFmNDg4MzFkMjIwYmRlZTAyY2YwARLIxxN4rnzHce_rqGNRbHwtjYOk",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/CxnHSlfy2Ni1Cpec4vxAno3H7Vg\""
+    "primaryEmail": "james.scharett@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCO-JoLTYtZTwXyILdmNhcmRfcGhvdG8qKGJkOWYyYTVhOGM5NDU5MDA3ZjFhNmFmNDg4MzFkMjIwYmRlZTAyY2YwARLIxxN4rnzHce_rqGNRbHwtjYOk"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"106752586130492352821",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Ql2OhSS_19E9PyNSDg5-prUmtAU\"",
-    "primaryEmail":"jamie.radonich@atsid.com",
-    "name":{
-      "givenName":"Jamie",
-      "familyName":"Radonich",
-      "fullName":"Jamie Radonich"
+    "name": {
+      "fullName": "Jamie Radonich"
     },
-    "emails":[
-      {
-        "address":"jamie.radonich@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3349,306",
-        "type":"work"
-      },
-      {
-        "value":"253-229-0324",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLXS57nxqYDbXSILdmNhcmRfcGhvdG8qKDlhYzFhZGI1MjM3ODMxOWNiMDlhZTE5OTY2ODkyZWU1MWUwYjQ1NGIwAWa_1CaimTZcP884LhPgxbg6MwBe",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/iQPdSw0k49VL-AfFagScjgY8DrI\""
+    "primaryEmail": "jamie.radonich@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCLXS57nxqYDbXSILdmNhcmRfcGhvdG8qKDlhYzFhZGI1MjM3ODMxOWNiMDlhZTE5OTY2ODkyZWU1MWUwYjQ1NGIwAWa_1CaimTZcP884LhPgxbg6MwBe"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107632263679101951556",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/WBIkIgHo24F6Dfbme5VPQqKQMX8\"",
-    "primaryEmail":"janet.manring@atsid.com",
-    "name":{
-      "givenName":"Janet",
-      "familyName":"Manring",
-      "fullName":"Janet Manring"
+    "name": {
+      "fullName": "Janet Manring"
     },
-    "emails":[
-      {
-        "address":"janet.manring@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-476-7598",
-        "type":"work"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMS884eP7M_1aSILdmNhcmRfcGhvdG8qKDU2M2QyN2IxYjZmNGNmNjMwZWVhMGY3YmI3MDVkMGUwYjc2NzU1NmQwAQGT2H0M-2MSsEhe_DOD9GGcHqrk",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/xSRp8rShodXIBf9vXgZYTZZBwJM\""
+    "primaryEmail": "janet.manring@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCMS884eP7M_1aSILdmNhcmRfcGhvdG8qKDU2M2QyN2IxYjZmNGNmNjMwZWVhMGY3YmI3MDVkMGUwYjc2NzU1NmQwAQGT2H0M-2MSsEhe_DOD9GGcHqrk"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"109384246780252902519",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/4JKzi_Ba8JP-txWeMqY8G8xo29U\"",
-    "primaryEmail":"jason.hinebaugh@atsid.com",
-    "name":{
-      "givenName":"Jason",
-      "familyName":"Hinebaugh",
-      "fullName":"Jason Hinebaugh"
+    "name": {
+      "fullName": "Jason Hinebaugh"
     },
-    "emails":[
-      {
-        "address":"jason.hinebaugh@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-317-2831",
-        "type":"work"
-      },
-      {
-        "value":"703-944-7614",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPeoz-yg1-KdggEiC3ZjYXJkX3Bob3RvKig3ZTQzYWM4NDkzMWE0MTFlMWI5ZjE5YmZkNDA5YTc4MzQ2ZWZlNDI4MAETwS9tYf8VahX-kaZQdzGzv61tiQ",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/11nfWIKo0a_iBxHrJgzpUWoiRr0\""
+    "primaryEmail": "jason.hinebaugh@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPeoz-yg1-KdggEiC3ZjYXJkX3Bob3RvKig3ZTQzYWM4NDkzMWE0MTFlMWI5ZjE5YmZkNDA5YTc4MzQ2ZWZlNDI4MAETwS9tYf8VahX-kaZQdzGzv61tiQ"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"102256273791529807128",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/5DqQ7cxX-wtAo4pm_U6X5HQZ7vU\"",
-    "primaryEmail":"jet.cheng@atsid.com",
-    "name":{
-      "givenName":"Jet",
-      "familyName":"Cheng",
-      "fullName":"Jet Cheng"
+    "name": {
+      "fullName": "Jet Cheng"
     },
-    "emails":[
-      {
-        "address":"jet.cheng@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-272-4376",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCJjaoaHyofmnHyILdmNhcmRfcGhvdG8qKDRhMjVlOWUxNGVlY2MyMGUyY2FlNDQyZDg3ODdiYWQ0YWY5NjBiNjYwAXIAYt7ylQtv4qbSVZhdIxqztYYN",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/I7eMd_oJfkHWZF5a5irR7tButMA\""
+    "primaryEmail": "jet.cheng@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCJjaoaHyofmnHyILdmNhcmRfcGhvdG8qKDRhMjVlOWUxNGVlY2MyMGUyY2FlNDQyZDg3ODdiYWQ0YWY5NjBiNjYwAXIAYt7ylQtv4qbSVZhdIxqztYYN"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"111998543749066753513",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/J8TqmMo0HZBmMAXW3Va68RgiLUA\"",
-    "primaryEmail":"joe.jaworski@atsid.com",
-    "name":{
-      "givenName":"Joe",
-      "familyName":"Jaworski",
-      "fullName":"Joe Jaworski"
+    "name": {
+      "fullName": "Joe Jaworski"
     },
-    "emails":[
-      {
-        "address":"joe.jaworski@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3368,309",
-        "type":"work"
-      },
-      {
-        "value":"425-387-7084",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECOmL7oiA_9jBpgEiC3ZjYXJkX3Bob3RvKig0MzE1YWU0MDI3NWQ5MTYxOGVhNTExODJmOTRiM2JlYzMyNzkwNDNhMAHko11DRi5fRGSnhEFiy_AkwKMd6w",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/fUL0ksyjfcfGJv7F1_wfJBmKgZE\""
+    "primaryEmail": "joe.jaworski@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECOmL7oiA_9jBpgEiC3ZjYXJkX3Bob3RvKig0MzE1YWU0MDI3NWQ5MTYxOGVhNTExODJmOTRiM2JlYzMyNzkwNDNhMAHko11DRi5fRGSnhEFiy_AkwKMd6w"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"107022498592845205647",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/wwmGhkHe8WhKMtFEuFzpZPGAwL0\"",
-    "primaryEmail":"jon.mclean@atsid.com",
-    "name":{
-      "givenName":"Jon",
-      "familyName":"McLean",
-      "fullName":"Jon McLean"
+    "name": {
+      "fullName": "Jon McLean"
     },
-    "emails":[
-      {
-        "address":"jon.mclean@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3343,323",
-        "type":"work"
-      },
-      {
-        "value":"360-447-8566",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCI-h4PG2qLu6YSILdmNhcmRfcGhvdG8qKDhhZTM4NGMyYmJlZGRjZjk5NWM1MzkwOTA2ZDJmMGJmZGMwNThhOWIwARfdl1Cl8hDEKFgYszjbT965ris3",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/I-euic5i48Pw0C29gov-ghNGgZw\""
+    "primaryEmail": "jon.mclean@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCI-h4PG2qLu6YSILdmNhcmRfcGhvdG8qKDhhZTM4NGMyYmJlZGRjZjk5NWM1MzkwOTA2ZDJmMGJmZGMwNThhOWIwARfdl1Cl8hDEKFgYszjbT965ris3"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"116392475807824742222",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/K2D-Lsixz_uXa5nfSfzZAOdSM4s\"",
-    "primaryEmail":"jose.gomez@atsid.com",
-    "name":{
-      "givenName":"Jose",
-      "familyName":"Gomez",
-      "fullName":"Jose Gomez"
+    "name": {
+      "fullName": "Jose Gomez"
     },
-    "emails":[
-      {
-        "address":"jose.gomez@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"240-338-5853",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECM6O0NTWvPG-4wEiC3ZjYXJkX3Bob3RvKig0NmQ5OWZkMjYwN2I4NzhiYjg5MmUzNzhjNjUzZjg2ZTA0MmRhYmU5MAHdy9UKh6Zw5uOwN5Jcj1kpBUdl4A",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/bvY6dc__nk4-qo5An3l85fBaI3A\""
+    "primaryEmail": "jose.gomez@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECM6O0NTWvPG-4wEiC3ZjYXJkX3Bob3RvKig0NmQ5OWZkMjYwN2I4NzhiYjg5MmUzNzhjNjUzZjg2ZTA0MmRhYmU5MAHdy9UKh6Zw5uOwN5Jcj1kpBUdl4A"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"117485098164482487492",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/jPy5FwvBKt5H_ot4XRYFvnzDY0w\"",
-    "primaryEmail":"ken.iwasa@atsid.com",
-    "name":{
-      "givenName":"Ken",
-      "familyName":"Iwasa",
-      "fullName":"Ken Iwasa"
+    "name": {
+      "fullName": "Ken Iwasa"
     },
-    "emails":[
-      {
-        "address":"ken.iwasa@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-272-7694 ",
-        "type":"work"
-      },
-      {
-        "value":"301-787-8206",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECMTpwOa_hOPT8gEiC3ZjYXJkX3Bob3RvKigxZTFmODEyOWMzODAzNzU3ZTBmNDhjOWZhNDc3MWQ0NzVmYzc2ZjgwMAHXK2aat9etj9AZf6Xur16juJuv4g",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/cTAaLlQ24yyT_CgVB2oGrvO7J_I\""
+    "primaryEmail": "ken.iwasa@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECMTpwOa_hOPT8gEiC3ZjYXJkX3Bob3RvKigxZTFmODEyOWMzODAzNzU3ZTBmNDhjOWZhNDc3MWQ0NzVmYzc2ZjgwMAHXK2aat9etj9AZf6Xur16juJuv4g"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"111228492176917498161",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/RKiDw2FkyDKGmuMqkR3QuL1Ivso\"",
-    "primaryEmail":"kevin.chu@atsid.com",
-    "name":{
-      "givenName":"Kevin",
-      "familyName":"Chu",
-      "fullName":"Kevin Chu"
+    "name": {
+      "fullName": "Kevin Chu"
     },
-    "emails":[
-      {
-        "address":"kevin.chu@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-621-6495",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLGSroPNxOfpmwEiC3ZjYXJkX3Bob3RvKig4YWI0MTFhZjk2N2U3NDFiMjQ2MmQ1MjVlOTEwNWZkOWRiZWExZDUwMAHW_tDpqrF5cSfijwfGYkqNIKyO-w",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/mow4YaynWwclp05u3_T_Mka_Mr4\""
+    "primaryEmail": "kevin.chu@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLGSroPNxOfpmwEiC3ZjYXJkX3Bob3RvKig4YWI0MTFhZjk2N2U3NDFiMjQ2MmQ1MjVlOTEwNWZkOWRiZWExZDUwMAHW_tDpqrF5cSfijwfGYkqNIKyO-w"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"102327672960124653687",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/nXASOg-zdyFjQWJu7jodWDCqZ70\"",
-    "primaryEmail":"kevin.convy@atsid.com",
-    "name":{
-      "givenName":"Kevin",
-      "familyName":"Convy",
-      "fullName":"Kevin Convy"
+    "name": {
+      "fullName": "Kevin Convy"
     },
-    "emails":[
-      {
-        "address":"kevin.convy@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3365,305",
-        "type":"work"
-      },
-      {
-        "value":"206-913-1604",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCPegjKyYx-OmICILdmNhcmRfcGhvdG8qKDMyZGM5YjJjZGRiNGE3YjBmZDM4NjM2NzgwZTMxNWIyNTRmMDI2NjAwAdwgJw3EPxQILxb9sbniksOJkYxP",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/eLIBMKSlgLIAvGBoGTFphTTJwcM\""
+    "primaryEmail": "kevin.convy@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCPegjKyYx-OmICILdmNhcmRfcGhvdG8qKDMyZGM5YjJjZGRiNGE3YjBmZDM4NjM2NzgwZTMxNWIyNTRmMDI2NjAwAdwgJw3EPxQILxb9sbniksOJkYxP"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"115259523765078403969",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/C2J0cn5numzm-aFmaW6xWv_EHPs\"",
-    "primaryEmail":"kyle.housley@atsid.com",
-    "name":{
-      "givenName":"Kyle",
-      "familyName":"Housley",
-      "fullName":"Kyle Housley"
+    "name": {
+      "fullName": "Kyle Housley"
     },
-    "emails":[
-      {
-        "address":"kyle.housley@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3348,322",
-        "type":"work"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECIHXhJnBgK7i0wEiC3ZjYXJkX3Bob3RvKihlYTI2YjUzZTZmMDMwOWQyOWNlNmMwYzNlZjI0MjIxNjMzZjQ1M2FjMAHJFnsxQfWdU65JvxfdPDYXeMi7yw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/w8fF3xDkEvVevXjHxvf4C8jDJYU\""
+    "primaryEmail": "kyle.housley@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECIHXhJnBgK7i0wEiC3ZjYXJkX3Bob3RvKihlYTI2YjUzZTZmMDMwOWQyOWNlNmMwYzNlZjI0MjIxNjMzZjQ1M2FjMAHJFnsxQfWdU65JvxfdPDYXeMi7yw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"108143629428139580075",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/_JBgIGDJ4XYLoZeSJOr-WsPqy2E\"",
-    "primaryEmail":"lacy.dove@atsid.com",
-    "name":{
-      "givenName":"Lacy",
-      "familyName":"Dove",
-      "fullName":"Lacy Dove"
+    "name": {
+      "fullName": "Lacy Dove"
     },
-    "emails":[
-      {
-        "address":"lacy.dove@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3341,302",
-        "type":"work"
-      },
-      {
-        "value":"571-451-8392",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCKu1tfWW-v6BcSILdmNhcmRfcGhvdG8qKDBhNWMxN2M1NTMzNGM0OThmMzk0Zjk1MTQxYzUzNmI5OGFiOTQ5MGEwAUmD6088OzlmmTrc3KZ-nBBFloCg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/7BnxFWW3EoDiH2qiNS7KslABPtE\""
+    "primaryEmail": "lacy.dove@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCKu1tfWW-v6BcSILdmNhcmRfcGhvdG8qKDBhNWMxN2M1NTMzNGM0OThmMzk0Zjk1MTQxYzUzNmI5OGFiOTQ5MGEwAUmD6088OzlmmTrc3KZ-nBBFloCg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"103185654670655733436",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/zj4u9pXhDtKxFA33y17PqrlP-AM\"",
-    "primaryEmail":"madelyn.mcgrath@atsid.com",
-    "name":{
-      "givenName":"Madelyn",
-      "familyName":"McGrath",
-      "fullName":"Madelyn McGrath"
+    "name": {
+      "fullName": "Madelyn McGrath"
     },
-    "emails":[
-      {
-        "address":"madelyn.mcgrath@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-271-9078",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCLz9_uu2ge6aLCILdmNhcmRfcGhvdG8qKDVhNGVlNWY5Nzk2ZmMwYmY2NmJkNWI2ZmRiZTllZDcwNjU2MzkxOGQwAcfq2PKP0sceLcfGxClw1oH_XiLy",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/r2UW20sT8ha2KYhur5osGKhoofs\""
+    "primaryEmail": "madelyn.mcgrath@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCLz9_uu2ge6aLCILdmNhcmRfcGhvdG8qKDVhNGVlNWY5Nzk2ZmMwYmY2NmJkNWI2ZmRiZTllZDcwNjU2MzkxOGQwAcfq2PKP0sceLcfGxClw1oH_XiLy"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"115826231277458051219",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/ppJ4dDqDEzeOAJPOH2TyBIEfDBw\"",
-    "primaryEmail":"michele.myers@atsid.com",
-    "name":{
-      "givenName":"Michele",
-      "familyName":"Myers",
-      "fullName":"Michele Myers"
+    "name": {
+      "fullName": "Michele Myers"
     },
-    "emails":[
-      {
-        "address":"dave.askey@atsid.com"
-      },
-      {
-        "address":"michele.myers@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-546-4922,104",
-        "type":"work"
-      },
-      {
-        "value":"813-220-0340",
-        "type":"mobile"
-      }
-    ]
+    "primaryEmail": "michele.myers@atsid.com"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"108820416418473551099",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/k059cma_27hkzFl-mkjwR-1OGQI\"",
-    "primaryEmail":"mike.lee@atsid.com",
-    "name":{
-      "givenName":"Mike",
-      "familyName":"Lee",
-      "fullName":"Mike Lee"
+    "name": {
+      "fullName": "Mike Lee"
     },
-    "emails":[
-      {
-        "address":"mike.lee@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"703-546-4932,108",
-        "type":"work"
-      },
-      {
-        "value":"908-415-5569",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCPvJjpGAwJq0eiILdmNhcmRfcGhvdG8qKDg5NWMxYzdmNDVmMDI2MGFiYjQ4ZjZhZDYxZGEwNDZkYjI4Y2U3OTUwAVpehowXZ6sOJwQqF3wpt9E3iHws",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PJdfFjglI8LOnH_YsnUA67oe_s0\""
+    "primaryEmail": "mike.lee@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCPvJjpGAwJq0eiILdmNhcmRfcGhvdG8qKDg5NWMxYzdmNDVmMDI2MGFiYjQ4ZjZhZDYxZGEwNDZkYjI4Y2U3OTUwAVpehowXZ6sOJwQqF3wpt9E3iHws"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"110918173372921790505",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/UmS3aIc_pkj3mmziWBppreiY0MQ\"",
-    "primaryEmail":"mike.yencha@atsid.com",
-    "name":{
-      "givenName":"Mike",
-      "familyName":"Yencha",
-      "fullName":"Mike Yencha"
+    "name": {
+      "fullName": "Mike Yencha"
     },
-    "emails":[
-      {
-        "address":"mike.yencha@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"540-308-3804",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECKmAh4nfmsnClwEiC3ZjYXJkX3Bob3RvKig4NTdiMGQwNWJjZmU2MDFjZWMwMzIxNjMwNTUzMGNjNDc1YWUxNGQxMAFxVEUZ2fdtQP1LsPGdm2TQrWxJlA",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/-VOAO2tQufuBz_OIJCvCMfDyXBo\""
+    "primaryEmail": "mike.yencha@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECKmAh4nfmsnClwEiC3ZjYXJkX3Bob3RvKig4NTdiMGQwNWJjZmU2MDFjZWMwMzIxNjMwNTUzMGNjNDc1YWUxNGQxMAFxVEUZ2fdtQP1LsPGdm2TQrWxJlA"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"110704399111966350276",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/8W9kKC0sDkIM3fLhHOYihekje_M\"",
-    "primaryEmail":"sabina.siddiqi@atsid.com",
-    "name":{
-      "givenName":"Sabina",
-      "familyName":"Siddiqi",
-      "fullName":"Sabina Siddiqi"
+    "name": {
+      "fullName": "Sabina Siddiqi"
     },
-    "emails":[
-      {
-        "address":"sabina.siddiqi@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"202-997-8071",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMS3i9byyOrGlAEiC3ZjYXJkX3Bob3RvKigzOWVkNjM1NWRiZmVmNGU1ZmNhOGRmYzAyMThlYzNlNDRkMzMzODVhMAFb4pzBuocF4Sa49VsMOFrty8LKOQ",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Z3TGJtC-iuMrwrUrJzW3FYrqUM4\""
+    "primaryEmail": "sabina.siddiqi@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECMS3i9byyOrGlAEiC3ZjYXJkX3Bob3RvKigzOWVkNjM1NWRiZmVmNGU1ZmNhOGRmYzAyMThlYzNlNDRkMzMzODVhMAFb4pzBuocF4Sa49VsMOFrty8LKOQ"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"106965501640942489569",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Q897m9z8EGHvhJlk53TwlGJWpMU\"",
-    "primaryEmail":"sandy.kimball@atsid.com",
-    "name":{
-      "givenName":"Sandy",
-      "familyName":"Kimball",
-      "fullName":"Sandy Kimball"
+    "name": {
+      "fullName": "Sandy Kimball"
     },
-    "emails":[
-      {
-        "address":"sandy.kimball@atsid.com",
-        "primary":true
-      },
-      {
-        "address":"sandra.kimball@atsid.com"
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-813-4952",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOGfnPbm2pvVYCILdmNhcmRfcGhvdG8qKGIyNDQyYjA0NGQ4ZWQyYzBjNDVmZTI5YTVkOWU1YmQ5NTk5MmY1NDIwAcZhl2kqpYUgPZib8Os6damUl6eQ",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Pq9rdIkO0RX1O49mhnE41OivcaI\""
+    "primaryEmail": "sandy.kimball@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCOGfnPbm2pvVYCILdmNhcmRfcGhvdG8qKGIyNDQyYjA0NGQ4ZWQyYzBjNDVmZTI5YTVkOWU1YmQ5NTk5MmY1NDIwAcZhl2kqpYUgPZib8Os6damUl6eQ"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"108579695732897003205",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/yMnPeAnSpcOjbrdVGBMB5nIpivY\"",
-    "primaryEmail":"scott.smith@atsid.com",
-    "name":{
-      "givenName":"Scott",
-      "familyName":"Smith",
-      "fullName":"Scott Smith"
+    "name": {
+      "fullName": "Scott Smith"
     },
-    "emails":[
-      {
-        "address":"scott.smith@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-385-6759",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCMXtisL9-cyIdyILdmNhcmRfcGhvdG8qKDFiNGNiYjlmZGIwMTIwNmEzYjNkYWYzY2M3MzkyZGNkZWFmNDJiMWYwAYFPXKD7U2UdqsZvX60_8885kLCL",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/bnpqUC6y3CAkGAI30dm4vK-ApNg\""
+    "primaryEmail": "scott.smith@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCMXtisL9-cyIdyILdmNhcmRfcGhvdG8qKDFiNGNiYjlmZGIwMTIwNmEzYjNkYWYzY2M3MzkyZGNkZWFmNDJiMWYwAYFPXKD7U2UdqsZvX60_8885kLCL"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"114255140097067025778",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/zOVMLXrGLFsjZpMmZsw55vbW-ko\"",
-    "primaryEmail":"soonki.ji@atsid.com",
-    "name":{
-      "givenName":"Soonki",
-      "familyName":"Ji",
-      "fullName":"Soonki Ji"
+    "name": {
+      "fullName": "Soonki Ji"
     },
-    "emails":[
-      {
-        "address":"soonki.ji@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-272-7875",
-        "type":"work"
-      },
-      {
-        "value":"703-829-0114",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECPKK7ujCzJvqxQEiC3ZjYXJkX3Bob3RvKihjYzAzODJiYWEyOWMyNzAzODA4NTg3MzcyODkzNDM3ZTcwYTQ0Mjg1MAG5ZpkU12K54XQryheJa5tH5Bi-pw",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/VAf3OlbKpM4FzQvwATs-JFuiZWY\""
+    "primaryEmail": "soonki.ji@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABECPKK7ujCzJvqxQEiC3ZjYXJkX3Bob3RvKihjYzAzODJiYWEyOWMyNzAzODA4NTg3MzcyODkzNDM3ZTcwYTQ0Mjg1MAG5ZpkU12K54XQryheJa5tH5Bi-pw"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"104090796204202741462",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/NIMIEEiZpyU1kPZPq0ElrBk5_80\"",
-    "primaryEmail":"stephen.speer@atsid.com",
-    "name":{
-      "givenName":"Stephen",
-      "familyName":"Speer",
-      "fullName":"Stephen Speer"
+    "name": {
+      "fullName": "Stephen Speer"
     },
-    "emails":[
-      {
-        "address":"stephen.speer@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-620-8747",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCNadlcCUr9viOCILdmNhcmRfcGhvdG8qKGYwOThmNTA3ZjMxYTcxZTNlODE0YmVmYWYzYWJhYjM3Y2NjMWE5NDEwAQ3MPXYZfwn9FO1UZreO0i6Bs3a2",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/PTZe-kQuTHTAggjdjHeoEA42yaA\""
+    "primaryEmail": "stephen.speer@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/private/AIbEiAIAAABDCNadlcCUr9viOCILdmNhcmRfcGhvdG8qKGYwOThmNTA3ZjMxYTcxZTNlODE0YmVmYWYzYWJhYjM3Y2NjMWE5NDEwAQ3MPXYZfwn9FO1UZreO0i6Bs3a2"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"117005883910307342207",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/Ub2RlCrqYoyRtru98efG1FZgW3w\"",
-    "primaryEmail":"steven.lambion@atsid.com",
-    "name":{
-      "givenName":"Steven",
-      "familyName":"Lambion",
-      "fullName":"Steven Lambion"
+    "name": {
+      "fullName": "Steven Lambion"
     },
-    "emails":[
-      {
-        "address":"steven.lambion@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-621-8811",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECP_OmeuLqsKA7AEiC3ZjYXJkX3Bob3RvKihjNGY4MGRlMmY4ZTY5NzhlYWM0YWI0MzFhOWFiMjc1MWRmNGRiYTFhMAG9pt0Y4SjDsMKtpif0jJrRmalGog",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/A5yjx1pggWBOJdVasbut70sjIbo\""
+    "primaryEmail": "steven.lambion@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECP_OmeuLqsKA7AEiC3ZjYXJkX3Bob3RvKihjNGY4MGRlMmY4ZTY5NzhlYWM0YWI0MzFhOWFiMjc1MWRmNGRiYTFhMAG9pt0Y4SjDsMKtpif0jJrRmalGog"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"104149672765588184877",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/b4VTeuP768jR--SIfHeficTdCsw\"",
-    "primaryEmail":"toby.weston@atsid.com",
-    "name":{
-      "givenName":"Toby",
-      "familyName":"Weston",
-      "fullName":"Toby Weston"
+    "name": {
+      "fullName": "Toby Weston"
     },
-    "emails":[
-      {
-        "address":"toby.weston@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"360-989-3363,321",
-        "type":"work"
-      },
-      {
-        "value":"360-620-0736",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCK2-_LfPrKbLOSILdmNhcmRfcGhvdG8qKDA1ZWM4ZjIzMjU0Y2M3MDBiNmEyNmE2NDRkYmRhMTlmOTI0YzI5ZjAwAQHvIf-bRgypkpTCPZR4rYQ2Ftnd",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/xRC0RIon185IAcB3HZWf2u1QYuM\""
+    "primaryEmail": "toby.weston@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCK2-_LfPrKbLOSILdmNhcmRfcGhvdG8qKDA1ZWM4ZjIzMjU0Y2M3MDBiNmEyNmE2NDRkYmRhMTlmOTI0YzI5ZjAwAQHvIf-bRgypkpTCPZR4rYQ2Ftnd"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"118100372319570107440",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/egxFOdWtjfFPBWqFLrV47vRu8_A\"",
-    "primaryEmail":"travis.towne@atsid.com",
-    "name":{
-      "givenName":"Travis",
-      "familyName":"Towne",
-      "fullName":"Travis Towne"
+    "name": {
+      "fullName": "Travis Towne"
     },
-    "emails":[
-      {
-        "address":"travis.towne@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"571-317-2824 ",
-        "type":"work"
-      },
-      {
-        "value":"360-620-1875",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLC4qNKYl9yY-wEiC3ZjYXJkX3Bob3RvKihkNmVlYmU5MzZjOGRkYjIyN2Q1MjAzM2FjNmJlYTJhNzJiNWU4NDQ0MAHLIOUI5mfAAd7M0RqdHI-ZewCxPg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/wZ3UNIlmm1-GekYywVHg7DLC5zk\""
+    "primaryEmail": "travis.towne@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLC4qNKYl9yY-wEiC3ZjYXJkX3Bob3RvKihkNmVlYmU5MzZjOGRkYjIyN2Q1MjAzM2FjNmJlYTJhNzJiNWU4NDQ0MAHLIOUI5mfAAd7M0RqdHI-ZewCxPg"
   },
   {
-    "kind":"admin#directory#user",
-    "id":"114236582193666462204",
-    "etag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/SCr39OKu-NBaEfjlua-sX2-0ekI\"",
-    "primaryEmail":"vicky.oliver@atsid.com",
-    "name":{
-      "givenName":"Vicky",
-      "familyName":"Oliver",
-      "fullName":"Vicky Oliver"
+    "name": {
+      "fullName": "Vicky Oliver"
     },
-    "emails":[
-      {
-        "address":"vicky.oliver@atsid.com",
-        "primary":true
-      }
-    ],
-    "phones":[
-      {
-        "value":"408-833-4483",
-        "type":"mobile"
-      }
-    ],
-    "thumbnailPhotoUrl":"https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPyjkKm5gqDJxQEiC3ZjYXJkX3Bob3RvKihlYmZkZGQ0NDdiNjU5Y2FjODdhMmMyOGQ5NjBjNzAzNTllZGNmYmZhMAHzOmwN2NovXxSEBFI57yCVBvyLLg",
-    "thumbnailPhotoEtag":"\"iwpzoDgSq9BJw-XzORg0bILYPVc/F2Jymk2zRN6PbxMesEFAordqMMc\""
+    "primaryEmail": "vicky.oliver@atsid.com",
+    "thumbnailPhotoUrl": "https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECPyjkKm5gqDJxQEiC3ZjYXJkX3Bob3RvKihlYmZkZGQ0NDdiNjU5Y2FjODdhMmMyOGQ5NjBjNzAzNTllZGNmYmZhMAHzOmwN2NovXxSEBFI57yCVBvyLLg"
   }
 ]

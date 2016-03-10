@@ -13,6 +13,8 @@ function errorGeneric(res) {
   res.status(500).send({ error: 'Unable to fetch all users' });
 }
 
+//TODO: This is wrong. Tf 'all' is requested, it properly uses the contacts API. Otherwise it just gets the list of hard-coded contact data and uses it directly.
+//Instead, it should use the groups purely as a mapping to subset the 'all' list from google, so it stays fresh.
 function fetchAllUsers(req, res) {
   if (allId === req.query.groupId) {
     contacts.listAllContacts(req, res);
