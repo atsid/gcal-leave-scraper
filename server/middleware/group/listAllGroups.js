@@ -1,24 +1,9 @@
-const selected = 10;
+const selected = 0;
 const groups = [
   {
     id: 0,
     label: 'All',
     edit: false,
-  },
-  {
-    id: 10,
-    label: 'Corporate',
-    edit: true,
-  },
-  {
-    id: 20,
-    label: 'Systems',
-    edit: true,
-  },
-  {
-    id: 30,
-    label: 'MSG',
-    edit: true,
   },
 ];
 

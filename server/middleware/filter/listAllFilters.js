@@ -2,14 +2,8 @@ const selected = 10;
 const filters = [
   {
     id: 10,
-    label: 'Leave',
-    value: 'ooo,leave,vacation,holiday',
-    edit: true,
-  },
-  {
-    id: 20,
-    label: 'Vacation',
-    value: 'vacation,holiday',
+    label: 'Leave/OOO',
+    value: 'ooo,leave,vacation,holiday,off',
     edit: true,
   },
 ];

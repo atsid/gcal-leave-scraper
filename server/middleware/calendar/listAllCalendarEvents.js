@@ -35,7 +35,6 @@ function getQueryParams(req) {
 
 function fetchAllCalendarEvents(req, res) {
   const queryParams = getQueryParams(req);
-  console.log('Fetching events from calendar: ', req.query.calendarId);
   return fetch('https://www.googleapis.com/calendar/v3/calendars/' + req.query.calendarId + '/events?' + queryParams)
   .then((response) => {
     return response.json();

@@ -140,7 +140,7 @@ const TimelineToolbar = React.createClass({
 
   routePage(value, category) {
     // TODO: Route to new page to allow for user to make a new group
-    console.log('Rout to group page to: ' + value + ' - ' + category);
+    console.log('Route to group page to: ' + value + ' - ' + category);
   },
 
   selectedItem(category, selectedState) {

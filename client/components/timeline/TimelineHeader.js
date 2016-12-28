@@ -97,7 +97,7 @@ const TimelineHeader = React.createClass({
       <CircularProgress
         className="headerSpinner"
         mode="indeterminate"
-        size={0.2} />
+        size={0.3} />
     ) : (<span/>);
   },
 

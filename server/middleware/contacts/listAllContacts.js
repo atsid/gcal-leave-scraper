@@ -2,6 +2,13 @@
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 
+// TODO: this should be db driven and configurable fro UI so it works for any domain
+const excludes = {
+  'admin@atsid.com': true,
+  'jamieson.large@atsid.com': true,
+  'jamieson.small@atsid.com': true,
+};
+
 function errorNoUserFound(res) {
   res.status(404).json({message: 'No authenticated user found'});
 }
@@ -23,12 +30,13 @@ function getQueryParams(req) {
 
 function fetchAllUsers(req, res) {
   const queryParams = getQueryParams(req);
+  // TODO: this doesn't actually throw correctly
   return fetch('https://www.googleapis.com/admin/directory/v1/users?' + queryParams)
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    return res.json(data.users);
+    return res.json(data.users.filter(user => !excludes[user.primaryEmail]));
   })
   .catch(err => {
     errorGeneric(err, res);
